@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "api of Exchange",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docofapi/docofapi.github.io.git"
+  },
+  "keywords": [
+    "document"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/docofapi/docofapi.github.io/issues"
+  },
+  "homepage": "https://github.com/docofapi/docofapi.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^1.4.1"
+  }
+}
