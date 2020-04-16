@@ -10,8 +10,7 @@
 
 **签名生成规则如下:**
 
-参与签名的字段包括有效的 token （Token，其获取方式详见帮助中心）， time （由开发者生成的当前时间戳），nonce（随机数），对所有待签名参数按照字段名的 ASCII 码从小到大排序（字典序）后，使用 键值对的格式（即key1value1key2value2…）拼接成字符串 str,注意：如果请求参数中的 value 为 NULL 的情况，则在拼接字符串时不计入签名字符串，参数名均为小写字符,
-        接下来对 str + KEY(密钥) 作 MD5 加密，字段名和字段值都采用原始值，不进行 str 转义。即 sign=Md5(str + KEY)。
+参与签名的字段包括有效的` token `（`Token `，其获取方式详见帮助中心）， ` time `（由开发者生成的当前时间戳），` nonce`（随机数），对所有待签名参数按照字段名的` ASCII `码从小到大排序（字典序）后，使用 键值对的格式（即` key1value1key2value2…`）拼接成字符串` str `,注意：如果请求参数中的` value `为` NULL `的情况，则在拼接字符串时不计入签名字符串，参数名均为小写字符,接下来对` str + KEY`(密钥) 作` MD5 `加密，字段名和字段值都采用原始值，不进行` str `转义。即` sign=Md5(str + KEY)`。
 
 **参数如下:**
 
@@ -56,7 +55,7 @@ arguments | 无 | 国际化参数(成功时返回null) | array
 success | 无 | true / false | boolean
 
 > 获取 type 列表： https://www.xyt.com/api/common/findLocale/{语言}
-
+>
 > 语言：zh_CN、en_US
 
 ## 基础数据
@@ -972,23 +971,23 @@ createdDate | rows | 创建时间 | date
 
 **心跳消息**
 
-当用户的Websocket客户端连接到XYT的Websocket服务器后，服务器会定期(当前设为30秒)向其发送ping消息并包含当前时间的时间戳，如下:
+当用户的` Websocket `客户端连接到` XYT `的` Websocket `服务器后，服务器会定期(当前设为` 30 `秒)向其发送` ping `消息并包含当前时间的时间戳，如下:
 
 ```js
 { data: { time: 1586249815378 }, send: "ping" }
 ```
 
-当用户的Websocket客户端接收到此心跳消息后，应返回pong消息并包含当前时间的时间戳，如下：
+当用户的 ` Websocket `客户端接收到此心跳消息后，应返回` pong `消息并包含当前时间的时间戳，如下：
 
 ```js
 { send: "pong", data: 1586249814687 }
 ```
 
-**注意：当Websocket服务器连续发送了`ping`消息五分钟后却没有收到任何一次`pong`消息返回后，服务器将主动断开与此客户端的连接。**
+**注意：当` Websocket` 服务器连续发送了`ping`消息五分钟后却没有收到任何一次`pong`消息返回后，服务器将主动断开与此客户端的连接。**
 
 **订阅主题**
 
-成功建立与Websocket服务器的连接后，Websocket客户端发送如下请求以订阅特定主题
+成功建立与` Websocket `服务器的连接后，` Websocket `客户端发送如下请求以订阅特定主题
 
 ```js
 { subscribe: 主题名, data: { 参数1:参数值, 参数2:参数值,...... } }
