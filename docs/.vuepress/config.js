@@ -47,7 +47,15 @@ module.exports = {
           title: '合约交易',
           collapsable: false,
           sidebarDepth: 3,
-          children: [['', '介绍']],
+          children: [
+            ['', '介绍'],
+            'common',
+            'base-data',
+            'market',
+            'account',
+            'futures',
+            'ws'
+          ],
         },
       ],
       '/': ['exchange/', 'futures/']
