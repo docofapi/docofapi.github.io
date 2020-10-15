@@ -50,7 +50,7 @@ time | 时间戳 | 是
 
 节点名称(关键字) | 父节点 | 描述 | 类型
 -- | -- | -- | -- |
-availableBalance | data | 可用保证金+仓位价值 | float
+availableBalance | data | 可用保证金 | float
 board | data | 合约板块编码 | string
 coin | data | 币种 | string
 fee | data | 手续费 | float
@@ -108,7 +108,7 @@ time | 时间戳 | 是
 
 节点名称(关键字) | 父节点 | 描述 | 类型
 -- | -- | -- | -- |
-availableBalance | data | 可用保证金+仓位价值 | float
+availableBalance | data | 可用保证金 | float
 board | data | 合约板块编码 | string
 coin | data | 币种 | string
 fee | data | 手续费 | float
