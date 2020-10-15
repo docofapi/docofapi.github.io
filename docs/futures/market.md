@@ -151,7 +151,6 @@ to | 结束时间(时间戳) | 是
 {
   "type": "SUCCESS",
   "data":[{
-    "amount": 31582.115,
     "close": 10742.1,
     "date": "2020-09-28 06:45:00",
     "high": 10742.7,
@@ -161,7 +160,6 @@ to | 结束时间(时间戳) | 是
     "scene": "REAL",
     "symbol": "btcusdt",
     "type": "MIN_1",
-    "volume": 2.94
   }],
   "arguments": null,
   "success": true
@@ -172,7 +170,6 @@ to | 结束时间(时间戳) | 是
 
 节点名称(关键字) | 父节点 | 描述 | 类型
 -- | -- | -- | -- |
-amount | data | 交易额 | float
 close | data | 收盘价 | float
 date | data | 日期 | date
 high | data | 最高价 | float
@@ -182,7 +179,6 @@ open | data | 开盘价 | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 symbol | data | 币对名称 | string
 type | data | K线类型 | string
-volume | data |交易量  | float
 
 ## 获取合约深度
 
