@@ -63,6 +63,127 @@ symbol | data | 币对名称 | string
 type | data | K线类型 | string
 volume | data |交易量  | float
 
+## 根据时间获取指数价格 K 线
+
+**请求路径: /contract/market/index/getIndexScaleByDate**
+
+**请求协议: POST**
+
+**接口签名: 无**
+
+**请求参数示例:**
+
+```js
+symbol=btcusdt&type=MIN_1&from=1601246645&to=1601258645
+```
+
+**请求数据描述如下:**
+
+节点名称(关键字) | 描述 | 必填
+-- | -- | -- | -- |
+symbol | 币对名称 | 是
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+from | 开始时间(时间戳) | 是
+to | 结束时间(时间戳) | 是
+
+**响应值示例:**
+
+```js
+{
+  "type": "SUCCESS",
+  "data":[{
+    'close': 11369.57,
+    'date': "2020-10-15 11:16:00",
+    'high': 11369.58,
+    'id': 1602731760,
+    'low': 11367.95,
+    'open': 11368.48,
+    'scene': null,
+    'symbol': "btcusdt",
+    'type': "MIN_1"
+  }],
+  "arguments": null,
+  "success": true
+}
+```
+
+**响应值描述如下:**
+
+节点名称(关键字) | 父节点 | 描述 | 类型
+-- | -- | -- | -- |
+close | data | 收盘价 | float
+date | data | 日期 | date
+high | data | 最高价 | float
+id | data | id | string
+low | data | 最低价 | float
+open | data | 开盘价 | float
+scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
+symbol | data | 币对名称 | string
+type | data | K线类型 | string
+
+## 根据时间获取标记价格 K 线
+
+**请求路径: /contract/market/mark/getScaleByDate**
+
+**请求协议: POST**
+
+**接口签名: 无**
+
+**请求参数示例:**
+
+```js
+symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
+```
+
+**请求数据描述如下:**
+
+节点名称(关键字) | 描述 | 必填
+-- | -- | -- | -- |
+symbol | 币对名称 | 是
+scene | 场景(REAL真实，VIRTUAL虚拟) | 是
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+from | 开始时间(时间戳) | 是
+to | 结束时间(时间戳) | 是
+
+**响应值示例:**
+
+```js
+{
+  "type": "SUCCESS",
+  "data":[{
+    "amount": 31582.115,
+    "close": 10742.1,
+    "date": "2020-09-28 06:45:00",
+    "high": 10742.7,
+    "id": 1601246700,
+    "low": 10741.6,
+    "open": 10742.6,
+    "scene": "REAL",
+    "symbol": "btcusdt",
+    "type": "MIN_1",
+    "volume": 2.94
+  }],
+  "arguments": null,
+  "success": true
+}
+```
+
+**响应值描述如下:**
+
+节点名称(关键字) | 父节点 | 描述 | 类型
+-- | -- | -- | -- |
+amount | data | 交易额 | float
+close | data | 收盘价 | float
+date | data | 日期 | date
+high | data | 最高价 | float
+id | data | id | string
+low | data | 最低价 | float
+open | data | 开盘价 | float
+scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
+symbol | data | 币对名称 | string
+type | data | K线类型 | string
+volume | data |交易量  | float
+
 ## 获取合约深度
 
 **请求路径: /contract/market/getDepth**

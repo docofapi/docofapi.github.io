@@ -476,7 +476,7 @@ m | data | 用户ID | integer
 b | data | 合约板块编码 | String
 n | data | 场景(REAL实际，VIRTUAL虚拟) | String
 c | data | 币种 | String
-a | data | 可用保证金+仓位价值 | float
+a | data | 可用保证金 | float
 o | data | 委托（冻结）保证金 | float
 p | data | 仓位（占用）保证金 | float
 r | data | 保证金率 | float
