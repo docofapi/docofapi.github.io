@@ -2,35 +2,35 @@
 
 ## 查询当前委托
 
-**请求路径: /open/contractOrder/getCurrentPage**
+**Request path: /open/contractOrder/getCurrentPage**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 size=10&page=1&scene=REAL&board=STD&symbol=btcusdt&positionId=CT202009221345165F698F6C50F35B256BD76B0B
-&token=Token&nonce=123123&sign=签名&time=1586239136316
+&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-size | 每页数量(默认值10) | 否
-page | 当前页(默认值1) | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-board | 合约板块编码 | 是
-symbol | 币对名称 | 是
-positionId | 仓位ID | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+size | 每页数量(默认值10) | No
+page | 当前页(默认值1) | No
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+board | 合约板块编码 | Yes
+symbol | 币对名称 | Yes
+positionId | 仓位ID | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -81,9 +81,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 footers | data | 页脚 | array
 rows | data | 数据列表 | array
@@ -126,36 +126,36 @@ dealPrice | rows | 平均成交价 | float
 
 ## 开仓下单
 
-**请求路径: /open/contractOrder/createEntry**
+**Request path: /open/contractOrder/createEntry**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-scene=REAL&type=LIMIT&side=SELL&board=STD&symbol=btcusdt&price=7374.06&quantity=4&multiplier=10&token=Token&nonce=123123&sign=签名&time=1586239136316
+scene=REAL&type=LIMIT&side=SELL&board=STD&symbol=btcusdt&price=7374.06&quantity=4&multiplier=10&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | 是
-side | 订单方向(BUY开多, SELL开空) | 是
-board | 合约板块编码 | 是
-symbol | 币对名称 | 是
-price | 委托单价 | 是
-quantity | 手数 | 是
-multiplier | 杠杆倍数 | 是
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
+side | 订单方向(BUY开多, SELL开空) | Yes
+board | 合约板块编码 | Yes
+symbol | 币对名称 | Yes
+price | 委托单价 | Yes
+quantity | 手数 | Yes
+multiplier | 杠杆倍数 | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -167,45 +167,45 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 订单号 | string
 
 
 ## 平仓下单
 
-**请求路径: /open/contractOrder/createExit**
+**Request path: /open/contractOrder/createExit**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 scene=REAL&symbol=btcusdt&board=STD&type=LIMIT&positionId=CT202008111343545F32301A29517D008E0A089C
-&price=7374.06&quantity=4&token=Token&nonce=123123&sign=签名&time=1586239136316
+&price=7374.06&quantity=4&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-symbol | 币对名称 | 是
-board | 合约板块编码 | 是
-type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | 是
-positionId | 仓位ID | 是
-price | 委托单价 | 是
-quantity | 手数 | 是
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+symbol | 币对名称 | Yes
+board | 合约板块编码 | Yes
+type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
+positionId | 仓位ID | Yes
+price | 委托单价 | Yes
+quantity | 手数 | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -216,43 +216,43 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 订单号 | string
 
 
 ## 撤单
 
-**请求路径: /open/contractOrder/cancel**
+**Request path: /open/contractOrder/cancel**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 orderId=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt
-&board=STD&scene=REAL&token=Token&sign=签名&nonce=123123&time=1586239136316
+&board=STD&scene=REAL&token=Token&sign=signature&nonce=123123&time=1586239136316
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderId | 订单ID | 是
-symbol | 交易对 | 是
-board | 合约板块编码 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-token | token | 是
-sign | 签名 | 是
-nonce | 随机数 | 是
-time | 时间戳 | 是
-symbol | 币对名称 | 否
+orderId | 订单ID | Yes
+symbol | 交易对 | Yes
+board | 合约板块编码 | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+token | token | Yes
+sign | signature | Yes
+nonce | random number | Yes
+time | Timestamp | Yes
+symbol | 币对名称 | No
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -263,44 +263,44 @@ symbol | 币对名称 | 否
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 无 | string
 
 ## 批量撤单
 
-**请求路径: /open/contractOrder/batchCancel**
+**Request path: /open/contractOrder/batchCancel**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 orderIds=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt&scene=REAL&side=SELL
-&minPrice=7390&maxPrice=7395&size=2&token=Token&nonce=123123&sign=签名&time=1586239136316
+&minPrice=7390&maxPrice=7395&size=2&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderIds | 订单ID, “,”隔开 | 否
-symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-size | 撤单数量 | 否
-side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | 否
-minPrice | 最小价格 | 否
-maxPrice | 最大价格 | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+orderIds | 订单ID, “,”隔开 | No
+symbol | 币对名称 | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+size | 撤单数量 | No
+side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | No
+minPrice | 最小价格 | No
+maxPrice | 最大价格 | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -314,40 +314,40 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
-节点名称(关键字) | 父节点 | 描述 | 类型
+**The response data is described as follows:**
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 订单号 | array
 
 
 ## 根据ID获取当前委托订单详情
 
-**请求路径: /open/contractOrder/getCurrentById**
+**Request path: /open/contractOrder/getCurrentById**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-scene=REAL&id=EX202004071549271315E8C30878571E40EE1444A78&board=STD&symbol=btcusdt&token=Token&nonce=123123&sign=签名&time=1586239136316
+scene=REAL&id=EX202004071549271315E8C30878571E40EE1444A78&board=STD&symbol=btcusdt&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-orderId | 订单ID | 是
-board | 合约板块编码 | 是
-symbol | 币对名称 | 是
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+orderId | 订单ID | Yes
+board | 合约板块编码 | Yes
+symbol | 币对名称 | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例：**
+**Examples of response values:**
 
 ```js
 {
@@ -394,9 +394,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 id | data | 订单id | string
 memberId | data | 用户id | integer
@@ -436,36 +436,36 @@ dealPrice | data | 平均成交价 | float
 
 ## 获取所有的交易数据
 
-**请求路径: /open/contractDeal/findPage**
+**Request path: /open/contractDeal/findPage**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 pageSize=20&page=1&sort=1&scene=REAL&board=STD&symbol=btcusdt
-&orderId=CT202009281739095F71AF3D50F35B256BD7F7A1&token=Token&nonce=123123&sign=签名&time=1586239136316
+&orderId=CT202009281739095F71AF3D50F35B256BD7F7A1&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-pageSize | 每页数量(默认值20) | 否
-page | 当前页(默认值1) | 否
-sort | 排序方式(默认值1,0升序,1降序) | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 否
-board | 合约板块编码 | 否
-symbol | 币对名称 | 否
-orderId | 订单ID | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+pageSize | 每页数量(默认值20) | No
+page | 当前页(默认值1) | No
+sort | 排序方式(默认值1,0升序,1降序) | No
+scene | 场景(REAL实际，VIRTUAL虚拟) | No
+board | 合约板块编码 | No
+symbol | 币对名称 | No
+orderId | 订单ID | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -508,9 +508,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 footers | data | 页脚 | array
 rows | data | 数据列表 | array
@@ -536,7 +536,7 @@ positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓) | string
 price | rows | 成交价格 | float
 scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-success | rows | 是否完成(true:是,false否) | boolean
+success | rows | 是否完成(true:Yes,false否) | boolean
 symbol | rows | 币对 | string
 tradeNo | rows | 截取后的交易ID | float
 type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
@@ -545,33 +545,33 @@ volume | rows | 成交数量 | float
 
 ## 获取用户所有的仓位信息
 
-**请求路径: /open/position/getCurrentPage**
+**Request path: /open/position/getCurrentPage**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-page=1&size=1&scene=REAL&board=STD&symbol=btcusdt&token=Token&nonce=123123&sign=签名&time=1586239136316
+page=1&size=1&scene=REAL&board=STD&symbol=btcusdt&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-page | 当前页(默认值1) | 否
-size | 每页数量(默认值10) | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-board | 合约板块编码 | 是
-symbol | 币对名称 | 是
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+page | 当前页(默认值1) | No
+size | 每页数量(默认值10) | No
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+board | 合约板块编码 | Yes
+symbol | 币对名称 | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -618,9 +618,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 footers | data | 页脚 | array
 rows | data | 数据列表 | array
@@ -646,7 +646,7 @@ margin | rows | 保证金 | float
 memberId | rows | 用户ID | integer
 multiplier | rows | 杠杆倍数 | integer
 orderVolume | rows | 委托数量 | float
-passive | rows | 是否强平(true:是,false否) | boolean
+passive | rows | 是否强平(true:Yes,false否) | boolean
 price | rows | 当前开仓均价 | float
 profit | rows | 盈亏 | float
 referenceSymbol | rows | 引用指数代号 | string
@@ -659,32 +659,32 @@ volume | rows | 成交数量 | float
 
 ## 根据ID获取仓位信息
 
-**请求路径: /open/position/getCurrentById**
+**Request path: /open/position/getCurrentById**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-positionId=CT202009281739095F71AF3D50F35B256BD7F7A1&symbol=btcusdt&board=STD&scene=REAL&token=Token&nonce=123123&sign=签名&time=1586239136316
+positionId=CT202009281739095F71AF3D50F35B256BD7F7A1&symbol=btcusdt&board=STD&scene=REAL&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-positionId | 仓位ID | 否
-symbol | 币对名称 | 否
-board | 合约板块编码 | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+positionId | 仓位ID | No
+symbol | 币对名称 | No
+board | 合约板块编码 | No
+scene | 场景(REAL实际，VIRTUAL虚拟) | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -726,9 +726,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 board | data | 合约板块编码 | string
 coin | data | 结算货币 | string
@@ -750,7 +750,7 @@ margin | data | 保证金 | float
 memberId | data | 用户ID | integer
 multiplier | data | 杠杆倍数 | integer
 orderVolume | data | 委托数量 | float
-passive | data | 是否强平(true:是,false否) | boolean
+passive | data | 是否强平(true:Yes,false否) | boolean
 positionNo | data | 截取后的仓位ID | string
 price | data | 当前开仓均价 | float
 referenceSymbol | data | 引用指数代号 | string

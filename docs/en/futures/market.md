@@ -2,29 +2,29 @@
 
 ## 根据时间获取合约价格 K 线
 
-**请求路径: /contract/market/getScaleByDate**
+**Request path: /contract/market/getScaleByDate**
 
-**请求协议: POST**
+**Request Protocol: POST**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | 是
-scene | 场景(REAL真实，VIRTUAL虚拟) | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-from | 开始时间(时间戳) | 是
-to | 结束时间(时间戳) | 是
+symbol | 币对名称 | Yes
+scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+from | 开始时间(Timestamp) | Yes
+to | 结束时间(Timestamp) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -47,9 +47,9 @@ to | 结束时间(时间戳) | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 amount | data | 交易额 | float
 close | data | 收盘价 | float
@@ -65,28 +65,28 @@ volume | data |交易量  | float
 
 ## 根据时间获取指数价格 K 线
 
-**请求路径: /contract/market/index/getIndexScaleByDate**
+**Request path: /contract/market/index/getIndexScaleByDate**
 
-**请求协议: POST**
+**Request Protocol: POST**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 symbol=btcusdt&type=MIN_1&from=1601246645&to=1601258645
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-from | 开始时间(时间戳) | 是
-to | 结束时间(时间戳) | 是
+symbol | 币对名称 | Yes
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+from | 开始时间(Timestamp) | Yes
+to | 结束时间(Timestamp) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -107,9 +107,9 @@ to | 结束时间(时间戳) | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 close | data | 收盘价 | float
 date | data | 日期 | date
@@ -123,29 +123,29 @@ type | data | K线类型 | string
 
 ## 根据时间获取标记价格 K 线
 
-**请求路径: /contract/market/mark/getScaleByDate**
+**Request path: /contract/market/mark/getScaleByDate**
 
-**请求协议: POST**
+**Request Protocol: POST**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | 是
-scene | 场景(REAL真实，VIRTUAL虚拟) | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-from | 开始时间(时间戳) | 是
-to | 结束时间(时间戳) | 是
+symbol | 币对名称 | Yes
+scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+from | 开始时间(Timestamp) | Yes
+to | 结束时间(Timestamp) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -166,9 +166,9 @@ to | 结束时间(时间戳) | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 close | data | 收盘价 | float
 date | data | 日期 | date
@@ -182,13 +182,13 @@ type | data | K线类型 | string
 
 ## 获取合约深度
 
-**请求路径: /contract/market/getDepth**
+**Request path: /contract/market/getDepth**
 
-**请求协议: POST**
+**Request Protocol: POST**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 symbol=btcusdt&scene=REAL&type=0&size=20
@@ -196,14 +196,14 @@ symbol=btcusdt&scene=REAL&type=0&size=20
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | 是
-scene | 场景场景(REAL真实，VIRTUAL虚拟) | 是
-type | 深度档位(默认值:0) | 是
-size | 数量 | 否
+symbol | 币对名称 | Yes
+scene | 场景场景(REAL真实，VIRTUAL虚拟) | Yes
+type | 深度档位(默认值:0) | Yes
+size | 数量 | No
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -225,9 +225,9 @@ size | 数量 | 否
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 buyList | data | 买入：价格、数量、条数 | array
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
@@ -236,25 +236,25 @@ symbol | data | 币对名称 | string
 
 ## 获取合约 24 小时行情
 
-**请求路径: /contract/market/getBySymbol**
+**Request path: /contract/market/getBySymbol**
 
-**请求协议: GET**
+**Request Protocol: GET**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 scene=REAL&symbol=btcusdt
 ```
 
 **请求数据描述如下：**
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL真实，VIRTUAL虚拟) | 是
-symbol | 币对名称 | 是
+scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+symbol | 币对名称 | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -283,9 +283,9 @@ symbol | 币对名称 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 amount | data | 成交额 | float
 basis | data | 合理基差 | float
@@ -307,24 +307,24 @@ volume | data | 成交量  | float
 
 ## 获取合约 24 小时行情列表
 
-**请求路径: /contract/market/findAll**
+**Request path: /contract/market/findAll**
 
-**请求协议: GET**
+**Request Protocol: GET**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
 scene=REAL
 ```
 
 **请求数据描述如下：**
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL真实，VIRTUAL虚拟) | 是
+scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -352,9 +352,9 @@ scene | 场景(REAL真实，VIRTUAL虚拟) | 是
   "success": true
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 amount | data | 成交额 | float
 basis | data | 合理基差 | float

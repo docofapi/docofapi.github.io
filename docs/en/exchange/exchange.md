@@ -2,31 +2,31 @@
 
 ## 查询当前委托
 
-**请求路径: /open/order/getCurrentPage**
+**Request path: /open/order/getCurrentPage**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-size=10&page=1&symbol=btcusdt&token=Token&nonce=123123&sign=签名&time=1586239136316
+size=10&page=1&symbol=btcusdt&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-size | 每页数量(默认值10) | 否
-page | 当前页(默认值1) | 否
-symbol | 币对名称 | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+size | 每页数量(默认值10) | No
+page | 当前页(默认值1) | No
+symbol | 币对名称 | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -63,9 +63,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name (keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 footers | data | 页脚 | array
 rows | data | 数据列表 | array
@@ -93,32 +93,32 @@ volume | rows | 数量 | float
 
 ## 下单
 
-**请求路径: /open/order/create**
+**Request path: /open/order/create**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-symbol=btcusdt&price=7374.06&volume=4&side=SELL&token=Token&nonce=123123&sign=签名&time=1586239136316
+symbol=btcusdt&price=7374.06&volume=4&side=SELL&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name (keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | 是
-price | 委托单价 | 是
-volume | 数量 | 是
-side | 买卖方向(BUY买入,SELL卖出) | 是
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+symbol | 币对名称 | Yes
+price | 委托单价 | Yes
+volume | 数量 | Yes
+side | 买卖方向(BUY买入,SELL卖出) | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -129,39 +129,39 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name (keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 订单号 | string
 
 
 ## 撤单
 
-**请求路径: /open/order/cancel**
+**Request path: /open/order/cancel**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-orderId=EX202004071549271315E8C30878571E40EE1444A78&token=Token&sign=签名&nonce=123123&time=1586239136316&symbol=btcusdt
+orderId=EX202004071549271315E8C30878571E40EE1444A78&token=Token&sign=signature&nonce=123123&time=1586239136316&symbol=btcusdt
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name (keyword) | Description | Required
 -- | -- | -- | -- |
-orderId | 订单ID | 是
-token | token | 是
-sign | 签名 | 是
-nonce | 随机数 | 是
-time | 时间戳 | 是
-symbol | 币对名称 | 否
+orderId | 订单ID | Yes
+token | token | Yes
+sign | signature | Yes
+nonce | random number | Yes
+time | Timestamp | Yes
+symbol | 币对名称 | No
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -172,42 +172,42 @@ symbol | 币对名称 | 否
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name (keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 订单号 | string
 
 ## 批量撤单
 
-**请求路径: /open/order/batchCancel**
+**Request path: /open/order/batchCancel**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-orderIds=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&side=SELL&minPrice=7390&maxPrice=7395&size=2&token=Token&nonce=123123&sign=签名&time=1586239136316
+orderIds=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&side=SELL&minPrice=7390&maxPrice=7395&size=2&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
 **请求数据描述如下：**
 
-节点名称(关键字) | 描述 | 必填
+Node name (keyword) | Description | Required
 -- | -- | -- | -- |
-orderIds | 订单ID, “,”隔开 | 否
-symbol | 币对名称 | 否
-side | 买卖方向(BUY买入,SELL卖出) | 否
-minPrice | 最小价格 | 否
-maxPrice | 最大价格 | 否
-size | 撤单数量 | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+orderIds | 订单ID, “,”隔开 | No
+symbol | 币对名称 | No
+side | 买卖方向(BUY买入,SELL卖出) | No
+minPrice | 最小价格 | No
+maxPrice | 最大价格 | No
+size | 撤单数量 | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -218,38 +218,38 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
-节点名称(关键字) | 父节点 | 描述 | 类型
+**The response data is described as follows:**
+Node name (keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 data | 无 | 订单号 | array
 
 
 ## 根据ID获取当前委托订单详情
 
-**请求路径: /open/order/getCurrentById**
+**Request path: /open/order/getCurrentById**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-orderId=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&token=Token&nonce=123123&sign=签名&time=1586239136316
+orderId=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name (keyword) | Description | Required
 -- | -- | -- | -- |
-orderId | 订单 | 是
-symbol | 币对名称 | 是
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+orderId | 订单 | Yes
+symbol | 币对名称 | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例：**
+**Examples of response values:**
 
 ```js
 {
@@ -282,9 +282,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name (keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 baseCoin | data | 基准货币，symbol的前半段 | string
 createdDate | data | 创建时间 | date
@@ -310,33 +310,33 @@ volume | data | 数量 | float
 
 ## 获取所有的交易数据
 
-**请求路径: /open/deal/findPage**
+**Request path: /open/deal/findPage**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-pageSize=20&page=1&sort=1&symbol=btcusdt&orderId=EX202004071549271315E8C30878571E40EE1444A78&token=Token&nonce=123123&sign=签名&time=1586239136316
+pageSize=20&page=1&sort=1&symbol=btcusdt&orderId=EX202004071549271315E8C30878571E40EE1444A78&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name (keyword) | Description | Required
 -- | -- | -- | -- |
-pageSize | 每页数量(默认值20) | 否
-page | 当前页(默认值1) | 否
-sort | 排序方式(默认值1,0升序,1降序) | 否
-symbol | 币对名称 | 否
-orderId | 订单ID | 否
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+pageSize | 每页数量(默认值20) | No
+page | 当前页(默认值1) | No
+sort | 排序方式(默认值1,0升序,1降序) | No
+symbol | 币对名称 | No
+orderId | 订单ID | No
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -367,9 +367,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name (keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 footers | data | 页脚 | array
 rows | data | 数据列表 | array

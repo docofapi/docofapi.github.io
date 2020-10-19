@@ -37,21 +37,21 @@ sign = "F5DB0F896659467AC527BD01C07EE692"
 ```js
 {
   "type": "SUCCESS",
-  "data": "响应数据",
+  "data": "response data",
   "arguments": null,
   "msg": "suc"
 }
 ```
 
-**响应数据描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-type | 无 | 响应码 | string
-data | 无 | 响应数据 | 任意类型
-arguments | 无 | 国际化参数(成功时返回null) | array
-success | 无 | true / false | boolean
+type | None | Response code | string
+data | None | Response data | Any type
+arguments | None | Internationalization parameters (return null on success) | array
+success | None | true / false | boolean
 
-> 获取 type 列表： https://www.xyt.com/api/common/findLocale/{语言}
+> Get a list of type: https://www.xyt.com/api/common/findLocale/{language}
 >
-> 语言：zh_CN、en_US
+> language: de_DE、en_US、fr_FR、ja_JP、ko_KR、ru_RU、th_TH、zh_CN、zh_TW

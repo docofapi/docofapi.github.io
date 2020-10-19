@@ -1,29 +1,29 @@
-# 账户相关
+# Account related
 
 ## 资产余额
 
-**请求路径: /open/user/account**
+**Request path: /open/user/account**
 
-**请求协议: GET/POST**
+**Request Protocol: GET/POST**
 
-**接口签名: 是**
+**API signature: Yes**
 
-**请求参数示例:**
+**Example request parameters:**
 
 ```js
-token=Token&nonce=123123&sign=签名&time=1586239136316
+token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-token | token | 是
-nonce | 随机数 | 是
-sign | 签名 | 是
-time | 时间戳 | 是
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | Timestamp | Yes
 
-**响应值示例：**
+**Examples of response values:**
 
 ```js
 {
@@ -39,9 +39,9 @@ time | 时间戳 | 是
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 balance | data | 正常资金 | float
 coin | data | 币种 | string

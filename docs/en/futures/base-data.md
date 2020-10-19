@@ -1,16 +1,16 @@
-# 基础数据
+# Basic data
 
 ## 获取所有合约板块
 
-**请求路径: /boardType/findAll**
+**Request path: /boardType/findAll**
 
-**请求协议: GET**
+**Request Protocol: GET**
 
-**接口签名: 无**
+**API signature: None**
 
-**请求参数: 无**
+**Request parameters: 无**
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -84,9 +84,9 @@
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 code | data | 编码 | string
 coin | data | 结算币种 | string

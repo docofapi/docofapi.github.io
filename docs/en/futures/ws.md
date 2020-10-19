@@ -35,7 +35,7 @@
 { subscribe: "contractScale", data: { symbol: "btcusdt", scene: "REAL", type: "MIN_1" } }
 ```
 
-响应值示例:
+Examples of response values:
 
 ```js
 {
@@ -79,15 +79,15 @@
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
-type | 深度档位(默认值:0) | 是
-size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | 是
+subscribe | 订阅的主题名称 | Yes
+symbol | 币对名称 | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+type | 深度档位(默认值:0) | Yes
+size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -100,9 +100,9 @@ size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | 是
   "send": "contractDepth"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | 卖出：价格,数量,条数 | array
 b | data | 买入：价格,数量,条数 | array
@@ -121,13 +121,13 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+subscribe | 订阅的主题名称 | Yes
+symbol | 币对名称 | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -145,9 +145,9 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | 是
   "send": "newTrade"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 d | l | 创建时间 | date
 e | l | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
@@ -168,12 +168,12 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+subscribe | 订阅的主题名称 | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -199,9 +199,9 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | 是
   "send": "contractTicker"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | 成交额 | float
 b | data | 买一价格 | float
@@ -232,13 +232,13 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+subscribe | 订阅的主题名称 | Yes
+symbol | 币对名称 | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -264,9 +264,9 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | 是
   "send": "contractSymbolTicker"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | 成交额 | float
 b | data | 买一价格 | float
@@ -298,14 +298,14 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+subscribe | 订阅的主题名称 | Yes
+symbol | 币对名称 | Yes
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -324,9 +324,9 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | 是
   "send": "contractScale"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | 成交额 | float
 c | data | 收盘价 | float
@@ -350,13 +350,13 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+subscribe | 订阅的主题名称 | Yes
+symbol | 币对名称 | Yes
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -372,9 +372,9 @@ type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分�
   "send": "indexScale"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 c | data | 收盘价 | float
 h | data | 最高价 | float
@@ -395,14 +395,14 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+subscribe | 订阅的主题名称 | Yes
+symbol | 币对名称 | Yes
+type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -419,9 +419,9 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | 是
   "send": "markScale"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 c | data | 收盘价 | float
 h | data | 最高价 | float
@@ -443,13 +443,13 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-token | token | 是
-memberId | 用户ID | 是
+subscribe | 订阅的主题名称 | Yes
+token | token | Yes
+memberId | 用户ID | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -468,9 +468,9 @@ memberId | 用户ID | 是
   "send": "margin"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 m | data | 用户ID | integer
 b | data | 合约板块编码 | String
@@ -494,13 +494,13 @@ send | 无 | 订阅主题名称 | string
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-token | token | 是
-memberId | 用户ID | 是
+subscribe | 订阅的主题名称 | Yes
+token | token | Yes
+memberId | 用户ID | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -544,9 +544,9 @@ memberId | 用户ID | 是
   "send": "contractOrder"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 board | data | 合约板块编码 | string
 coin | data | 结算币种 | string
@@ -594,13 +594,13 @@ volume | data | 数量 | float
 
 **请求数据描述如下:**
 
-节点名称(关键字) | 描述 | 必填
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | 是
-token | token | 是
-memberId | 用户ID | 是
+subscribe | 订阅的主题名称 | Yes
+token | token | Yes
+memberId | 用户ID | Yes
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -640,9 +640,9 @@ memberId | 用户ID | 是
   "send": "position"
 }
 ```
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 board | data | 合约板块编码 | string
 coin | data | 结算货币 | string
@@ -665,7 +665,7 @@ margin | data | 保证金 | float
 memberId | data | 用户ID | integer
 multiplier | data | 杠杆倍数 | integer
 orderVolume | data | 委托数量 | float
-passive | data | 是否强平(true:是,false否) | boolean
+passive | data | 是否强平(true:Yes,false否) | boolean
 price | data | 当前开仓均价 | float
 profit | data | 盈亏 | float
 referenceSymbol | data | 引用指数代号 | string

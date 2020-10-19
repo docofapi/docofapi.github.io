@@ -54,4 +54,4 @@ success | 无 | true / false | boolean
 
 > 获取 type 列表： https://www.xyt.com/api/common/findLocale/{语言}
 >
-> 语言：zh_CN、en_US
+> 语言：de_DE、en_US、fr_FR、ja_JP、ko_KR、ru_RU、th_TH、zh_CN、zh_TW

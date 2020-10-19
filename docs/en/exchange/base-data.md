@@ -1,16 +1,16 @@
-# 基础数据
+# Basic data
 
 ## 获取所有币种
 
-**请求路径: /coin/findAll**
+**Request path: /coin/findAll**
 
-**请求协议: GET**
+**Request Protocol: GET**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数: 无**
+**Request parameters: None**
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -72,9 +72,9 @@
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 name | data | 币对名称 | string
 baseCoin | data | 所属币种 | string
@@ -127,15 +127,15 @@ withdrawFeeRate | contractList | 提币手续费比例 | float
 
 ## 获取所有币对
 
-**请求路径: /product/findAll**
+**Request path: /product/findAll**
 
-**请求协议: GET**
+**Request Protocol: GET**
 
-**接口签名: 无**
+**API signature: No**
 
-**请求参数: 无**
+**Request parameters: None**
 
-**响应值示例:**
+**Examples of response values:**
 
 ```js
 {
@@ -172,9 +172,9 @@ withdrawFeeRate | contractList | 提币手续费比例 | float
 }
 ```
 
-**响应值描述如下:**
+**The response data is described as follows:**
 
-节点名称(关键字) | 父节点 | 描述 | 类型
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 symbol | data |  币对名称 | string
 category | data | 分类编码 | string
