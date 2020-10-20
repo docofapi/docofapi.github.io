@@ -47,7 +47,7 @@ sign = "F5DB0F896659467AC527BD01C07EE692"
 
 **The response data is described as follows:**
 
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 type | None | Response code | string
 data | None | Response data | Any type

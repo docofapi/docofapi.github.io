@@ -77,7 +77,7 @@ Examples of response values:
 { subscribe: "contractDepth", data: { symbol: "ltcusdt", scene: "REAL", type: 0, size: 1000 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -104,11 +104,11 @@ size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 卖出：价格,数量,条数 | array
-b | data | 买入：价格,数量,条数 | array
+a | data | 卖出：价格,quantity,条数 | array
+b | data | 买入：价格,quantity,条数 | array
 n | data | 场景(REAL实际，VIRTUAL虚拟) | string
 s | data | coin pair name | string
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 
 ## 合约最新成交订阅
@@ -119,7 +119,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "contractNewTrade", data: { symbol: "ltcusdt", scene: "REAL" } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -149,14 +149,14 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-d | l | 创建时间 | date
+d | l | creation time | date
 e | l | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 i | l | id | string
-p | l | 价格 | float
-v | l | 数量 | float
+p | l | price | float
+v | l | quantity | float
 n | data | 场景(REAL实际，VIRTUAL虚拟) | string
 s | data | coin pair name | string
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 24小时行情订阅
 
@@ -166,7 +166,7 @@ send | 无 | 订阅主题名称 | string
 {subscribe: "contractTicker", data: {scene: "REAL"}}
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -220,7 +220,7 @@ r | data | 引用指数代号 | string
 s | data | 币对 | string
 t | data | 日期 | date
 v | data | 成交量 | float
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 合约单个币对行情订阅
 
@@ -230,7 +230,7 @@ send | 无 | 订阅主题名称 | string
 {subscribe: "contractSymbolTicker", data: {symbol: "btcusdt", scene: "REAL"}}
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -285,7 +285,7 @@ r | data | 引用指数代号 | string
 s | data | 币对 | string
 t | data | 日期 | date
 v | data | 成交量 | float
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 
 ## 合约价 K 线订阅
@@ -296,7 +296,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "contractScale", data: {symbol: "btcusdt", type: "MIN_1", scene: "REAL"} }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -338,7 +338,7 @@ o | data | opening price | float
 s | data | coin pair name | String
 t | data | K 线类型 | String
 v | data | 交易量 | float
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 指数价 K 线订阅
 
@@ -348,7 +348,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "indexScale", data: {symbol: "btcusdt", type: "MIN_1"} }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -383,7 +383,7 @@ l | data | 最低价 | float
 o | data | opening price | float
 s | data | coin pair name | String
 t | data | K 线类型 | String
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 标记价 K 线订阅
 
@@ -393,7 +393,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "markScale", data: {symbol: "btcusdt", type: "MIN_1", scene: "REAL"} }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -431,7 +431,7 @@ n | data | 场景(REAL实际，VIRTUAL虚拟) | String
 o | data | opening price | float
 s | data | coin pair name | String
 t | data | K 线类型 | String
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 保证金账户订阅
 
@@ -441,7 +441,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe:"margin", data: { "token": "Token", "memberId": 100094 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -481,8 +481,8 @@ o | data | 委托（冻结）保证金 | float
 p | data | 仓位（占用）保证金 | float
 r | data | 保证金率 | float
 i | data | 盈亏 | float
-f | data | 手续费 | float
-send | 无 | 订阅主题名称 | string
+f | data | fees | float
+send | None | 订阅主题名称 | string
 
 ## 合约订单订阅
 
@@ -492,7 +492,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe:"contractOrder", data: { "token": "Token", "memberId": 100094 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -550,12 +550,12 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 board | data | 合约板块编码 | string
 coin | data | 结算币种 | string
-createdDate | data | 创建时间 | date
-currentVolume | data | 当前数量 | float
-date | data | 生效时间 | date
-dealAmount | data | 成交金额 | float
-dealPrice | data | 平均成交价 | float
-dealVolume | data | 成交数量 | float
+createdDate | data | creation time | date
+currentVolume | data | current quantity | float
+date | data | effective time | date
+dealAmount | data | turnover | float
+dealPrice | data | average transaction price | float
+dealVolume | data | number of transactions | float
 id | data | 订单id | string
 lossPrice | data | 止损价 | float
 makerFeeRate | data | maker rate | float
@@ -566,9 +566,9 @@ multiplier | data | 杠杆倍数 | integer
 passive | data | 是否强平(true:enable,false:disable) | boolean
 positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
 positionId | data | 仓位ID | string
-price | data | 价格 | float
+price | data | price | float
 profitPrice | data | 止盈价 | float
-pushed | data | 是否推送(true:enable,false:disable) | boolean
+pushed | data | whether to push(true:enable,false:disable) | boolean
 quantity | data | 手数 | float
 referenceSymbol | data | 引用指数代号 | string
 referencePrice | data | 指数价 | float
@@ -576,13 +576,13 @@ roleCode | data | 角色编码 | string
 scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 size | data | 合约面值 | float
-source | data | 来源(WEB,H5,APP,API) | string
+source | data | source(WEB,H5,APP,API) | string
 symbol | data | 币对 | string
 takerFeeRate | data | taker rate | float
 tradeCount | data | 交易次数 | long
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
-updatedDate | data | 修改时间 | date
-volume | data | 数量 | float
+updatedDate | data | update time | date
+volume | data | quantity | float
 
 ## 仓位信息订阅
 
@@ -592,7 +592,7 @@ volume | data | 数量 | float
 { subscribe:"position", data: { "token": "Token", "memberId": 100094 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -646,7 +646,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 board | data | 合约板块编码 | string
 coin | data | 结算货币 | string
-createdDate | data | 创建时间 | date
+createdDate | data | creation time | date
 currentId   | data | 仓位记录ID | string
 entryAmount | data | 开仓金额 | float
 entryFee | data | 开仓手续费 | float
@@ -673,5 +673,5 @@ roleCode  | data | 角色编码 | string
 scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | data | 币对 | string
-updatedDate | data | 修改时间 | date
-volume | data | 成交数量 | float
+updatedDate | data | update time | date
+volume | data | number of transactions | float

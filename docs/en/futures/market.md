@@ -21,8 +21,8 @@ Node name(keyword) | Description | Required
 symbol | coin pair name | Yes
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(Timestamp) | Yes
-to | 结束时间(Timestamp) | Yes
+from | 开始时间(timestamp) | Yes
+to | 结束时间(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -83,8 +83,8 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(Timestamp) | Yes
-to | 结束时间(Timestamp) | Yes
+from | 开始时间(timestamp) | Yes
+to | 结束时间(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -142,8 +142,8 @@ Node name(keyword) | Description | Required
 symbol | coin pair name | Yes
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(Timestamp) | Yes
-to | 结束时间(Timestamp) | Yes
+from | 开始时间(timestamp) | Yes
+to | 结束时间(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -194,14 +194,14 @@ type | data | K线类型 | string
 symbol=btcusdt&scene=REAL&type=0&size=20
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 scene | 场景场景(REAL真实，VIRTUAL虚拟) | Yes
 type | 深度档位(默认值:0) | Yes
-size | 数量 | No
+size | quantity | No
 
 **Examples of response values:**
 
@@ -248,7 +248,7 @@ symbol | data | coin pair name | string
 scene=REAL&symbol=btcusdt
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
@@ -319,7 +319,7 @@ volume | data | 成交量  | float
 scene=REAL
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes

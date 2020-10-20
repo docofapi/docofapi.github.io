@@ -75,7 +75,7 @@ Examples of response values:
 { subscribe: "depth", data: { symbol: "btcusdt", type: 0, size: 100 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -100,10 +100,10 @@ size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 卖出：价格,数量,条数 | array
-b | data | 买入：价格,数量,条数 | array
+a | data | 卖出：价格,quantity,条数 | array
+b | data | 买入：价格,quantity,条数 | array
 s | data | 币对名称 | string
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 
 ## 最新成交
@@ -114,7 +114,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "newTrade", data: { symbol: "btcusdt" } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -142,9 +142,9 @@ symbol | 币对名称 | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-list | data | Id,价格,数量,方向,创建时间 | array
+list | data | Id,price,quantity,方向,creation time | array
 symbol | data | 币对名称 | string
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 24小时行情
 
@@ -154,7 +154,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "ticker" }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -198,7 +198,7 @@ p | data | 当前价 | float
 s | data | 币对名称 | float
 t | data | 日期 | date
 v | data | 成交量 | float
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 单个币对行情
 
@@ -208,7 +208,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "symbolTicker", data: { symbol: "btcusdt" } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -244,7 +244,7 @@ p | data | 当前价 | float
 s | data | 币对名称 | float
 t | data | 日期 | date
 v | data | 成交量 | float
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 
 ## K 线
@@ -255,7 +255,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe: "scale", data: { symbol: "btcusdt", type: "MIN_1" } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -294,7 +294,7 @@ o | data | opening price | float
 s | data | 币对名称 | float
 t | data | K 线类型 | date
 v | data | 交易量 | float
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 账户
 
@@ -304,7 +304,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe:"account", data: { "token": "Token", "memberId": 100028 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -333,7 +333,7 @@ b | data | 资金余额 | float
 c | data | coin | float
 l | data | 冻结金额 | float
 m | data | user ID | integer
-send | 无 | 订阅主题名称 | string
+send | None | 订阅主题名称 | string
 
 ## 订单
 
@@ -343,7 +343,7 @@ send | 无 | 订阅主题名称 | string
 { subscribe:"order", data: { "token": "Token", "memberId": 100028 } }
 ```
 
-**请求数据描述如下:**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -388,22 +388,22 @@ Node name(keyword) | Parent node | Description | Type
 id | data | id | string
 memberId | data | user ID | integer
 symbol | data | 币对名称 | string
-baseCoin | data | 基准货币，symbol的前半段 | string
-quoteCoin | data | 计价货币,symbol的后半段 | string
-price | data | 价格 | float
-volume | data | 数量 | float
+baseCoin | data | base coin, the first half of the symbol | string
+quoteCoin | data | denomination coin, the second half of the symbol | string
+price | data | price | float
+volume | data | quantity | float
 takerFeeRate | data | taker rate | float
 makerFeeRate | data | maker rate | float
-side | data | 交易方向(BUY买入,SELL卖出) | string
-type | data | 订单类型(LIMIT限价，MARKET市价) | string
-source | data | 来源(WEB,H5,APP,API) | string
-date | data | 生效时间 | date
-createdDate | data | 创建时间 | date
-updatedDate | data | 修改时间 | date
-pushed | data | 是否推送 | boolean
+side | data | Trading direction (BUY: buy, SELL: sell) | string
+type | data | order type (LIMIT: limit price, MARKET: market price) | string
+source | data | source(WEB,H5,APP,API) | string
+date | data | effective time | date
+createdDate | data | creation time | date
+updatedDate | data | update time | date
+pushed | data | whether to push | boolean
 tradeCount | data | 交易次数 | long
-currentVolume | data | 当前数量 | float
-dealVolume | data | 成交数量 | float
-dealAmount | data | 成交金额 | float
-dealPrice | data | 平均成交价 | float
-send | 无 | 订阅主题名称 | string
+currentVolume | data | current quantity | float
+dealVolume | data | number of transactions | float
+dealAmount | data | turnover | float
+dealPrice | data | average transaction price | float
+send | None | 订阅主题名称 | string

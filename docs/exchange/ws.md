@@ -394,8 +394,8 @@ price | data | 价格 | float
 volume | data | 数量 | float
 takerFeeRate | data | 吃单方手续费率 | float
 makerFeeRate | data | 挂单方手续费率 | float
-side | data | 交易方向(BUY买入,SELL卖出) | string
-type | data | 订单类型(LIMIT限价，MARKET市价) | string
+side | data | 交易方向(BUY: 买入,SELL: 卖出) | string
+type | data | 订单类型(LIMIT:限价，MARKET:市价) | string
 source | data | 来源(WEB,H5,APP,API) | string
 date | data | 生效时间 | date
 createdDate | data | 创建时间 | date

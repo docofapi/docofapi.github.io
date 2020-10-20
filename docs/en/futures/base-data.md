@@ -8,7 +8,7 @@
 
 **API signature: None**
 
-**Request parameters: 无**
+**Request parameters: None**
 
 **Examples of response values:**
 
@@ -117,7 +117,7 @@ openPrice | contractList | opening price | float
 positionMaxSize | contractList | 仓位最大条数 | integer
 pricePrecision | contractList | price precision | integer
 priceRate | contractList | 价格浮动率 | float
-quoteCoin | contractList | 计价货币 | string
+quoteCoin | contractList | denomination coin | string
 referenceSymbol | contractList | 引用指数代号 | string
 size | contractList | 合约面值 | float
 symbol | contractList | 币对 | string

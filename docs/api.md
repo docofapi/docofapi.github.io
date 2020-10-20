@@ -311,7 +311,7 @@ size | 数量(最小值为1，最大值为100) | 是
 createdDate | data | 时间 | date
 id | data | id | string
 price | data | 价格 | float
-side | data | 方向:BUY买入,SELL卖出 | string
+side | data | 方向:BUY: 买入,SELL: 卖出 | string
 symbol | data | 币对名称 | string
 volume | data | 数量 | float
 
@@ -655,12 +655,12 @@ memberId | rows | 用户ID | integer
 price | rows | 价格 | float
 pushed | rows | 是否推送 | boolean
 quoteCoin | rows | 计价货币,symbol的后半段 | string
-side | rows | 交易方向(BUY买入,SELL卖出) | string
+side | rows | 交易方向(BUY: 买入,SELL: 卖出) | string
 source | rows | 来源(WEB,H5,APP,API) | string
 symbol | rows | 币对名称 | string
 takerFeeRate | rows | 吃单方手续费率 | float
 tradeCount | rows | 交易次数 | long
-type | rows | 订单类型(LIMIT限价，MARKET市价) | string
+type | rows | 订单类型(LIMIT:限价，MARKET:市价) | string
 updatedDate | rows | 修改时间 | date
 volume | rows | 数量 | float
 
@@ -685,7 +685,7 @@ symbol=btcusdt&price=7374.06&volume=4&side=SELL&token=Token&nonce=123123&sign=�
 symbol | 币对名称 | 是
 price | 委托单价 | 是
 volume | 数量 | 是
-side | 买卖方向(BUY买入,SELL卖出) | 是
+side | 买卖方向(BUY: 买入,SELL: 卖出) | 是
 token | token | 是
 nonce | 随机数 | 是
 sign | 签名 | 是
@@ -771,7 +771,7 @@ orderIds=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&side=SELL&mi
 -- | -- | -- | -- |
 orderIds | 订单ID, “,”隔开 | 否
 symbol | 币对名称 | 否
-side | 买卖方向(BUY买入,SELL卖出) | 否
+side | 买卖方向(BUY: 买入,SELL: 卖出) | 否
 minPrice | 最小价格 | 否
 maxPrice | 最大价格 | 否
 size | 撤单数量 | 否
@@ -872,12 +872,12 @@ memberId | data | 用户ID | integer
 price | data | 价格 | float
 pushed | data | 是否推送 | boolean
 quoteCoin | data | 计价货币,symbol的后半段 | string
-side | data | 交易方向(BUY买入,SELL卖出) | string
+side | data | 交易方向(BUY: 买入,SELL: 卖出) | string
 source | data | 来源(WEB,H5,APP,API) | string
 symbol | data | 币对名称 | string
 takerFeeRate | data | 吃单方手续费率 | float
 tradeCount | data | 交易次数 | long
-type | data | 订单类型(LIMIT限价，MARKET市价) | string
+type | data | 订单类型(LIMIT:限价，MARKET:市价) | string
 updatedDate | data | 修改时间 | date
 volume | data | 数量 | float
 
@@ -901,7 +901,7 @@ pageSize=20&page=1&sort=1&symbol=btcusdt&orderId=EX202004071549271315E8C30878571
 -- | -- | -- | -- |
 pageSize | 每页数量(默认值20) | 否
 page | 当前页(默认值1) | 否
-sort | 排序方式(默认值1,0升序,1降序) | 否
+sort | 排序方式(默认值1,0:升序,1:降序) | 否
 symbol | 币对名称 | 否
 orderId | 订单ID | 否
 token | token | 是
@@ -949,7 +949,7 @@ rows | data | 数据列表 | array
 total | data | 总条数 | long
 id | rows | id | string
 orderId | rows | 订单ID | string
-side | rows | 交易方向(BUY买入,SELL卖出) | string
+side | rows | 交易方向(BUY: 买入,SELL: 卖出) | string
 symbol | rows | 币对名称 | string
 volume | rows | 成交数量 | float
 orderPrice | rows | 订单价格 | float
@@ -1359,8 +1359,8 @@ price | data | 价格 | float
 volume | data | 数量 | float
 takerFeeRate | data | 吃单方手续费率 | float
 makerFeeRate | data | 挂单方手续费率 | float
-side | data | 交易方向(BUY买入,SELL卖出) | string
-type | data | 订单类型(LIMIT限价，MARKET市价) | string
+side | data | 交易方向(BUY: 买入,SELL: 卖出) | string
+type | data | 订单类型(LIMIT:限价，MARKET:市价) | string
 source | data | 来源(WEB,H5,APP,API) | string
 date | data | 生效时间 | date
 createdDate | data | 创建时间 | date

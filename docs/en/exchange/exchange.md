@@ -1,6 +1,6 @@
-# 币币交易
+# Exchange
 
-## 查询当前委托
+## Query current order
 
 **Request path: /open/order/getCurrentPage**
 
@@ -11,20 +11,20 @@
 **Example request parameters:**
 
 ```js
-size=10&page=1&symbol=btcusdt&token=Token&nonce=123123&sign=signature&time=1586239136316
+size=10&page=1&symbol=btcusdt&token=token&nonce=123123&sign=signature&time=1586239136316
 ```
 
 **The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-size | 每页数量(默认值10) | No
-page | 当前页(默认值1) | No
+size | number of pages(default 10) | No
+page | current page(default 1) | No
 symbol | coin pair name | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -65,33 +65,33 @@ time | Timestamp | Yes
 
 **The response data is described as follows:**
 
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-footers | data | 页脚 | array
-rows | data | 数据列表 | array
-total | data | 总条数 | long
-baseCoin | rows | 基准货币，symbol的前半段 | string
-currentVolume | rows | 当前数量 | float
-date | rows | 生效时间 | date
-dealAmount | rows | 成交金额 | float
-dealPrice | rows | 平均成交价 | float
-dealVolume | rows | 成交数量 | float
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
+baseCoin | rows | base coin, the first half of the symbol | string
+currentVolume | rows | current quantity | float
+date | rows | effective time | date
+dealAmount | rows | turnover | float
+dealPrice | rows | average transaction price | float
+dealVolume | rows | number of transactions | float
 id | rows | id | string
 makerFeeRate | rows | maker rate | float
-memberId | rows | 用户ID | integer
-price | rows | 价格 | float
-pushed | rows | 是否推送 | boolean
-quoteCoin | rows | 计价货币,symbol的后半段 | string
-side | rows | 交易方向(BUY买入,SELL卖出) | string
-source | rows | 来源(WEB,H5,APP,API) | string
+memberId | rows | user ID | integer
+price | rows | price | float
+pushed | rows | whether to push | boolean
+quoteCoin | rows | denomination coin, the second half of the symbol | string
+side | rows | Trading direction (BUY: buy, SELL: sell) | string
+source | rows | source(WEB,H5,APP,API) | string
 symbol | rows | coin pair name | string
 takerFeeRate | rows | taker rate | float
-tradeCount | rows | 交易次数 | long
-type | rows | 订单类型(LIMIT限价，MARKET市价) | string
-updatedDate | rows | 修改时间 | date
-volume | rows | 数量 | float
+tradeCount | rows | transactions | long
+type | rows | order type (LIMIT: limit price, MARKET: market price) | string
+updatedDate | rows | update time | date
+volume | rows | quantity | float
 
-## 下单
+## Place an order
 
 **Request path: /open/order/create**
 
@@ -105,18 +105,18 @@ volume | rows | 数量 | float
 symbol=btcusdt&price=7374.06&volume=4&side=SELL&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
-Node name (keyword) | Description | Required
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-price | 委托单价 | Yes
-volume | 数量 | Yes
-side | 买卖方向(BUY买入,SELL卖出) | Yes
+price | commission price | Yes
+volume | quantity | Yes
+side | buying and selling direction (BUY: buy, SELL: sell) | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -131,12 +131,12 @@ time | Timestamp | Yes
 
 **The response data is described as follows:**
 
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 订单号 | string
+data | None | order id | string
 
 
-## 撤单
+## Cancel order
 
 **Request path: /open/order/cancel**
 
@@ -150,15 +150,15 @@ data | 无 | 订单号 | string
 orderId=EX202004071549271315E8C30878571E40EE1444A78&token=Token&sign=signature&nonce=123123&time=1586239136316&symbol=btcusdt
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
-Node name (keyword) | Description | Required
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderId | 订单ID | Yes
+orderId | order id | Yes
 token | token | Yes
 sign | signature | Yes
 nonce | random number | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 symbol | coin pair name | No
 
 **Examples of response values:**
@@ -174,11 +174,11 @@ symbol | coin pair name | No
 
 **The response data is described as follows:**
 
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 订单号 | string
+data | None | order id | string
 
-## 批量撤单
+## Batch cancellation
 
 **Request path: /open/order/batchCancel**
 
@@ -192,20 +192,20 @@ data | 无 | 订单号 | string
 orderIds=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&side=SELL&minPrice=7390&maxPrice=7395&size=2&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
-Node name (keyword) | Description | Required
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderIds | 订单ID, “,”隔开 | No
+orderIds | order ID, separated by commas | No
 symbol | coin pair name | No
-side | 买卖方向(BUY买入,SELL卖出) | No
-minPrice | 最小价格 | No
-maxPrice | 最大价格 | No
-size | 撤单数量 | No
+side | buying and selling direction (BUY: buy, SELL: sell) | No
+minPrice | lowest price | No
+maxPrice | highest price | No
+size | number of cancelled orders | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -219,12 +219,12 @@ time | Timestamp | Yes
 ```
 
 **The response data is described as follows:**
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 订单号 | array
+data | None | order id | array
 
 
-## 根据ID获取当前委托订单详情
+## Get current order details based on ID
 
 **Request path: /open/order/getCurrentById**
 
@@ -240,14 +240,14 @@ orderId=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&token=Token&n
 
 **The requested data is described as follows:**
 
-Node name (keyword) | Description | Required
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderId | 订单 | Yes
+orderId | order ID | Yes
 symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -284,31 +284,31 @@ time | Timestamp | Yes
 
 **The response data is described as follows:**
 
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-baseCoin | data | 基准货币，symbol的前半段 | string
-createdDate | data | 创建时间 | date
-currentVolume | data | 当前数量 | float
-date | data | 生效时间 | date
-dealAmount | data | 成交金额 | float
-dealPrice | data | 平均成交价 | float
-dealVolume | data | 成交数量 | float
+baseCoin | data | base coin, the first half of the symbol | string
+createdDate | data | creation time | date
+currentVolume | data | current quantity | float
+date | data | effective time | date
+dealAmount | data | turnover | float
+dealPrice | data | average transaction price | float
+dealVolume | data | number of transactions | float
 id | data | id | string
 makerFeeRate | data | maker rate | float
-memberId | data | 用户ID | integer
-price | data | 价格 | float
-pushed | data | 是否推送 | boolean
-quoteCoin | data | 计价货币,symbol的后半段 | string
-side | data | 交易方向(BUY买入,SELL卖出) | string
-source | data | 来源(WEB,H5,APP,API) | string
+memberId | data | user ID | integer
+price | data | price | float
+pushed | data | whether to push | boolean
+quoteCoin | data | denomination coin, the second half of the symbol | string
+side | data | Trading direction (BUY: buy, SELL: sell) | string
+source | data | source(WEB,H5,APP,API) | string
 symbol | data | coin pair name | string
 takerFeeRate | data | taker rate | float
-tradeCount | data | 交易次数 | long
-type | data | 订单类型(LIMIT限价，MARKET市价) | string
-updatedDate | data | 修改时间 | date
-volume | data | 数量 | float
+tradeCount | data | transactions | long
+type | data | order type (LIMIT: limit price, MARKET: market price) | string
+updatedDate | data | update time | date
+volume | data | quantity | float
 
-## 获取所有的交易数据
+## Get all transaction data
 
 **Request path: /open/deal/findPage**
 
@@ -324,17 +324,17 @@ pageSize=20&page=1&sort=1&symbol=btcusdt&orderId=EX202004071549271315E8C30878571
 
 **The requested data is described as follows:**
 
-Node name (keyword) | Description | Required
+Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-pageSize | 每页数量(默认值20) | No
-page | 当前页(默认值1) | No
-sort | 排序方式(默认值1,0升序,1降序) | No
+pageSize | number of pages(default 20) | No
+page | current page(default 1) | No
+sort | sorting method (default 1,0: ascending order, 1: descending order) | No
 symbol | coin pair name | No
-orderId | 订单ID | No
+orderId | order ID | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -369,23 +369,23 @@ time | Timestamp | Yes
 
 **The response data is described as follows:**
 
-Node name (keyword) | Parent node | Description | Type
+Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-footers | data | 页脚 | array
-rows | data | 数据列表 | array
-total | data | 总条数 | long
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
 id | rows | id | string
-orderId | rows | 订单ID | string
-side | rows | 交易方向(BUY买入,SELL卖出) | string
+orderId | rows | order ID | string
+side | rows | Trading direction (BUY: buy, SELL: sell) | string
 symbol | rows | coin pair name | string
-volume | rows | 成交数量 | float
-orderPrice | rows | 订单价格 | float
-price | rows | 成交价格 | float
-payCoin | rows | 付出币种 | string
-gainCoin | rows | 得到币种 | string
-payVolume | rows | 付出数量 | float
-gainVolume | rows | 得到数量 | float
+volume | rows | number of transactions | float
+orderPrice | rows | order price | float
+price | rows | deal price | float
+payCoin | rows | payment coin | string
+gainCoin | rows | get coin | string
+payVolume | rows | quantity paid | float
+gainVolume | rows | get the quantity | float
 feeRate | rows | commission rate | float
-fee | rows | 手续费 | float
-back | rows | 退还数量 | float
-createdDate | rows | 创建时间 | date
+fee | rows | fees | float
+back | rows | quantity returned | float
+createdDate | rows | creation time | date

@@ -455,7 +455,7 @@ pageSize=20&page=1&sort=1&scene=REAL&board=STD&symbol=btcusdt
 -- | -- | -- | -- |
 pageSize | 每页数量(默认值20) | 否
 page | 当前页(默认值1) | 否
-sort | 排序方式(默认值1,0升序,1降序) | 否
+sort | 排序方式(默认值1,0:升序,1:降序) | 否
 scene | 场景(REAL实际，VIRTUAL虚拟) | 否
 board | 合约板块编码 | 否
 symbol | 币对名称 | 否

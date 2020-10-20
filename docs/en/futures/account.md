@@ -23,7 +23,7 @@ board | 合约板块编码 | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -53,7 +53,7 @@ Node name(keyword) | Parent node | Description | Type
 availableBalance | data | 可用保证金 | float
 board | data | 合约板块编码 | string
 coin | data | coin | string
-fee | data | 手续费 | float
+fee | data | fees | float
 orderBalance | data | 委托（冻结）保证金 | float
 positionBalance | data | 仓位（占用）保证金 | float
 profit | data | 盈亏 | float
@@ -81,7 +81,7 @@ Node name(keyword) | Description | Required
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -111,7 +111,7 @@ Node name(keyword) | Parent node | Description | Type
 availableBalance | data | 可用保证金 | float
 board | data | 合约板块编码 | string
 coin | data | coin | string
-fee | data | 手续费 | float
+fee | data | fees | float
 orderBalance | data | 委托（冻结）保证金 | float
 positionBalance | data | 仓位（占用）保证金 | float
 profit | data | 盈亏 | float

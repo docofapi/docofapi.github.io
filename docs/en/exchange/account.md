@@ -21,7 +21,7 @@ Node name(keyword) | Description | Required
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 

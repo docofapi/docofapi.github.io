@@ -1,6 +1,6 @@
 # 合约交易
 
-## 查询当前委托
+## Query current order
 
 **Request path: /open/contractOrder/getCurrentPage**
 
@@ -19,8 +19,8 @@ size=10&page=1&scene=REAL&board=STD&symbol=btcusdt&positionId=CT202009221345165F
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-size | 每页数量(默认值10) | No
-page | 当前页(默认值1) | No
+size | number of pages(default 10) | No
+page | current page(default 1) | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
@@ -28,7 +28,7 @@ positionId | 仓位ID | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -85,19 +85,19 @@ time | Timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-footers | data | 页脚 | array
-rows | data | 数据列表 | array
-total | data | 总条数 | long
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
 id | rows | 订单id | string
 memberId | rows | user ID | integer
 symbol | rows | 币对 | string
 scene | rows | 场景(REAL实际，VIRTUAL虚拟)	 | string
 board | rows | 合约板块编码 | string
 coin | rows | 结算币种 | string
-price | rows | 价格 | float
+price | rows | price | float
 profitPrice | rows | 止盈价 | float
 lossPrice | rows | 止损价 | float
-volume | rows | 数量 | float
+volume | rows | quantity | float
 multiplier | rows | 杠杆倍数 | integer
 size | rows | 合约面值 | float
 quantity | rows | 手数 | float
@@ -110,19 +110,19 @@ side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL�
 positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓)  | string
 positionId | rows | 仓位ID | string
 type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
-source | rows | 来源(WEB,H5,APP,API) | string
-date | rows | 生效时间 | date
+source | rows | source(WEB,H5,APP,API) | string
+date | rows | effective time | date
 passive | rows | 是否强平(true:enable,false:disable) | boolean
-createdDate | rows | 创建时间 | date
-updatedDate | rows | 修改时间 | date
-pushed | rows | 是否推送(true:enable,false:disable) | boolean
+createdDate | rows | creation time | date
+updatedDate | rows | update time | date
+pushed | rows | whether to push(true:enable,false:disable) | boolean
 roleCode | rows | 角色编码 | string
 marginDiscount | rows | 保证金折扣 | float
 tradeCount | rows | 交易次数 | long
-currentVolume | rows | 当前数量 | float
-dealVolume | rows | 成交数量 | float
-dealAmount | rows | 成交金额 | float
-dealPrice | rows | 平均成交价 | float
+currentVolume | rows | current quantity | float
+dealVolume | rows | number of transactions | float
+dealAmount | rows | turnover | float
+dealPrice | rows | average transaction price | float
 
 ## 开仓下单
 
@@ -138,7 +138,7 @@ dealPrice | rows | 平均成交价 | float
 scene=REAL&type=LIMIT&side=SELL&board=STD&symbol=btcusdt&price=7374.06&quantity=4&multiplier=10&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -147,13 +147,13 @@ type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止�
 side | 订单方向(BUY开多, SELL开空) | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
-price | 委托单价 | Yes
+price | Commission price | Yes
 quantity | 手数 | Yes
 multiplier | 杠杆倍数 | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -171,7 +171,7 @@ time | Timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 订单号 | string
+data | None | order id | string
 
 
 ## 平仓下单
@@ -189,7 +189,7 @@ scene=REAL&symbol=btcusdt&board=STD&type=LIMIT&positionId=CT202008111343545F3230
 &price=7374.06&quantity=4&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
@@ -198,12 +198,12 @@ symbol | coin pair name | Yes
 board | 合约板块编码 | Yes
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
 positionId | 仓位ID | Yes
-price | 委托单价 | Yes
+price | Commission price | Yes
 quantity | 手数 | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -220,10 +220,10 @@ time | Timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 订单号 | string
+data | None | order id | string
 
 
-## 撤单
+## Cancel order
 
 **Request path: /open/contractOrder/cancel**
 
@@ -238,18 +238,18 @@ orderId=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt
 &board=STD&scene=REAL&token=Token&sign=signature&nonce=123123&time=1586239136316
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderId | 订单ID | Yes
+orderId | order ID | Yes
 symbol | 交易对 | Yes
 board | 合约板块编码 | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 token | token | Yes
 sign | signature | Yes
 nonce | random number | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 symbol | coin pair name | No
 
 **Examples of response values:**
@@ -267,9 +267,9 @@ symbol | coin pair name | No
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 无 | string
+data | None | None | string
 
-## 批量撤单
+## Batch cancellation
 
 **Request path: /open/contractOrder/batchCancel**
 
@@ -284,21 +284,21 @@ orderIds=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt&scene=REAL&side
 &minPrice=7390&maxPrice=7395&size=2&token=Token&nonce=123123&sign=signature&time=1586239136316
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-orderIds | 订单ID, “,”隔开 | No
+orderIds | order ID, separated by commas | No
 symbol | coin pair name | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
-size | 撤单数量 | No
+size | number of cancelled orders | No
 side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | No
-minPrice | 最小价格 | No
-maxPrice | 最大价格 | No
+minPrice | lowest price | No
+maxPrice | highest price | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -317,10 +317,10 @@ time | Timestamp | Yes
 **The response data is described as follows:**
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-data | 无 | 订单号 | array
+data | None | order id | array
 
 
-## 根据ID获取当前委托订单详情
+## Get current order details based on ID
 
 **Request path: /open/contractOrder/getCurrentById**
 
@@ -339,13 +339,13 @@ scene=REAL&id=EX202004071549271315E8C30878571E40EE1444A78&board=STD&symbol=btcus
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
-orderId | 订单ID | Yes
+orderId | order ID | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -404,10 +404,10 @@ symbol | data | 币对 | string
 scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
 board | data | 合约板块编码 | string
 coin | data | 结算币种 | string
-price | data | 价格 | float
+price | data | price | float
 profitPrice | data | 止盈价 | float
 lossPrice | data | 止损价 | float
-volume | data | 数量 | float
+volume | data | quantity | float
 multiplier | data | 杠杆倍数 | integer
 size | data | 合约面值 | float
 quantity | data | 手数 | float
@@ -420,21 +420,21 @@ side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL�
 positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
 positionId | data | 仓位ID | string
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
-source | data | 来源(WEB,H5,APP,API) | string
-date | data | 生效时间 | date
+source | data | source(WEB,H5,APP,API) | string
+date | data | effective time | date
 passive | data | 是否强平(true:enable,false:disable) | boolean
-createdDate | data | 创建时间 | date
-updatedDate | data | 修改时间 | date
-pushed | data | 是否推送(true:enable,false:disable) | boolean
+createdDate | data | creation time | date
+updatedDate | data | update time | date
+pushed | data | whether to push(true:enable,false:disable) | boolean
 roleCode | data | 角色编码 | string
 marginDiscount | data | 保证金折扣 | float
 tradeCount | data | 交易次数 | long
-currentVolume | data | 当前数量 | float
-dealVolume | data | 成交数量 | float
-dealAmount | data | 成交金额 | float
-dealPrice | data | 平均成交价 | float
+currentVolume | data | current quantity | float
+dealVolume | data | number of transactions | float
+dealAmount | data | turnover | float
+dealPrice | data | average transaction price | float
 
-## 获取所有的交易数据
+## Get all transaction data
 
 **Request path: /open/contractDeal/findPage**
 
@@ -453,17 +453,17 @@ pageSize=20&page=1&sort=1&scene=REAL&board=STD&symbol=btcusdt
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-pageSize | 每页数量(默认值20) | No
-page | 当前页(默认值1) | No
-sort | 排序方式(默认值1,0升序,1降序) | No
+pageSize | number of pages(default 20) | No
+page | current page(default 1) | No
+sort | sorting method (default 1,0: ascending order, 1: descending order) | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | No
 board | 合约板块编码 | No
 symbol | coin pair name | No
-orderId | 订单ID | No
+orderId | order ID | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -512,14 +512,14 @@ time | Timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-footers | data | 页脚 | array
-rows | data | 数据列表 | array
-total | data | 总条数 | long
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
 board | rows | 合约板块编码 | string
 coin | rows | 结算货币 | string
-contractOrderId | rows | 订单ID | string
+contractOrderId | rows | order ID | string
 contractTradeId | rows | 交易ID | string
-createdDate | rows | 创建时间 | date
+createdDate | rows | creation time | date
 dealNo | rows | 截取后的dealID | string
 fee | rows | 实际手续费率 | float
 feeRate | rows | commission rate | string
@@ -528,20 +528,20 @@ margin | rows | 释放保证金 | float
 memberId | rows | user ID | integer
 multiplier | rows | 杠杆倍数 | integer
 orderNo | rows | 截取后的orderId | string
-orderPrice | rows | 订单价格 | float
+orderPrice | rows | order price | float
 positionId | rows | 仓位ID | string
 positionNo | rows | 截取后的仓位ID | string
 positionPrice | rows | 开仓均价 | float
 positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓) | string
-price | rows | 成交价格 | float
+price | rows | deal price | float
 scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 success | rows | 是否完成(true:Yes,false否) | boolean
 symbol | rows | 币对 | string
 tradeNo | rows | 截取后的交易ID | float
 type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
-updatedDate | rows | 修改时间 | date
-volume | rows | 成交数量 | float
+updatedDate | rows | update time | date
+volume | rows | number of transactions | float
 
 ## 获取用户所有的仓位信息
 
@@ -561,15 +561,15 @@ page=1&size=1&scene=REAL&board=STD&symbol=btcusdt&token=Token&nonce=123123&sign=
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-page | 当前页(默认值1) | No
-size | 每页数量(默认值10) | No
+page | current page(default 1) | No
+size | number of pages(default 10) | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -622,12 +622,12 @@ time | Timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-footers | data | 页脚 | array
-rows | data | 数据列表 | array
-total | data | 总条数 | long
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
 board | rows | 合约板块编码 | string
 coin | rows | 结算货币 | string
-createdDate | rows | 创建时间 | date
+createdDate | rows | creation time | date
 currentId   | rows | 仓位记录ID | string
 entryAmount | rows | 开仓金额 | float
 entryFee | rows | 开仓手续费 | float
@@ -654,8 +654,8 @@ roleCode  | data | 角色编码 | string
 scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | rows | 币对 | string
-updatedDate | rows | 修改时间 | date
-volume | rows | 成交数量 | float
+updatedDate | rows | update time | date
+volume | rows | number of transactions | float
 
 ## 根据ID获取仓位信息
 
@@ -682,7 +682,7 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
-time | Timestamp | Yes
+time | timestamp | Yes
 
 **Examples of response values:**
 
@@ -732,7 +732,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 board | data | 合约板块编码 | string
 coin | data | 结算货币 | string
-createdDate | data | 创建时间 | date
+createdDate | data | creation time | date
 entryAmount | data | 开仓金额 | float
 entryFee | data | 开仓手续费 | float
 entryMargin | data | 开仓保证金 | float
@@ -757,5 +757,5 @@ referenceSymbol | data | 引用指数代号 | string
 scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | data | 币对 | string
-updatedDate | data | 修改时间 | date
-volume | data | 成交数量 | float
+updatedDate | data | update time | date
+volume | data | number of transactions | float

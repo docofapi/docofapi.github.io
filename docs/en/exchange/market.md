@@ -6,7 +6,7 @@
 
 **Request Protocol: POST**
 
-**API signature: 无**
+**API signature: No**
 
 **Example request parameters:**
 
@@ -19,7 +19,7 @@ symbol=btcusdt&size=100
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-size | 数量(最小值为1，最大值为100) | Yes
+size | quantity(最小值为1，最大值为100) | Yes
 
 **Examples of response values:**
 
@@ -45,10 +45,10 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 createdDate | data | 时间 | date
 id | data | id | string
-price | data | 价格 | float
-side | data | 方向:BUY买入,SELL卖出 | string
+price | data | price | float
+side | data | 方向:BUY: 买入,SELL: 卖出 | string
 symbol | data | coin pair name | string
-volume | data | 数量 | float
+volume | data | quantity | float
 
 ## 根据时间获取 K 线
 
@@ -56,7 +56,7 @@ volume | data | 数量 | float
 
 **Request Protocol: POST**
 
-**API signature: 无**
+**API signature: No**
 
 **Example request parameters:**
 
@@ -70,8 +70,8 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(Timestamp) | Yes
-to | 结束时间(Timestamp) | Yes
+from | 开始时间(timestamp) | Yes
+to | 结束时间(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -116,7 +116,7 @@ volume | data |交易量  | float
 
 **Request Protocol: POST**
 
-**API signature: 无**
+**API signature: No**
 
 **Example request parameters:**
 
@@ -124,13 +124,13 @@ volume | data |交易量  | float
 symbol=btcusdt&type=0&size=20
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:：**
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 type | 深度档位(默认值:0) | Yes
-size | 数量 | No
+size | quantity | No
 
 **Examples of response values:**
 
@@ -175,7 +175,7 @@ symbol | data | coin pair name | string
 symbol=btcusdt
 ```
 
-**请求数据描述如下：**
+**The requested data is described as follows:**
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
@@ -220,9 +220,9 @@ volume | data |当前价  | float
 
 **Request Protocol: GET**
 
-**API signature: 无**
+**API signature: No**
 
-**请求参数: 无**
+**请求参数: None**
 
 **Examples of response values:**
 

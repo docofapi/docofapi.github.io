@@ -181,7 +181,7 @@ category | data | classification code | string
 categoryName | data | category Name | string
 iconUrl | data | category icon path | string
 baseCoin | data | base coin, the first half of the symbol | string
-quoteCoin | data | the denomination currency, the second half of the symbol | string
+quoteCoin | data | denomination coin, the second half of the symbol | string
 openPrice | data | opening price | float
 feeRate | data | commission rate | float
 takerFeeRate | data | taker rate | float

@@ -46,7 +46,7 @@ size | 数量(最小值为1，最大值为100) | 是
 createdDate | data | 时间 | date
 id | data | id | string
 price | data | 价格 | float
-side | data | 方向:BUY买入,SELL卖出 | string
+side | data | 方向:BUY: 买入,SELL: 卖出 | string
 symbol | data | 币对名称 | string
 volume | data | 数量 | float
 
