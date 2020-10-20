@@ -1,6 +1,6 @@
-# 账户相关
+# Account related
 
-## 根据板块获取保证金
+## Get margin according to the board
 
 **Request path: /open/margin/getMarginByBoard**
 
@@ -18,8 +18,8 @@ scene=REAL&board=STD&token=Token&nonce=123123&sign=signature&time=1586239136316
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
-board | 合约板块编码 | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -50,17 +50,17 @@ time | timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-availableBalance | data | 可用保证金 | float
-board | data | 合约板块编码 | string
+availableBalance | data | available margin | float
+board | data | contract board code | string
 coin | data | coin | string
 fee | data | fees | float
-orderBalance | data | 委托（冻结）保证金 | float
-positionBalance | data | 仓位（占用）保证金 | float
-profit | data | 盈亏 | float
-rate | data | 保证金率 | float
-scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
+orderBalance | data | entrusted (frozen) margin | float
+positionBalance | data | position (occupied) margin | float
+profit | data | profit and loss | float
+rate | data | margin rate | float
+scene | data | scene(REAL:real, VIRTUAL:virtual) | string
 
-## 获取用户所有保证金
+## Get all the user deposit
 
 **Request path: /open/margin/getMargin**
 
@@ -108,12 +108,12 @@ time | timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-availableBalance | data | 可用保证金 | float
-board | data | 合约板块编码 | string
+availableBalance | data | available margin | float
+board | data | contract board code | string
 coin | data | coin | string
 fee | data | fees | float
-orderBalance | data | 委托（冻结）保证金 | float
-positionBalance | data | 仓位（占用）保证金 | float
-profit | data | 盈亏 | float
-rate | data | 保证金率 | float
-scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
+orderBalance | data | entrusted (frozen) margin | float
+positionBalance | data | position (occupied) margin | float
+profit | data | profit and loss | float
+rate | data | margin rate | float
+scene | data | scene(REAL:real, VIRTUAL:virtual) | string

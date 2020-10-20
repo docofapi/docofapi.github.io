@@ -1,6 +1,6 @@
 # Market data
 
-## 根据时间获取合约价格 K 线
+## Get contract price K line according to time
 
 **Request path: /contract/market/getScaleByDate**
 
@@ -19,7 +19,7 @@ symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL: virtual) | Yes
 type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
 from | starting time(timestamp) | Yes
 to | end Time(timestamp) | Yes
@@ -58,12 +58,12 @@ high | data | highest price | float
 id | data | id | string
 low | data | lowest price | float
 open | data | opening price | float
-scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
+scene | data | scene(REAL:real, VIRTUAL: virtual) | string
 symbol | data | coin pair name | string
 type | data | k line type | string
-volume | data |交易量  | float
+volume | data | volume  | float
 
-## 根据时间获取指数价格 K 线
+## Get index price K line according to time
 
 **Request path: /contract/market/index/getIndexScaleByDate**
 
@@ -117,11 +117,11 @@ high | data | highest price | float
 id | data | id | string
 low | data | lowest price | float
 open | data | opening price | float
-scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
+scene | data | scene(REAL:real, VIRTUAL:virtual)  | string
 symbol | data | coin pair name | string
 type | data | k line type | string
 
-## 根据时间获取标记价格 K 线
+## Get marked price candlestick based on time
 
 **Request path: /contract/market/mark/getScaleByDate**
 
@@ -140,7 +140,7 @@ symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
 from | starting time(timestamp) | Yes
 to | end Time(timestamp) | Yes
@@ -176,11 +176,11 @@ high | data | highest price | float
 id | data | id | string
 low | data | lowest price | float
 open | data | opening price | float
-scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
+scene | data | scene(REAL:real, VIRTUAL:virtual)  | string
 symbol | data | coin pair name | string
 type | data | k line type | string
 
-## 获取合约深度
+## Get contract depth
 
 **Request path: /contract/market/getDepth**
 
@@ -199,7 +199,7 @@ symbol=btcusdt&scene=REAL&type=0&size=20
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-scene | 场景场景(REAL真实，VIRTUAL虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual)  | Yes
 type | depth gear (default: 0) | Yes
 size | quantity | No
 
@@ -230,11 +230,11 @@ size | quantity | No
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 buyList | data | buying: price, quantity, total | array
-scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
+scene | data | scene(REAL:real, VIRTUAL:virtual) | string
 sellList | data | sell:price, quantity, total | array
 symbol | data | coin pair name | string
 
-## 获取合约 24 小时行情
+## Get contract 24-hour market
 
 **Request path: /contract/market/getBySymbol**
 
@@ -251,7 +251,7 @@ scene=REAL&symbol=btcusdt
 **The requested data is described as follows:**
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 symbol | coin pair name | Yes
 
 **Examples of response values:**
@@ -288,24 +288,24 @@ symbol | coin pair name | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 amount | data | turnover | float
-basis | data | 合理基差 | float
-buy | data | 买一价格 | float
+basis | data | reasonable basis | float
+buy | data | first purchase price | float
 date | data | date | date
-fundingRate | data | 资金费率 | float
+fundingRate | data | funding rate | float
 high | data | highest price | float
-indexPrice | data | 指数价格 | float
+indexPrice | data | index price | float
 low | data | lowest price | float
-markPrice | data | 标记价格 | float
+markPrice | data | mark price | float
 open | data |opening price  | float
 price | data | current price | float
-referencePrice | data | 引用指数价格 | float
-referenceSymbol | data | 引用指数代号 | string
-scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
-sell | data | 卖一价格 | float
-symbol | data | 币对  | string
+referencePrice | data | quoted index price | float
+referenceSymbol | data | reference index code | string
+scene | data | scene(REAL: real, VIRTUAL: virtual) | string
+sell | data | first selling price | float
+symbol | data | coin pair  | string
 volume | data | volume  | float
 
-## 获取合约 24 小时行情列表
+## Get contract 24-hour market list
 
 **Request path: /contract/market/findAll**
 
@@ -322,7 +322,7 @@ scene=REAL
 **The requested data is described as follows:**
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 
 **Examples of response values:**
 
@@ -357,19 +357,19 @@ scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 amount | data | turnover | float
-basis | data | 合理基差 | float
-buy | data | 买一价格 | float
+basis | data | reasonable basis | float
+buy | data | first purchase price | float
 date | data | date | date
-fundingRate | data | 资金费率 | float
+fundingRate | data | funding rate | float
 high | data | highest price | float
-indexPrice | data | 指数价格 | float
+indexPrice | data | index price | float
 low | data | lowest price | float
-markPrice | data | 标记价格 | float
+markPrice | data | mark price | float
 open | data |opening price  | float
 price | data | current price | float
-referencePrice | data | 引用指数价格 | float
-referenceSymbol | data | 引用指数代号 | string
-scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
-sell | data | 卖一价格 | float
-symbol | data | 币对  | string
+referencePrice | data | quoted index price | float
+referenceSymbol | data | reference index code | string
+scene | data | scene(REAL:real, VIRTUAL:virtual) | string
+sell | data | first selling price | float
+symbol | data | coin pair  | string
 volume | data | volume  | float

@@ -1,6 +1,6 @@
 # Basic data
 
-## 获取所有合约板块
+## Get all contract boards
 
 **Request path: /boardType/findAll**
 
@@ -88,49 +88,49 @@
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-code | data | 编码 | string
-coin | data | 结算币种 | string
-coinPrecision | data | 结算币种精度 | integer
-baseCoin | contractList | 基准货币 | string
-basisMaxSize | contractList | 基差计算条数 | integer
-contractBoardName | contractList | 合约板块名称 | string
+code | data | coding | string
+coin | data | settlement coin | string
+coinPrecision | data | settlement coin precision | integer
+baseCoin | contractList | base coin | string
+basisMaxSize | contractList | number of basis calculations | integer
+contractBoardName | contractList | contract board name | string
 depthPrecisionList | contractList | depth precision (comma separated) | string
-enabledEntry | contractList | 启用开仓(true:enable,false:disable) | boolean
-enabledExit | contractList | 启用平仓(true:enable,false:disable) | boolean
-fresh | contractList | 新上币对(true:enable,false:disable) | boolean
-fundingMultiplier | contractList | 资金费率倍数 | float
-fundingPrecision | contractList | 资金费率精度 | integer
+enabledEntry | contractList | enable open position(true:enable,false:disable) | boolean
+enabledExit | contractList | enable closing(true:enable,false:disable) | boolean
+fresh | contractList | New coin pair(true:enable,false:disable) | boolean
+fundingMultiplier | contractList | funding rate multiple | float
+fundingPrecision | contractList | funding rate precision | integer
 enabled | index | enable(true:enable,false:disable) | boolean
-exchange | weightList | 交易所 | string
+exchange | weightList | Exchange | string
 weight | weightList | weights | float
-indexSymbol | contractList | 指数代号 | string
-interval | contractList | 资金费率间隔(h) | integer
+indexSymbol | contractList | index code | string
+interval | contractList | funding rate interval(h) | integer
 makerFeeRate | contractList | maker rate | float
-markInterval | contractList | 标记价格间隔(ms) | integer
-maxMultiplier | contractList | 最大杠杆倍数 | integer
-maxVolume | contractList | 最高手数 | float
-minMultiplier | contractList | 最小杠杆倍数 | integer
-minVolume | contractList | 最低手数 | float
-multiplierList | contractList | 杠杆倍数区间段 | string
-openDate | contractList | 开盘时间 | date
+markInterval | contractList | mark price interval(ms) | integer
+maxMultiplier | contractList | maximum leverage | integer
+maxVolume | contractList | maximum quantity | float
+minMultiplier | contractList | minimum leverage | integer
+minVolume | contractList | minimum quantity | float
+multiplierList | contractList | leverage multiple interval | string
+openDate | contractList | opening time | date
 openPrice | contractList | opening price | float
-positionMaxSize | contractList | 仓位最大条数 | integer
+positionMaxSize | contractList | maximum number of positions | integer
 pricePrecision | contractList | price precision | integer
-priceRate | contractList | 价格浮动率 | float
+priceRate | contractList | price fluctuation rate | float
 quoteCoin | contractList | denomination coin | string
-referenceSymbol | contractList | 引用指数代号 | string
-size | contractList | 合约面值 | float
-symbol | contractList | 币对 | string
+referenceSymbol | contractList | reference index code | string
+size | contractList | contract price | float
+symbol | contractList | coin pair | string
 takerFeeRate | contractList | taker rate | float
-volumePrecision  | contractList  | 手精度 | integer
+volumePrecision  | contractList  | volume precision | integer
 weight  | contractList | weights | integer
-enabledEntry | data | 启用开仓(true:enable,false:disable) | boolean
-enabledExit | data | 启用平仓(true:enable,false:disable) | boolean
-enabledMarginDeposit | data | 启用充保证金(true:enable,false:disable) | boolean
-enabledMarginWithdraw | data | 启用提保证金(true:enable,false:disable) | boolean
-holdMarginRate | data | 维持保证金率 | float
-iconUrl | data | 图标路径 | string
-localMap | data | 国际化语言Map<String, String> | string
-name | data | 板块名称 | string
-visibled | data | 是否公共(true:enable,false:disable) | boolean
+enabledEntry | data | enable open position(true:enable,false:disable) | boolean
+enabledExit | data | enable closing(true:enable,false:disable) | boolean
+enabledMarginDeposit | data | enable deposit(true:enable,false:disable) | boolean
+enabledMarginWithdraw | data | enable withdrawal(true:enable,false:disable) | boolean
+holdMarginRate | data | maintenance margin rate | float
+iconUrl | data | icon path | string
+localMap | data | international language map<String, String> | string
+name | data | board name | string
+visibled | data | Whether public(true:enable,false:disable) | boolean
 weight | data | weights | integer

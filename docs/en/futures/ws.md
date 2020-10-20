@@ -83,7 +83,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+scene | scene(REAL: real, VIRTUAL: virtual) | Yes
 type | depth gear (default: 0) | Yes
 size | quantity default value: 100 (10, 20, 50, 100, 200, 1000) | Yes
 
@@ -106,12 +106,12 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | sell: price,quantity,total | array
 b | data | buying:price,quantity,total | array
-n | data | Scene (REAL: real, VIRTUAL: virtual) | string
+n | data | scene(REAL: real, VIRTUAL: virtual) | string
 s | data | coin pair name | string
 send | None | subscription topic name | string
 
 
-## 合约最新成交订阅
+## Subscribe to contract latest transaction
 
 **Example:**
 
@@ -125,7 +125,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 
 **Examples of response values:**
 
@@ -150,15 +150,15 @@ scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 d | l | creation time | date
-e | l | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
+e | l | direction (open position: BUY (long), SELL (short); close position: BUY (short), SELL (long)) | string
 i | l | id | string
 p | l | price | float
 v | l | quantity | float
-n | data | Scene (REAL: real, VIRTUAL: virtual) | string
+n | data | scene(REAL: real, VIRTUAL: virtual) | string
 s | data | coin pair name | string
 send | None | subscription topic name | string
 
-## 24小时行情订阅
+## Subscribe to 24-hour market subscription
 
 **Example:**
 
@@ -171,7 +171,7 @@ send | None | subscription topic name | string
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | subscribed topic name | Yes
-scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+scene | scene(REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -204,25 +204,25 @@ scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | turnover | float
-b | data | 买一价格 | float
-c | data | 引用指数价格 | float
-e | data | 卖一价格 | float
-f | data | 资金费率 | float
+b | data | first purchase price | float
+c | data | quoted index price | float
+e | data | first selling price | float
+f | data | funding rate | float
 h | data | highest price | float
-i | data | 指数价格 | float
-j | data | 合理基差 | float
+i | data | index price | float
+j | data | reasonable basis | float
 l | data | lowest price | float
-m | data | 标记价格 | float
-n | data | Scene (REAL: real, VIRTUAL: virtual) | string
+m | data | mark price | float
+n | data | scene(REAL: real, VIRTUAL: virtual) | string
 o | data | opening price | float
 p | data | current price | float
-r | data | 引用指数代号 | string
-s | data | 币对 | string
+r | data | reference index code | string
+s | data | coin pair | string
 t | data | date | date
 v | data | volume | float
 send | None | subscription topic name | string
 
-## 合约单个币对行情订阅
+## Subscribe to contract single coin pair market
 
 **Example:**
 
@@ -236,7 +236,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+scene | scene(REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -269,26 +269,26 @@ scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 a | data | turnover | float
-b | data | 买一价格 | float
-c | data | 引用指数价格 | float
-e | data | 卖一价格 | float
-f | data | 资金费率 | float
+b | data | first purchase price | float
+c | data | quoted index price | float
+e | data | first selling price | float
+f | data | funding rate | float
 h | data | highest price | float
-i | data | 指数价格 | float
-j | data | 合理基差 | float
+i | data | index price | float
+j | data | reasonable basis | float
 l | data | lowest price | float
-m | data | 标记价格 | float
-n | data | Scene (REAL: real, VIRTUAL: virtual) | string
+m | data | mark price | float
+n | data | scene(REAL: real, VIRTUAL: virtual) | string
 o | data | opening price | float
 p | data | current price | float
-r | data | 引用指数代号 | string
-s | data | 币对 | string
+r | data | reference index code | string
+s | data | coin pair | string
 t | data | date | date
 v | data | volume | float
 send | None | subscription topic name | string
 
 
-## 合约价 K 线订阅
+## Subscribe to contract price K line
 
 **Example:**
 
@@ -303,7 +303,7 @@ Node name(keyword) | Description | Required
 subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
 type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
-scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+scene | scene(REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -333,14 +333,14 @@ c | data | closing price | float
 h | data | highest price | float
 i | data | id | String
 l | data | lowest price | float
-n | data | Scene (REAL: real, VIRTUAL: virtual) | String
+n | data | scene(REAL: real, VIRTUAL: virtual) | String
 o | data | opening price | float
 s | data | coin pair name | String
-t | data | K 线类型 | String
-v | data | 交易量 | float
+t | data | k line type | String
+v | data | volume | float
 send | None | subscription topic name | string
 
-## 指数价 K 线订阅
+## Subscribe to index price candlestick
 
 **Example:**
 
@@ -382,10 +382,10 @@ i | data | id | String
 l | data | lowest price | float
 o | data | opening price | float
 s | data | coin pair name | String
-t | data | K 线类型 | String
+t | data | k line type | String
 send | None | subscription topic name | string
 
-## 标记价 K 线订阅
+## Subscribe to mark price candlestick
 
 **Example:**
 
@@ -400,7 +400,7 @@ Node name(keyword) | Description | Required
 subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
 type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
-scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+scene | scene(REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -427,13 +427,13 @@ c | data | closing price | float
 h | data | highest price | float
 i | data | id | String
 l | data | lowest price | float
-n | data | Scene (REAL: real, VIRTUAL: virtual) | String
+n | data | scene(REAL: real, VIRTUAL: virtual) | String
 o | data | opening price | float
 s | data | coin pair name | String
-t | data | K 线类型 | String
+t | data | k line type | String
 send | None | subscription topic name | string
 
-## 保证金账户订阅
+## Subscribe to margin
 
 **Example:**
 
@@ -473,18 +473,18 @@ memberId | user ID | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 m | data | user ID | integer
-b | data | 合约板块编码 | String
-n | data | Scene (REAL: real, VIRTUAL: virtual) | String
+b | data | contract board code | String
+n | data | scene(REAL: real, VIRTUAL: virtual) | String
 c | data | coin | String
-a | data | 可用保证金 | float
-o | data | 委托（冻结）保证金 | float
-p | data | 仓位（占用）保证金 | float
-r | data | 保证金率 | float
-i | data | 盈亏 | float
+a | data | available margin | float
+o | data | entrusted (frozen) margin | float
+p | data | position (occupied) margin | float
+r | data | margin rate | float
+i | data | profit and loss | float
 f | data | fees | float
 send | None | subscription topic name | string
 
-## 合约订单订阅
+## Subscribe to contract order
 
 **Example:**
 
@@ -548,43 +548,43 @@ memberId | user ID | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-board | data | 合约板块编码 | string
-coin | data | 结算币种 | string
+board | data | contract board code | string
+coin | data | settlement coin | string
 createdDate | data | creation time | date
 currentVolume | data | current quantity | float
 date | data | effective time | date
 dealAmount | data | turnover | float
 dealPrice | data | average transaction price | float
 dealVolume | data | number of transactions | float
-id | data | 订单id | string
-lossPrice | data | 止损价 | float
+id | data | order ID | string
+lossPrice | data | stop price | float
 makerFeeRate | data | maker rate | float
-margin | data | 保证金 | float
-marginDiscount | data | 保证金折扣 | float
+margin | data | margin | float
+marginDiscount | data | margin discount | float
 memberId | data | user ID | integer
-multiplier | data | 杠杆倍数 | integer
-passive | data | 是否强平(true:enable,false:disable) | boolean
-positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
-positionId | data | 仓位ID | string
+multiplier | data | leverage | integer
+passive | data | whether to liquidate(true:enable,false:disable) | boolean
+positionSide | data | position direction (ENTRY: open position, EXIT: close position)  | string
+positionId | data | position ID | string
 price | data | price | float
-profitPrice | data | 止盈价 | float
+profitPrice | data | take profit price | float
 pushed | data | whether to push(true:enable,false:disable) | boolean
-quantity | data | 手数 | float
-referenceSymbol | data | 引用指数代号 | string
-referencePrice | data | 指数价 | float
-roleCode | data | 角色编码 | string
-scene | data | Scene (REAL: real, VIRTUAL: virtual)	 | string
-side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-size | data | 合约面值 | float
+quantity | data | volume | float
+referenceSymbol | data | reference index code | string
+referencePrice | data | index price | float
+roleCode | data | role coding | string
+scene | data | scene(REAL: real, VIRTUAL: virtual)	 | string
+side | data | direction (open position: BUY (long), SELL (short); close position: BUY (short), SELL (long)) | string
+size | data | contract price | float
 source | data | source(WEB,H5,APP,API) | string
-symbol | data | 币对 | string
+symbol | data | coin pair | string
 takerFeeRate | data | taker rate | float
 tradeCount | data | transactions | long
-type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
+type | data | order type (LIMIT: limit price, MARKET: market price, STOP: breakthrough price, PROFIT_LOSS: stop profit and stop loss) | string
 updatedDate | data | update time | date
 volume | data | quantity | float
 
-## 仓位信息订阅
+## Subscribe to position information
 
 **Example:**
 
@@ -644,34 +644,34 @@ memberId | user ID | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-board | data | 合约板块编码 | string
-coin | data | 结算货币 | string
+board | data | contract board code | string
+coin | data | settlement coin | string
 createdDate | data | creation time | date
-currentId   | data | 仓位记录ID | string
-entryAmount | data | 开仓金额 | float
-entryFee | data | 开仓手续费 | float
-entryMargin | data | 开仓保证金 | float
-entryPrice | data | 开仓均价 | float
-entryVolume | data | 开仓数量 | float
-exitAmount | data | 平仓金额 | float
-exitFee | data | 平仓手续费 | float
-exitMargin | data | 平仓保证金 | float
-exitPrice | data | 平仓均价 | float
-exitReferencePrice | data | 总平均指数价格(平仓) | float
-exitVolume | data | 平仓数量 | float
-fee | data | 持仓占用手续费 | float
-id | data | 仓位ID | string
-margin | data | 保证金 | float
+currentId   | data | position ID | string
+entryAmount | data | opening amount | float
+entryFee | data | opening fee | float
+entryMargin | data | open margin | float
+entryPrice | data | average open price | float
+entryVolume | data | number of open positions | float
+exitAmount | data | liquidation amount | float
+exitFee | data | closing fee | float
+exitMargin | data | liquidation margin | float
+exitPrice | data | average closing price | float
+exitReferencePrice | data | total average index price (closed position) | float
+exitVolume | data | number of closed positions | float
+fee | data | fees for holding positions | float
+id | data | position ID | string
+margin | data | margin | float
 memberId | data | user ID | integer
-multiplier | data | 杠杆倍数 | integer
-orderVolume | data | 委托数量 | float
-passive | data | 是否强平(true:Yes,false否) | boolean
-price | data | 当前开仓均价 | float
-profit | data | 盈亏 | float
-referenceSymbol | data | 引用指数代号 | string
-roleCode  | data | 角色编码 | string
-scene | data | Scene (REAL: real, VIRTUAL: virtual) | string
-side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-symbol | data | 币对 | string
+multiplier | data | leverage | integer
+orderVolume | data | entrust quantity | float
+passive | data | whether to liquidate(true:Yes,false否) | boolean
+price | data | current average price | float
+profit | data | profit and loss | float
+referenceSymbol | data | reference index code | string
+roleCode  | data | role coding | string
+scene | data | scene(REAL: real, VIRTUAL: virtual) | string
+side | data | direction (open position: BUY (long), SELL (short); close position: BUY (short), SELL (long)) | string
+symbol | data | coin pair | string
 updatedDate | data | update time | date
 volume | data | number of transactions | float

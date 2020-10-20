@@ -1,4 +1,4 @@
-# 合约交易
+# Futures
 
 ## Query current order
 
@@ -21,10 +21,10 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 size | number of pages(default 10) | No
 page | current page(default 1) | No
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
-board | 合约板块编码 | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
 symbol | coin pair name | Yes
-positionId | 仓位ID | No
+positionId | position ID | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -88,43 +88,43 @@ Node name(keyword) | Parent node | Description | Type
 footers | data | footer | array
 rows | data | datasheets | array
 total | data | total | long
-id | rows | 订单id | string
+id | rows | order ID | string
 memberId | rows | user ID | integer
-symbol | rows | 币对 | string
-scene | rows | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
-board | rows | 合约板块编码 | string
-coin | rows | 结算币种 | string
+symbol | rows | coin pair | string
+scene | rows | scene(REAL: real, VIRTUAL: virtual) | string
+board | rows | contract board code | string
+coin | rows | settlement coin | string
 price | rows | price | float
-profitPrice | rows | 止盈价 | float
-lossPrice | rows | 止损价 | float
+profitPrice | rows | take profit price | float
+lossPrice | rows | stop price | float
 volume | rows | quantity | float
-multiplier | rows | 杠杆倍数 | integer
-size | rows | 合约面值 | float
-quantity | rows | 手数 | float
-referenceSymbol | rows | 引用指数代号 | string
-referencePrice | rows | 指数价 | float
-margin | rows | 保证金 | float
+multiplier | rows | leverage | integer
+size | rows | contract price | float
+quantity | rows | quantity | float
+referenceSymbol | rows | reference index code | string
+referencePrice | rows | index price | float
+margin | rows | margin | float
 takerFeeRate | rows | taker rate | float
 makerFeeRate | rows | maker rate | float
-side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓)  | string
-positionId | rows | 仓位ID | string
-type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
+side | rows | trading direction (open position: BUY (long), SELL (short); close position: BUY (short), SELL (long)) | string
+positionSide | rows | position direction (ENTRY: open position, EXIT: close position)  | string
+positionId | rows | position ID | string
+type | rows | order type (LIMIT: limit price, MARKET: market price, STOP: breakthrough price, PROFIT_LOSS: stop profit and stop loss) | string
 source | rows | source(WEB,H5,APP,API) | string
 date | rows | effective time | date
-passive | rows | 是否强平(true:enable,false:disable) | boolean
+passive | rows | whether to liquidate(true:enable,false:disable) | boolean
 createdDate | rows | creation time | date
 updatedDate | rows | update time | date
 pushed | rows | whether to push(true:enable,false:disable) | boolean
-roleCode | rows | 角色编码 | string
-marginDiscount | rows | 保证金折扣 | float
-tradeCount | rows | 交易次数 | long
+roleCode | rows | role coding | string
+marginDiscount | rows | margin discount | float
+tradeCount | rows | transactions | long
 currentVolume | rows | current quantity | float
 dealVolume | rows | number of transactions | float
 dealAmount | rows | turnover | float
 dealPrice | rows | average transaction price | float
 
-## 开仓下单
+## Open an order
 
 **Request path: /open/contractOrder/createEntry**
 
@@ -142,14 +142,14 @@ scene=REAL&type=LIMIT&side=SELL&board=STD&symbol=btcusdt&price=7374.06&quantity=
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
-type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
-side | 订单方向(BUY开多, SELL开空) | Yes
-board | 合约板块编码 | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+type | order type (LIMIT: limit price, MARKET: market price, STOP: breakthrough price, PROFIT_LOSS: stop profit and stop loss) | Yes
+side | order direction (BUY: long, SELL: short) | Yes
+board | contract board code | Yes
 symbol | coin pair name | Yes
-price | Commission price | Yes
-quantity | 手数 | Yes
-multiplier | 杠杆倍数 | Yes
+price | commission price | Yes
+quantity | quantity | Yes
+multiplier | leverage | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -174,7 +174,7 @@ Node name(keyword) | Parent node | Description | Type
 data | None | order id | string
 
 
-## 平仓下单
+## Close an order
 
 **Request path: /open/contractOrder/createExit**
 
@@ -193,13 +193,13 @@ scene=REAL&symbol=btcusdt&board=STD&type=LIMIT&positionId=CT202008111343545F3230
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 symbol | coin pair name | Yes
-board | 合约板块编码 | Yes
-type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
-positionId | 仓位ID | Yes
-price | Commission price | Yes
-quantity | 手数 | Yes
+board | contract board code | Yes
+type | order type (LIMIT: limit price, MARKET: market price, STOP: breakthrough price, PROFIT_LOSS: stop profit and stop loss) | Yes
+positionId | position ID | Yes
+price | commission price | Yes
+quantity | quantity | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -243,9 +243,9 @@ orderId=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 orderId | order ID | Yes
-symbol | 交易对 | Yes
-board | 合约板块编码 | Yes
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
+symbol | coin pair | Yes
+board | contract board code | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 token | token | Yes
 sign | signature | Yes
 nonce | random number | Yes
@@ -290,9 +290,9 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 orderIds | order ID, separated by commas | No
 symbol | coin pair name | Yes
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 size | number of cancelled orders | No
-side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | No
+side | trading direction (open position: BUY (open long), SELL (open short); close position: BUY (close short), SELL (close long)) | No
 minPrice | lowest price | No
 maxPrice | highest price | No
 token | token | Yes
@@ -338,9 +338,9 @@ scene=REAL&id=EX202004071549271315E8C30878571E40EE1444A78&board=STD&symbol=btcus
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
 orderId | order ID | Yes
-board | 合约板块编码 | Yes
+board | contract board code | Yes
 symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
@@ -398,37 +398,37 @@ time | timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-id | data | 订单id | string
+id | data | order ID | string
 memberId | data | user ID | integer
-symbol | data | 币对 | string
-scene | data | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
-board | data | 合约板块编码 | string
-coin | data | 结算币种 | string
+symbol | data | coin pair | string
+scene | data | scene(REAL:real, VIRTUAL:virtual)	 | string
+board | data | contract board code | string
+coin | data | settlement coin | string
 price | data | price | float
-profitPrice | data | 止盈价 | float
-lossPrice | data | 止损价 | float
+profitPrice | data | take Profit Price | float
+lossPrice | data | stop price | float
 volume | data | quantity | float
-multiplier | data | 杠杆倍数 | integer
-size | data | 合约面值 | float
-quantity | data | 手数 | float
-referenceSymbol | data | 引用指数代号 | string
-referencePrice | data | 指数价 | float
-margin | data | 保证金 | float
+multiplier | data | leverage | integer
+size | data | contract price | float
+quantity | data | quantity | float
+referenceSymbol | data | reference index code | string
+referencePrice | data | index price | float
+margin | data | margin | float
 takerFeeRate | data | taker rate | float
 makerFeeRate | data | maker rate | float
-side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
-positionId | data | 仓位ID | string
-type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
+side | data | trading direction (open position: BUY (open long), SELL (open short); close position: BUY (close short), SELL (close long)) | string
+positionSide | data | Position direction (ENTRY: open position, EXIT: close position)  | string
+positionId | data | position ID | string
+type | data | order type (LIMIT: limit price, MARKET: market price, STOP: breakthrough price, PROFIT_LOSS: stop profit and stop loss) | string
 source | data | source(WEB,H5,APP,API) | string
 date | data | effective time | date
-passive | data | 是否强平(true:enable,false:disable) | boolean
+passive | data | whether to liquidate(true:enable,false:disable) | boolean
 createdDate | data | creation time | date
 updatedDate | data | update time | date
 pushed | data | whether to push(true:enable,false:disable) | boolean
-roleCode | data | 角色编码 | string
-marginDiscount | data | 保证金折扣 | float
-tradeCount | data | 交易次数 | long
+roleCode | data | role coding | string
+marginDiscount | data | margin discount | float
+tradeCount | data | transactions | long
 currentVolume | data | current quantity | float
 dealVolume | data | number of transactions | float
 dealAmount | data | turnover | float
@@ -456,8 +456,8 @@ Node name(keyword) | Description | Required
 pageSize | number of pages(default 20) | No
 page | current page(default 1) | No
 sort | sorting method (default 1,0: ascending order, 1: descending order) | No
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | No
-board | 合约板块编码 | No
+scene | scene(REAL:real, VIRTUAL:virtual) | No
+board | contract board code | No
 symbol | coin pair name | No
 orderId | order ID | No
 token | token | Yes
@@ -515,35 +515,35 @@ Node name(keyword) | Parent node | Description | Type
 footers | data | footer | array
 rows | data | datasheets | array
 total | data | total | long
-board | rows | 合约板块编码 | string
-coin | rows | 结算货币 | string
+board | rows | contract board code | string
+coin | rows | settlement coin | string
 contractOrderId | rows | order ID | string
-contractTradeId | rows | 交易ID | string
+contractTradeId | rows | transaction ID | string
 createdDate | rows | creation time | date
-dealNo | rows | 截取后的dealID | string
-fee | rows | 实际手续费率 | float
+dealNo | rows | deal ID | string
+fee | rows | actual fee rate | float
 feeRate | rows | commission rate | string
 id | rows | id | string
-margin | rows | 释放保证金 | float
+margin | rows | margin released | float
 memberId | rows | user ID | integer
-multiplier | rows | 杠杆倍数 | integer
-orderNo | rows | 截取后的orderId | string
+multiplier | rows | leverage | integer
+orderNo | rows | order ID | string
 orderPrice | rows | order price | float
-positionId | rows | 仓位ID | string
-positionNo | rows | 截取后的仓位ID | string
-positionPrice | rows | 开仓均价 | float
-positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓) | string
+positionId | rows | position ID | string
+positionNo | rows | position ID | string
+positionPrice | rows | average open price | float
+positionSide | rows | position direction (ENTRY: open position, EXIT: close position) | string
 price | rows | deal price | float
-scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
-side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-success | rows | 是否完成(true:Yes,false否) | boolean
-symbol | rows | 币对 | string
-tradeNo | rows | 截取后的交易ID | float
-type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
+scene | rows | scene(REAL:real, VIRTUAL:virtual) | string
+side | rows | Trading direction (open position: BUY (open long), SELL (open short); close position: BUY (close short), SELL (close long)) | string
+success | rows | is it done(true:Yes,false: no) | boolean
+symbol | rows | coin pair | string
+tradeNo | rows | transaction ID | float
+type | rows | order type (LIMIT: limit price, MARKET: market price, STOP: breakthrough price, PROFIT_LOSS: stop profit and stop loss) | string
 updatedDate | rows | update time | date
 volume | rows | number of transactions | float
 
-## 获取用户所有的仓位信息
+## Get all position information of the user
 
 **Request path: /open/position/getCurrentPage**
 
@@ -563,8 +563,8 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 page | current page(default 1) | No
 size | number of pages(default 10) | No
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
-board | 合约板块编码 | Yes
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
 symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
@@ -625,39 +625,39 @@ Node name(keyword) | Parent node | Description | Type
 footers | data | footer | array
 rows | data | datasheets | array
 total | data | total | long
-board | rows | 合约板块编码 | string
-coin | rows | 结算货币 | string
+board | rows | contract board code | string
+coin | rows | settlement coin | string
 createdDate | rows | creation time | date
-currentId   | rows | 仓位记录ID | string
-entryAmount | rows | 开仓金额 | float
-entryFee | rows | 开仓手续费 | float
-entryMargin | rows | 开仓保证金 | float
-entryPrice | rows | 开仓均价 | float
-entryVolume | rows | 开仓数量 | float
-exitAmount | rows | 平仓金额 | float
-exitFee | rows | 平仓手续费 | float
-exitMargin | rows | 平仓保证金 | float
-exitPrice | rows | 平仓均价 | float
-exitReferencePrice | rows | 总平均指数价格(平仓) | float
-exitVolume | rows | 平仓数量 | float
-fee | rows | 持仓占用手续费 | float
-id | rows | 仓位ID | string
-margin | rows | 保证金 | float
+currentId   | rows | position ID | string
+entryAmount | rows | opening amount | float
+entryFee | rows | opening fee | float
+entryMargin | rows | open margin | float
+entryPrice | rows | average open price | float
+entryVolume | rows | number of open positions | float
+exitAmount | rows | liquidation amount | float
+exitFee | rows | closing fee | float
+exitMargin | rows | liquidation margin | float
+exitPrice | rows | average closing price | float
+exitReferencePrice | rows | total average index price (closed position) | float
+exitVolume | rows | number of closed positions | float
+fee | rows | fees for holding positions | float
+id | rows | position ID | string
+margin | rows | margin | float
 memberId | rows | user ID | integer
-multiplier | rows | 杠杆倍数 | integer
-orderVolume | rows | 委托数量 | float
-passive | rows | 是否强平(true:Yes,false否) | boolean
-price | rows | 当前开仓均价 | float
-profit | rows | 盈亏 | float
-referenceSymbol | rows | 引用指数代号 | string
-roleCode  | data | 角色编码 | string
-scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
-side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-symbol | rows | 币对 | string
+multiplier | rows | leverage | integer
+orderVolume | rows | entrust quantity | float
+passive | rows | whether to liquidate(true:Yes,false:No) | boolean
+price | rows | current average price | float
+profit | rows | profit and loss | float
+referenceSymbol | rows | reference index code | string
+roleCode  | data | role coding | string
+scene | rows | scene(REAL:real, VIRTUAL:virtual) | string
+side | rows | Trading direction (open position: BUY (open long), SELL (open short); close position: BUY (close short), SELL (close long)) | string
+symbol | rows | coin pair | string
 updatedDate | rows | update time | date
 volume | rows | number of transactions | float
 
-## 根据ID获取仓位信息
+## Get position information based on ID
 
 **Request path: /open/position/getCurrentById**
 
@@ -675,10 +675,10 @@ positionId=CT202009281739095F71AF3D50F35B256BD7F7A1&symbol=btcusdt&board=STD&sce
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-positionId | 仓位ID | No
+positionId | position ID | No
 symbol | coin pair name | No
-board | 合约板块编码 | No
-scene | 场景(REAL:实际，VIRTUAL:虚拟) | No
+board | contract board code | No
+scene | scene(REAL:real, VIRTUAL:virtual) | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -730,32 +730,32 @@ time | timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-board | data | 合约板块编码 | string
-coin | data | 结算货币 | string
+board | data | contract board code | string
+coin | data | settlement coin | string
 createdDate | data | creation time | date
-entryAmount | data | 开仓金额 | float
-entryFee | data | 开仓手续费 | float
-entryMargin | data | 开仓保证金 | float
-entryPrice | data | 开仓均价 | float
-entryVolume | data | 开仓数量 | float
-exitAmount | data | 平仓金额 | float
-exitFee | data | 平仓手续费 | float
-exitMargin | data | 平仓保证金 | float
-exitPrice | data | 平仓均价 | float
-exitReferencePrice | data | 总平均指数价格(平仓) | float
-exitVolume | data | 平仓数量 | float
-fee | data | 持仓占用手续费 | float
-id | data | 仓位ID | string
-margin | data | 保证金 | float
+entryAmount | data | opening amount | float
+entryFee | data | opening fee | float
+entryMargin | data | open margin | float
+entryPrice | data | average open price | float
+entryVolume | data | number of open positions | float
+exitAmount | data | liquidation amount | float
+exitFee | data | closing fee | float
+exitMargin | data | liquidation margin | float
+exitPrice | data | average closing price | float
+exitReferencePrice | data | total average index price (closed position) | float
+exitVolume | data | number of closed positions | float
+fee | data | fees for holding positions | float
+id | data | position ID | string
+margin | data | margin | float
 memberId | data | user ID | integer
-multiplier | data | 杠杆倍数 | integer
-orderVolume | data | 委托数量 | float
-passive | data | 是否强平(true:Yes,false否) | boolean
-positionNo | data | 截取后的仓位ID | string
-price | data | 当前开仓均价 | float
-referenceSymbol | data | 引用指数代号 | string
-scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
-side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-symbol | data | 币对 | string
+multiplier | data | leverage | integer
+orderVolume | data | entrust quantity | float
+passive | data | whether to liquidate(true:Yes,false: No) | boolean
+positionNo | data | position ID | string
+price | data | current average price | float
+referenceSymbol | data | reference index code | string
+scene | data | scene(REAL:real, VIRTUAL:virtual) | string
+side | data | Trading direction (open position: BUY (open long), SELL (open short); close position: BUY (close short), SELL (close long)) | string
+symbol | data | coin pair | string
 updatedDate | data | update time | date
 volume | data | number of transactions | float

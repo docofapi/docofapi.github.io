@@ -107,7 +107,7 @@ margin | rows | 保证金 | float
 takerFeeRate | rows | 吃单方手续费率 | float
 makerFeeRate | rows | 挂单方手续费率 | float
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓)  | string
+positionSide | rows | 仓位方向(ENTRY:开仓, EXIT:平仓)  | string
 positionId | rows | 仓位ID | string
 type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 source | rows | 来源(WEB,H5,APP,API) | string
@@ -417,7 +417,7 @@ margin | data | 保证金 | float
 takerFeeRate | data | 吃单方手续费率 | float
 makerFeeRate | data | 挂单方手续费率 | float
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
-positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
+positionSide | data | 仓位方向(ENTRY:开仓, EXIT:平仓)  | string
 positionId | data | 仓位ID | string
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 source | data | 来源(WEB,H5,APP,API) | string
@@ -532,7 +532,7 @@ orderPrice | rows | 订单价格 | float
 positionId | rows | 仓位ID | string
 positionNo | rows | 截取后的仓位ID | string
 positionPrice | rows | 开仓均价 | float
-positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓) | string
+positionSide | rows | 仓位方向(ENTRY:开仓, EXIT:平仓) | string
 price | rows | 成交价格 | float
 scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string

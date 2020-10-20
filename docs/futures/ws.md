@@ -564,7 +564,7 @@ marginDiscount | data | 保证金折扣 | float
 memberId | data | 用户id | integer
 multiplier | data | 杠杆倍数 | integer
 passive | data | 是否强平(true:启用,false:禁用) | boolean
-positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
+positionSide | data | 仓位方向(ENTRY:开仓, EXIT:平仓)  | string
 positionId | data | 仓位ID | string
 price | data | 价格 | float
 profitPrice | data | 止盈价 | float
