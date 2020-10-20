@@ -95,12 +95,12 @@ baseCoin | contractList | 基准货币 | string
 basisMaxSize | contractList | 基差计算条数 | integer
 contractBoardName | contractList | 合约板块名称 | string
 depthPrecisionList | contractList | 深度精度(“,”隔开) | string
-enabledEntry | contractList | 启用开仓(true:启用,false禁用) | boolean
-enabledExit | contractList | 启用平仓(true:启用,false禁用) | boolean
-fresh | contractList | 新上币对(true:启用,false禁用) | boolean
+enabledEntry | contractList | 启用开仓(true:启用,false:禁用) | boolean
+enabledExit | contractList | 启用平仓(true:启用,false:禁用) | boolean
+fresh | contractList | 新上币对(true:启用,false:禁用) | boolean
 fundingMultiplier | contractList | 资金费率倍数 | float
 fundingPrecision | contractList | 资金费率精度 | integer
-enabled | index | 启用(true:启用,false禁用) | boolean
+enabled | index | 启用(true:启用,false:禁用) | boolean
 exchange | weightList | 交易所 | string
 weight | weightList | 权重 | float
 indexSymbol | contractList | 指数代号 | string
@@ -124,13 +124,13 @@ symbol | contractList | 币对 | string
 takerFeeRate | contractList | 吃单方手续费率 | float
 volumePrecision  | contractList  | 手精度 | integer
 weight  | contractList | 权重 | integer
-enabledEntry | data | 启用开仓(true:启用,false禁用) | boolean
-enabledExit | data | 启用平仓(true:启用,false禁用) | boolean
-enabledMarginDeposit | data | 启用充保证金(true:启用,false禁用) | boolean
-enabledMarginWithdraw | data | 启用提保证金(true:启用,false禁用) | boolean
+enabledEntry | data | 启用开仓(true:启用,false:禁用) | boolean
+enabledExit | data | 启用平仓(true:启用,false:禁用) | boolean
+enabledMarginDeposit | data | 启用充保证金(true:启用,false:禁用) | boolean
+enabledMarginWithdraw | data | 启用提保证金(true:启用,false:禁用) | boolean
 holdMarginRate | data | 维持保证金率 | float
 iconUrl | data | 图标路径 | string
 localMap | data | 国际化语言Map<String, String> | string
 name | data | 板块名称 | string
-visibled | data | 是否公共(true:启用,false禁用) | boolean
+visibled | data | 是否公共(true:启用,false:禁用) | boolean
 weight | data | 权重 | integer

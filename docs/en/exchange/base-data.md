@@ -1,6 +1,6 @@
 # Basic data
 
-## 获取所有币种
+## Get all coins
 
 **Request path: /coin/findAll**
 
@@ -76,56 +76,56 @@
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-name | data | 币对名称 | string
-baseCoin | data | 所属币种 | string
-enabled | data | 启用(true:启用,false禁用) | boolean
-weight | data | 权重 | integer
-iconUrl | data | 币种图片途径 | string
-mainAddress | data | 主地址 | string
-confirmCount | data | 最小到账确认数 | integer
-enabledDeposit | data | 启用充币(true:启用,false禁用) | boolean
-enabledWithdraw | data | 启用提币(true:启用,false禁用) | boolean
-enabledPayment | data | 启用付款(true:启用,false禁用) | boolean
-enabledWithdrawAddressVaild | data | 启用提币地址验证 | boolean
-minDeposit | data | 最小充币数量 | float
-minWithdraw | data | 最小提币数量 | float
-maxWithdraw | data | 最大提币数量 | float
-dayMemberMaxWithdraw | data | 每人每日最大提币量 | float
-dayMaxWithdraw | data | 平台每日最大提币量 | float
-withdrawFee | data | 提币手续费 | float
+name | data | coin pair name | string
+baseCoin | data | owned coin | string
+enabled | data | enable(true:enable,false:disable) | boolean
+weight | data | weights | integer
+iconUrl | data | coin picture path | string
+mainAddress | data | primary address | string
+confirmCount | data | minimum arrival confirmation | integer
+enabledDeposit | data | enable deposit(true:enable,false:disable) | boolean
+enabledWithdraw | data | enable withdrawal(true:enable,false:disable) | boolean
+enabledPayment | data | enable payment(true:enable,false:disable) | boolean
+enabledWithdrawAddressVaild | data | enable withdrawal address verification | boolean
+minDeposit | data | minimum deposit amount | float
+minWithdraw | data | minimum withdrawal amount | float
+maxWithdraw | data | maximum withdrawal amount | float
+dayMemberMaxWithdraw | data | maximum withdrawal amount per person per day | float
+dayMaxWithdraw | data | maximum daily withdrawal amount of the platform | float
+withdrawFee | data | withdrawal fee | float
 withdrawFeeRate | data | withdrawFeeRate | float
-precision | data | 展示精度 | integer
-withdrawPrecision | data | 提币精度 | integer
-minHideVolume | data | 最小隐藏数量 | float
-addressType | data | 地址类型(NORMAL主地址，CHILDREN子地址) | string
-enabledChildrenAddress | data | 开启子地址添加 | boolean
-addressRegex | data | 地址正则 | string
-addressRegexMessage | data | 地址正则规则描述 | string
-otcEnabled | data | otc启用 | boolean
-otcPrecision  | data | otc精度 | integer
-otcWeight  | data | otc权重 | integer
-otcMinDeposit | data | otc商户最低保证金数量 | float
-otcMaxCancelCount | data | otc最大取消次数 | integer
-otcEndMinutes | data | otc结束分钟数 | integer
-otcMinAmount | data | otc最小金额 | float
-otcMaxAmount | data | otc最大金额 | float
-otcMinPrice | data | otc最低价格 | float
-otcMaxPrice | data | otc最高价格 | float
-otcDayMaxSell | data | otc平台每日最大卖出数量 | float
-otcDayMemberMaxSell | data | otc每人每日最大卖出数量 | float
-releaseDate | data | 发行日期 | date
-releaseQuantity | data | 发行数量 | float
-liquidity | data | 流通数量 | float
-whitePaperUrl | data | 白皮书 | string
-contentUrl | data | 币种简介 | string
-webUrl | data | 官网地址 | string
-chainUrl | data | 区块链地址 | string
-contractType | contractList | 合约类型 | string
-baseCoin | contractList | 所属币种 | string
-withdrawFee | contractList | 提币手续费 | float
-withdrawFeeRate | contractList | 提币手续费比例 | float
+precision | data | precision | integer
+withdrawPrecision | data | withdrawal accuracy | integer
+minHideVolume | data | minimum hidden amount | float
+addressType | data | address type (NORMAL: main address, CHILDREN: sub address) | string
+enabledChildrenAddress | data | open sub address addition | boolean
+addressRegex | data | address regular | string
+addressRegexMessage | data | address regular rule description | string
+otcEnabled | data | Enable otc | boolean
+otcPrecision  | data | otc precision | integer
+otcWeight  | data | otc weight | integer
+otcMinDeposit | data | otc merchant minimum deposit amount | float
+otcMaxCancelCount | data | otc maximum number of cancellations | integer
+otcEndMinutes | data | otc order valid minutes | integer
+otcMinAmount | data | otc minimum amount | float
+otcMaxAmount | data | otc maximum amount | float
+otcMinPrice | data | otc lowest price | float
+otcMaxPrice | data | otc highest price | float
+otcDayMaxSell | data | Maximum daily sales volume on otc platform | float
+otcDayMemberMaxSell | data | otc maximum daily sales per person | float
+releaseDate | data | issue date | date
+releaseQuantity | data | issue number | float
+liquidity | data | quantity in circulation | float
+whitePaperUrl | data | white paper | string
+contentUrl | data | introduction to coin | string
+webUrl | data | official website address | string
+chainUrl | data | blockchain address | string
+contractType | contractList | contract type | string
+baseCoin | contractList | owned coin | string
+withdrawFee | contractList | withdrawal fee | float
+withdrawFeeRate | contractList | withdrawal fee ratio | float
 
-## 获取所有币对
+## Get all coin pairs
 
 **Request path: /product/findAll**
 
@@ -143,7 +143,7 @@ withdrawFeeRate | contractList | 提币手续费比例 | float
   "data":[{
     "symbol": "btcusdt",
     "category": "MAIN",
-    "categoryName": "主板",
+    "categoryName": "motherboard",
     "iconUrl": null,
     "baseCoin": "BTC",
     "quoteCoin": "USDT",
@@ -176,28 +176,28 @@ withdrawFeeRate | contractList | 提币手续费比例 | float
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-symbol | data |  币对名称 | string
-category | data | 分类编码 | string
-categoryName | data | 分类名称 | string
-iconUrl | data | 分类图标路径 | string
-baseCoin | data | 基准货币，symbol的前半段 | string
-quoteCoin | data | 计价货币，symbol的后半段 | string
-openPrice | data | 开盘价 | float
-feeRate | data | 手续费率 | float
-takerFeeRate | data | 吃单方手续费率 | float
-makerFeeRate | data | 挂单方手续费率 | float
-pricePrecision | data | 价格精度 | integer
-volumePrecision | data | 数量精度 | integer
-depthPrecisionList | data | 深度精度(逗号分隔) |string
-minPrice | data | 最低单价 | float
-minVolume | data | 最小数量 | float
-minAmount | data | 最低金额 | float
-buyMaxVolume | data | 最大买入数量 | float
-sellMaxVolume | data | 最大卖出数量 | float
-special | data | 特殊币种:展示ST | boolean
-fresh | data | 新上币对:展示NEW | boolean
-hide | data | 币对隐藏 | boolean
-weight | data | 权重 | integer
-enabledMarket | data | 市价开关 | boolean
-enabledLimit | data | 限价开关 | boolean
-openDate | data | 开盘时间 | date
+symbol | data |  coin pair name | string
+category | data | classification code | string
+categoryName | data | category Name | string
+iconUrl | data | category icon path | string
+baseCoin | data | base coin, the first half of the symbol | string
+quoteCoin | data | the denomination currency, the second half of the symbol | string
+openPrice | data | opening price | float
+feeRate | data | commission rate | float
+takerFeeRate | data | taker rate | float
+makerFeeRate | data | maker rate | float
+pricePrecision | data | price precision | integer
+volumePrecision | data | quantity precision | integer
+depthPrecisionList | data | depth precision (comma separated)|string
+minPrice | data | lowest price | float
+minVolume | data | minimum quantity | float
+minAmount | data | minimum amount | float
+buyMaxVolume | data | maximum purchase quantity | float
+sellMaxVolume | data | maximum sell quantity | float
+special | data | Special coin: display ST | boolean
+fresh | data | New listing pair: show NEW | boolean
+hide | data | currency pair hiding | boolean
+weight | data | weights | integer
+enabledMarket | data | market switch | boolean
+enabledLimit | data | limit switch | boolean
+openDate | data | opening time | date

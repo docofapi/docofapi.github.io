@@ -78,14 +78,14 @@
 -- | -- | -- | -- |
 name | data | 币对名称 | string
 baseCoin | data | 所属币种 | string
-enabled | data | 启用(true:启用,false禁用) | boolean
+enabled | data | 启用(true:启用,false:禁用) | boolean
 weight | data | 权重 | integer
 iconUrl | data | 币种图片途径 | string
 mainAddress | data | 主地址 | string
 confirmCount | data | 最小到账确认数 | integer
-enabledDeposit | data | 启用充币(true:启用,false禁用) | boolean
-enabledWithdraw | data | 启用提币(true:启用,false禁用) | boolean
-enabledPayment | data | 启用付款(true:启用,false禁用) | boolean
+enabledDeposit | data | 启用充币(true:启用,false:禁用) | boolean
+enabledWithdraw | data | 启用提币(true:启用,false:禁用) | boolean
+enabledPayment | data | 启用付款(true:启用,false:禁用) | boolean
 enabledWithdrawAddressVaild | data | 启用提币地址验证 | boolean
 minDeposit | data | 最小充币数量 | float
 minWithdraw | data | 最小提币数量 | float
@@ -97,7 +97,7 @@ withdrawFeeRate | data | withdrawFeeRate | float
 precision | data | 展示精度 | integer
 withdrawPrecision | data | 提币精度 | integer
 minHideVolume | data | 最小隐藏数量 | float
-addressType | data | 地址类型(NORMAL主地址，CHILDREN子地址) | string
+addressType | data | 地址类型(NORMAL:主地址，CHILDREN:子地址) | string
 enabledChildrenAddress | data | 开启子地址添加 | boolean
 addressRegex | data | 地址正则 | string
 addressRegexMessage | data | 地址正则规则描述 | string

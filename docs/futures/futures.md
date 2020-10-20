@@ -112,10 +112,10 @@ positionId | rows | 仓位ID | string
 type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 source | rows | 来源(WEB,H5,APP,API) | string
 date | rows | 生效时间 | date
-passive | rows | 是否强平(true:启用,false禁用) | boolean
+passive | rows | 是否强平(true:启用,false:禁用) | boolean
 createdDate | rows | 创建时间 | date
 updatedDate | rows | 修改时间 | date
-pushed | rows | 是否推送(true:启用,false禁用) | boolean
+pushed | rows | 是否推送(true:启用,false:禁用) | boolean
 roleCode | rows | 角色编码 | string
 marginDiscount | rows | 保证金折扣 | float
 tradeCount | rows | 交易次数 | long
@@ -422,10 +422,10 @@ positionId | data | 仓位ID | string
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 source | data | 来源(WEB,H5,APP,API) | string
 date | data | 生效时间 | date
-passive | data | 是否强平(true:启用,false禁用) | boolean
+passive | data | 是否强平(true:启用,false:禁用) | boolean
 createdDate | data | 创建时间 | date
 updatedDate | data | 修改时间 | date
-pushed | data | 是否推送(true:启用,false禁用) | boolean
+pushed | data | 是否推送(true:启用,false:禁用) | boolean
 roleCode | data | 角色编码 | string
 marginDiscount | data | 保证金折扣 | float
 tradeCount | data | 交易次数 | long

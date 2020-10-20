@@ -18,7 +18,7 @@ symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 from | 开始时间(Timestamp) | Yes
@@ -57,9 +57,9 @@ date | data | 日期 | date
 high | data | 最高价 | float
 id | data | id | string
 low | data | 最低价 | float
-open | data | 开盘价 | float
+open | data | opening price | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 type | data | K线类型 | string
 volume | data |交易量  | float
 
@@ -81,7 +81,7 @@ symbol=btcusdt&type=MIN_1&from=1601246645&to=1601258645
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 from | 开始时间(Timestamp) | Yes
 to | 结束时间(Timestamp) | Yes
@@ -116,9 +116,9 @@ date | data | 日期 | date
 high | data | 最高价 | float
 id | data | id | string
 low | data | 最低价 | float
-open | data | 开盘价 | float
+open | data | opening price | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 type | data | K线类型 | string
 
 ## 根据时间获取标记价格 K 线
@@ -139,7 +139,7 @@ symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 from | 开始时间(Timestamp) | Yes
@@ -175,9 +175,9 @@ date | data | 日期 | date
 high | data | 最高价 | float
 id | data | id | string
 low | data | 最低价 | float
-open | data | 开盘价 | float
+open | data | opening price | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 type | data | K线类型 | string
 
 ## 获取合约深度
@@ -198,7 +198,7 @@ symbol=btcusdt&scene=REAL&type=0&size=20
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景场景(REAL真实，VIRTUAL虚拟) | Yes
 type | 深度档位(默认值:0) | Yes
 size | 数量 | No
@@ -232,7 +232,7 @@ Node name(keyword) | Parent node | Description | Type
 buyList | data | 买入：价格、数量、条数 | array
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 sellList | data | 卖出：价格、数量、条数 | array
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 
 ## 获取合约 24 小时行情
 
@@ -252,7 +252,7 @@ scene=REAL&symbol=btcusdt
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 
 **Examples of response values:**
 
@@ -296,7 +296,7 @@ high | data | 最高价 | float
 indexPrice | data | 指数价格 | float
 low | data | 最低价 | float
 markPrice | data | 标记价格 | float
-open | data |开盘价  | float
+open | data |opening price  | float
 price | data | 当前价 | float
 referencePrice | data | 引用指数价格 | float
 referenceSymbol | data | 引用指数代号 | string
@@ -365,7 +365,7 @@ high | data | 最高价 | float
 indexPrice | data | 指数价格 | float
 low | data | 最低价 | float
 markPrice | data | 标记价格 | float
-open | data |开盘价  | float
+open | data |opening price  | float
 price | data | 当前价 | float
 referencePrice | data | 引用指数价格 | float
 referenceSymbol | data | 引用指数代号 | string

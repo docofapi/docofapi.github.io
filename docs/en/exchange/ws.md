@@ -193,7 +193,7 @@ Node name(keyword) | Parent node | Description | Type
 a | data | 成交额 | float
 h | data | 最高价 | float
 l | data | 最低价 | float
-o | data | 开盘价 | float
+o | data | opening price | float
 p | data | 当前价 | float
 s | data | 币对名称 | float
 t | data | 日期 | date
@@ -239,7 +239,7 @@ Node name(keyword) | Parent node | Description | Type
 a | data | 成交额 | float
 h | data | 最高价 | float
 l | data | 最低价 | float
-o | data | 开盘价 | float
+o | data | opening price | float
 p | data | 当前价 | float
 s | data | 币对名称 | float
 t | data | 日期 | date
@@ -290,7 +290,7 @@ c | data | 收盘价 | float
 h | data | 最高价 | float
 i | data | id | float
 l | data | 最低价 | float
-o | data | 开盘价 | float
+o | data | opening price | float
 s | data | 币对名称 | float
 t | data | K 线类型 | date
 v | data | 交易量 | float
@@ -310,7 +310,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
 token | token | Yes
-memberId | 用户ID | Yes
+memberId | user ID | Yes
 
 **Examples of response values:**
 
@@ -330,9 +330,9 @@ memberId | 用户ID | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 b | data | 资金余额 | float
-c | data | 币种 | float
+c | data | coin | float
 l | data | 冻结金额 | float
-m | data | 用户Id | integer
+m | data | user ID | integer
 send | 无 | 订阅主题名称 | string
 
 ## 订单
@@ -349,7 +349,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
 token | token | Yes
-memberId | 用户ID | Yes
+memberId | user ID | Yes
 
 **Examples of response values:**
 
@@ -386,14 +386,14 @@ memberId | 用户ID | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 id | data | id | string
-memberId | data | 用户ID | integer
+memberId | data | user ID | integer
 symbol | data | 币对名称 | string
 baseCoin | data | 基准货币，symbol的前半段 | string
 quoteCoin | data | 计价货币,symbol的后半段 | string
 price | data | 价格 | float
 volume | data | 数量 | float
-takerFeeRate | data | 吃单方手续费率 | float
-makerFeeRate | data | 挂单方手续费率 | float
+takerFeeRate | data | taker rate | float
+makerFeeRate | data | maker rate | float
 side | data | 交易方向(BUY买入,SELL卖出) | string
 type | data | 订单类型(LIMIT限价，MARKET市价) | string
 source | data | 来源(WEB,H5,APP,API) | string

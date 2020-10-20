@@ -23,7 +23,7 @@ size | 每页数量(默认值10) | No
 page | 当前页(默认值1) | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 board | 合约板块编码 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 positionId | 仓位ID | No
 token | token | Yes
 nonce | random number | Yes
@@ -89,7 +89,7 @@ footers | data | 页脚 | array
 rows | data | 数据列表 | array
 total | data | 总条数 | long
 id | rows | 订单id | string
-memberId | rows | 用户id | integer
+memberId | rows | user ID | integer
 symbol | rows | 币对 | string
 scene | rows | 场景(REAL实际，VIRTUAL虚拟)	 | string
 board | rows | 合约板块编码 | string
@@ -104,18 +104,18 @@ quantity | rows | 手数 | float
 referenceSymbol | rows | 引用指数代号 | string
 referencePrice | rows | 指数价 | float
 margin | rows | 保证金 | float
-takerFeeRate | rows | 吃单方手续费率 | float
-makerFeeRate | rows | 挂单方手续费率 | float
+takerFeeRate | rows | taker rate | float
+makerFeeRate | rows | maker rate | float
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓)  | string
 positionId | rows | 仓位ID | string
 type | rows | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 source | rows | 来源(WEB,H5,APP,API) | string
 date | rows | 生效时间 | date
-passive | rows | 是否强平(true:启用,false禁用) | boolean
+passive | rows | 是否强平(true:enable,false:disable) | boolean
 createdDate | rows | 创建时间 | date
 updatedDate | rows | 修改时间 | date
-pushed | rows | 是否推送(true:启用,false禁用) | boolean
+pushed | rows | 是否推送(true:enable,false:disable) | boolean
 roleCode | rows | 角色编码 | string
 marginDiscount | rows | 保证金折扣 | float
 tradeCount | rows | 交易次数 | long
@@ -146,7 +146,7 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
 side | 订单方向(BUY开多, SELL开空) | Yes
 board | 合约板块编码 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 price | 委托单价 | Yes
 quantity | 手数 | Yes
 multiplier | 杠杆倍数 | Yes
@@ -194,7 +194,7 @@ scene=REAL&symbol=btcusdt&board=STD&type=LIMIT&positionId=CT202008111343545F3230
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 board | 合约板块编码 | Yes
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
 positionId | 仓位ID | Yes
@@ -250,7 +250,7 @@ token | token | Yes
 sign | signature | Yes
 nonce | random number | Yes
 time | Timestamp | Yes
-symbol | 币对名称 | No
+symbol | coin pair name | No
 
 **Examples of response values:**
 
@@ -289,7 +289,7 @@ orderIds=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt&scene=REAL&side
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 orderIds | 订单ID, “,”隔开 | No
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 size | 撤单数量 | No
 side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | No
@@ -341,7 +341,7 @@ Node name(keyword) | Description | Required
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 orderId | 订单ID | Yes
 board | 合约板块编码 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -399,7 +399,7 @@ time | Timestamp | Yes
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 id | data | 订单id | string
-memberId | data | 用户id | integer
+memberId | data | user ID | integer
 symbol | data | 币对 | string
 scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
 board | data | 合约板块编码 | string
@@ -414,18 +414,18 @@ quantity | data | 手数 | float
 referenceSymbol | data | 引用指数代号 | string
 referencePrice | data | 指数价 | float
 margin | data | 保证金 | float
-takerFeeRate | data | 吃单方手续费率 | float
-makerFeeRate | data | 挂单方手续费率 | float
+takerFeeRate | data | taker rate | float
+makerFeeRate | data | maker rate | float
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
 positionId | data | 仓位ID | string
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 source | data | 来源(WEB,H5,APP,API) | string
 date | data | 生效时间 | date
-passive | data | 是否强平(true:启用,false禁用) | boolean
+passive | data | 是否强平(true:enable,false:disable) | boolean
 createdDate | data | 创建时间 | date
 updatedDate | data | 修改时间 | date
-pushed | data | 是否推送(true:启用,false禁用) | boolean
+pushed | data | 是否推送(true:enable,false:disable) | boolean
 roleCode | data | 角色编码 | string
 marginDiscount | data | 保证金折扣 | float
 tradeCount | data | 交易次数 | long
@@ -458,7 +458,7 @@ page | 当前页(默认值1) | No
 sort | 排序方式(默认值1,0升序,1降序) | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | No
 board | 合约板块编码 | No
-symbol | 币对名称 | No
+symbol | coin pair name | No
 orderId | 订单ID | No
 token | token | Yes
 nonce | random number | Yes
@@ -522,10 +522,10 @@ contractTradeId | rows | 交易ID | string
 createdDate | rows | 创建时间 | date
 dealNo | rows | 截取后的dealID | string
 fee | rows | 实际手续费率 | float
-feeRate | rows | 手续费率 | string
+feeRate | rows | commission rate | string
 id | rows | id | string
 margin | rows | 释放保证金 | float
-memberId | rows | 用户ID | integer
+memberId | rows | user ID | integer
 multiplier | rows | 杠杆倍数 | integer
 orderNo | rows | 截取后的orderId | string
 orderPrice | rows | 订单价格 | float
@@ -565,7 +565,7 @@ page | 当前页(默认值1) | No
 size | 每页数量(默认值10) | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 board | 合约板块编码 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -643,7 +643,7 @@ exitVolume | rows | 平仓数量 | float
 fee | rows | 持仓占用手续费 | float
 id | rows | 仓位ID | string
 margin | rows | 保证金 | float
-memberId | rows | 用户ID | integer
+memberId | rows | user ID | integer
 multiplier | rows | 杠杆倍数 | integer
 orderVolume | rows | 委托数量 | float
 passive | rows | 是否强平(true:Yes,false否) | boolean
@@ -676,7 +676,7 @@ positionId=CT202009281739095F71AF3D50F35B256BD7F7A1&symbol=btcusdt&board=STD&sce
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 positionId | 仓位ID | No
-symbol | 币对名称 | No
+symbol | coin pair name | No
 board | 合约板块编码 | No
 scene | 场景(REAL实际，VIRTUAL虚拟) | No
 token | token | Yes
@@ -747,7 +747,7 @@ exitVolume | data | 平仓数量 | float
 fee | data | 持仓占用手续费 | float
 id | data | 仓位ID | string
 margin | data | 保证金 | float
-memberId | data | 用户ID | integer
+memberId | data | user ID | integer
 multiplier | data | 杠杆倍数 | integer
 orderVolume | data | 委托数量 | float
 passive | data | 是否强平(true:Yes,false否) | boolean

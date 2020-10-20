@@ -1,6 +1,6 @@
 # Account related
 
-## 资产余额
+## Asset balance
 
 **Request path: /open/user/account**
 
@@ -43,7 +43,7 @@ time | Timestamp | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-balance | data | 正常资金 | float
-coin | data | 币种 | string
-locked | data | 冻结资金 | float
-memberId | data | 用户ID | integer
+balance | data | normal funds | float
+coin | data | coin | string
+locked | data | frozen funds | float
+memberId | data | user ID | integer

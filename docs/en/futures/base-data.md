@@ -94,18 +94,18 @@ coinPrecision | data | 结算币种精度 | integer
 baseCoin | contractList | 基准货币 | string
 basisMaxSize | contractList | 基差计算条数 | integer
 contractBoardName | contractList | 合约板块名称 | string
-depthPrecisionList | contractList | 深度精度(“,”隔开) | string
-enabledEntry | contractList | 启用开仓(true:启用,false禁用) | boolean
-enabledExit | contractList | 启用平仓(true:启用,false禁用) | boolean
-fresh | contractList | 新上币对(true:启用,false禁用) | boolean
+depthPrecisionList | contractList | depth precision (comma separated) | string
+enabledEntry | contractList | 启用开仓(true:enable,false:disable) | boolean
+enabledExit | contractList | 启用平仓(true:enable,false:disable) | boolean
+fresh | contractList | 新上币对(true:enable,false:disable) | boolean
 fundingMultiplier | contractList | 资金费率倍数 | float
 fundingPrecision | contractList | 资金费率精度 | integer
-enabled | index | 启用(true:启用,false禁用) | boolean
+enabled | index | enable(true:enable,false:disable) | boolean
 exchange | weightList | 交易所 | string
-weight | weightList | 权重 | float
+weight | weightList | weights | float
 indexSymbol | contractList | 指数代号 | string
 interval | contractList | 资金费率间隔(h) | integer
-makerFeeRate | contractList | 挂单方手续费率 | float
+makerFeeRate | contractList | maker rate | float
 markInterval | contractList | 标记价格间隔(ms) | integer
 maxMultiplier | contractList | 最大杠杆倍数 | integer
 maxVolume | contractList | 最高手数 | float
@@ -113,24 +113,24 @@ minMultiplier | contractList | 最小杠杆倍数 | integer
 minVolume | contractList | 最低手数 | float
 multiplierList | contractList | 杠杆倍数区间段 | string
 openDate | contractList | 开盘时间 | date
-openPrice | contractList | 开盘价 | float
+openPrice | contractList | opening price | float
 positionMaxSize | contractList | 仓位最大条数 | integer
-pricePrecision | contractList | 价格精度 | integer
+pricePrecision | contractList | price precision | integer
 priceRate | contractList | 价格浮动率 | float
 quoteCoin | contractList | 计价货币 | string
 referenceSymbol | contractList | 引用指数代号 | string
 size | contractList | 合约面值 | float
 symbol | contractList | 币对 | string
-takerFeeRate | contractList | 吃单方手续费率 | float
+takerFeeRate | contractList | taker rate | float
 volumePrecision  | contractList  | 手精度 | integer
-weight  | contractList | 权重 | integer
-enabledEntry | data | 启用开仓(true:启用,false禁用) | boolean
-enabledExit | data | 启用平仓(true:启用,false禁用) | boolean
-enabledMarginDeposit | data | 启用充保证金(true:启用,false禁用) | boolean
-enabledMarginWithdraw | data | 启用提保证金(true:启用,false禁用) | boolean
+weight  | contractList | weights | integer
+enabledEntry | data | 启用开仓(true:enable,false:disable) | boolean
+enabledExit | data | 启用平仓(true:enable,false:disable) | boolean
+enabledMarginDeposit | data | 启用充保证金(true:enable,false:disable) | boolean
+enabledMarginWithdraw | data | 启用提保证金(true:enable,false:disable) | boolean
 holdMarginRate | data | 维持保证金率 | float
 iconUrl | data | 图标路径 | string
 localMap | data | 国际化语言Map<String, String> | string
 name | data | 板块名称 | string
-visibled | data | 是否公共(true:启用,false禁用) | boolean
-weight | data | 权重 | integer
+visibled | data | 是否公共(true:enable,false:disable) | boolean
+weight | data | weights | integer

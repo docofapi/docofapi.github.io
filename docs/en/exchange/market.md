@@ -18,7 +18,7 @@ symbol=btcusdt&size=100
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 size | 数量(最小值为1，最大值为100) | Yes
 
 **Examples of response values:**
@@ -47,7 +47,7 @@ createdDate | data | 时间 | date
 id | data | id | string
 price | data | 价格 | float
 side | data | 方向:BUY买入,SELL卖出 | string
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 volume | data | 数量 | float
 
 ## 根据时间获取 K 线
@@ -68,7 +68,7 @@ symbol=btcusdt&type=MIN_1&from=1585866600&to=1586046600
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 from | 开始时间(Timestamp) | Yes
 to | 结束时间(Timestamp) | Yes
@@ -105,8 +105,8 @@ date | data | 日期 | date
 high | data | 最高价 | float
 id | data | id | string
 low | data | 最低价 | float
-open | data | 开盘价 | float
-symbol | data | 币对名称 | string
+open | data | opening price | float
+symbol | data | coin pair name | string
 type | data | K线类型 | string
 volume | data |交易量  | float
 
@@ -128,7 +128,7 @@ symbol=btcusdt&type=0&size=20
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 type | 深度档位(默认值:0) | Yes
 size | 数量 | No
 
@@ -159,7 +159,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 buyList | data | 买入：单价、数量、个数 | array
 sellList | data | 卖出：单价、数量、个数 | array
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 
 ## 获取 24 小时行情
 
@@ -178,7 +178,7 @@ symbol=btcusdt
 **请求数据描述如下：**
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 
 **Examples of response values:**
 
@@ -208,9 +208,9 @@ amount | data | 成交额 | float
 date | data | 日期 | date
 high | data | 最高价 | float
 low | data | 最低价 | float
-open | data | 开盘价 | float
+open | data | opening price | float
 price | data | 当前价 | float
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 volume | data |当前价  | float
 
 
@@ -251,7 +251,7 @@ amount | data | 成交额 | float
 date | data | 日期 | date
 high | data | 最高价 | float
 low | data | 最低价 | float
-open | data | 开盘价 | float
+open | data | opening price | float
 price | data | 当前价 | float
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 volume | data |当前价  | float

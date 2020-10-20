@@ -82,7 +82,7 @@ Examples of response values:
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 type | 深度档位(默认值:0) | Yes
 size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
@@ -107,7 +107,7 @@ Node name(keyword) | Parent node | Description | Type
 a | data | 卖出：价格,数量,条数 | array
 b | data | 买入：价格,数量,条数 | array
 n | data | 场景(REAL实际，VIRTUAL虚拟) | string
-s | data | 币对名称 | string
+s | data | coin pair name | string
 send | 无 | 订阅主题名称 | string
 
 
@@ -124,7 +124,7 @@ send | 无 | 订阅主题名称 | string
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 **Examples of response values:**
@@ -155,7 +155,7 @@ i | l | id | string
 p | l | 价格 | float
 v | l | 数量 | float
 n | data | 场景(REAL实际，VIRTUAL虚拟) | string
-s | data | 币对名称 | string
+s | data | coin pair name | string
 send | 无 | 订阅主题名称 | string
 
 ## 24小时行情订阅
@@ -214,7 +214,7 @@ j | data | 合理基差 | float
 l | data | 最低价 | float
 m | data | 标记价格 | float
 n | data | 场景(REAL实际，VIRTUAL虚拟) | string
-o | data | 开盘价 | float
+o | data | opening price | float
 p | data | 当前价 | float
 r | data | 引用指数代号 | string
 s | data | 币对 | string
@@ -235,7 +235,7 @@ send | 无 | 订阅主题名称 | string
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 **Examples of response values:**
@@ -279,7 +279,7 @@ j | data | 合理基差 | float
 l | data | 最低价 | float
 m | data | 标记价格 | float
 n | data | 场景(REAL实际，VIRTUAL虚拟) | string
-o | data | 开盘价 | float
+o | data | opening price | float
 p | data | 当前价 | float
 r | data | 引用指数代号 | string
 s | data | 币对 | string
@@ -301,7 +301,7 @@ send | 无 | 订阅主题名称 | string
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
@@ -334,8 +334,8 @@ h | data | 最高价 | float
 i | data | id | String
 l | data | 最低价 | float
 n | data | 场景(REAL实际，VIRTUAL虚拟) | String
-o | data | 开盘价 | float
-s | data | 币对名称 | String
+o | data | opening price | float
+s | data | coin pair name | String
 t | data | K 线类型 | String
 v | data | 交易量 | float
 send | 无 | 订阅主题名称 | string
@@ -353,7 +353,7 @@ send | 无 | 订阅主题名称 | string
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 
 **Examples of response values:**
@@ -380,8 +380,8 @@ c | data | 收盘价 | float
 h | data | 最高价 | float
 i | data | id | String
 l | data | 最低价 | float
-o | data | 开盘价 | float
-s | data | 币对名称 | String
+o | data | opening price | float
+s | data | coin pair name | String
 t | data | K 线类型 | String
 send | 无 | 订阅主题名称 | string
 
@@ -398,7 +398,7 @@ send | 无 | 订阅主题名称 | string
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
 scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
@@ -428,8 +428,8 @@ h | data | 最高价 | float
 i | data | id | String
 l | data | 最低价 | float
 n | data | 场景(REAL实际，VIRTUAL虚拟) | String
-o | data | 开盘价 | float
-s | data | 币对名称 | String
+o | data | opening price | float
+s | data | coin pair name | String
 t | data | K 线类型 | String
 send | 无 | 订阅主题名称 | string
 
@@ -447,7 +447,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
 token | token | Yes
-memberId | 用户ID | Yes
+memberId | user ID | Yes
 
 **Examples of response values:**
 
@@ -472,10 +472,10 @@ memberId | 用户ID | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-m | data | 用户ID | integer
+m | data | user ID | integer
 b | data | 合约板块编码 | String
 n | data | 场景(REAL实际，VIRTUAL虚拟) | String
-c | data | 币种 | String
+c | data | coin | String
 a | data | 可用保证金 | float
 o | data | 委托（冻结）保证金 | float
 p | data | 仓位（占用）保证金 | float
@@ -498,7 +498,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
 token | token | Yes
-memberId | 用户ID | Yes
+memberId | user ID | Yes
 
 **Examples of response values:**
 
@@ -558,17 +558,17 @@ dealPrice | data | 平均成交价 | float
 dealVolume | data | 成交数量 | float
 id | data | 订单id | string
 lossPrice | data | 止损价 | float
-makerFeeRate | data | 挂单方手续费率 | float
+makerFeeRate | data | maker rate | float
 margin | data | 保证金 | float
 marginDiscount | data | 保证金折扣 | float
-memberId | data | 用户id | integer
+memberId | data | user ID | integer
 multiplier | data | 杠杆倍数 | integer
-passive | data | 是否强平(true:启用,false禁用) | boolean
+passive | data | 是否强平(true:enable,false:disable) | boolean
 positionSide | data | 仓位方向(ENTRY开仓, EXIT平仓)  | string
 positionId | data | 仓位ID | string
 price | data | 价格 | float
 profitPrice | data | 止盈价 | float
-pushed | data | 是否推送(true:启用,false禁用) | boolean
+pushed | data | 是否推送(true:enable,false:disable) | boolean
 quantity | data | 手数 | float
 referenceSymbol | data | 引用指数代号 | string
 referencePrice | data | 指数价 | float
@@ -578,7 +578,7 @@ side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL�
 size | data | 合约面值 | float
 source | data | 来源(WEB,H5,APP,API) | string
 symbol | data | 币对 | string
-takerFeeRate | data | 吃单方手续费率 | float
+takerFeeRate | data | taker rate | float
 tradeCount | data | 交易次数 | long
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 updatedDate | data | 修改时间 | date
@@ -598,7 +598,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | Yes
 token | token | Yes
-memberId | 用户ID | Yes
+memberId | user ID | Yes
 
 **Examples of response values:**
 
@@ -662,7 +662,7 @@ exitVolume | data | 平仓数量 | float
 fee | data | 持仓占用手续费 | float
 id | data | 仓位ID | string
 margin | data | 保证金 | float
-memberId | data | 用户ID | integer
+memberId | data | user ID | integer
 multiplier | data | 杠杆倍数 | integer
 orderVolume | data | 委托数量 | float
 passive | data | 是否强平(true:Yes,false否) | boolean

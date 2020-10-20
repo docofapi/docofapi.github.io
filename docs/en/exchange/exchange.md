@@ -20,7 +20,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 size | 每页数量(默认值10) | No
 page | 当前页(默认值1) | No
-symbol | 币对名称 | No
+symbol | coin pair name | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -77,15 +77,15 @@ dealAmount | rows | 成交金额 | float
 dealPrice | rows | 平均成交价 | float
 dealVolume | rows | 成交数量 | float
 id | rows | id | string
-makerFeeRate | rows | 挂单方手续费率 | float
+makerFeeRate | rows | maker rate | float
 memberId | rows | 用户ID | integer
 price | rows | 价格 | float
 pushed | rows | 是否推送 | boolean
 quoteCoin | rows | 计价货币,symbol的后半段 | string
 side | rows | 交易方向(BUY买入,SELL卖出) | string
 source | rows | 来源(WEB,H5,APP,API) | string
-symbol | rows | 币对名称 | string
-takerFeeRate | rows | 吃单方手续费率 | float
+symbol | rows | coin pair name | string
+takerFeeRate | rows | taker rate | float
 tradeCount | rows | 交易次数 | long
 type | rows | 订单类型(LIMIT限价，MARKET市价) | string
 updatedDate | rows | 修改时间 | date
@@ -109,7 +109,7 @@ symbol=btcusdt&price=7374.06&volume=4&side=SELL&token=Token&nonce=123123&sign=si
 
 Node name (keyword) | Description | Required
 -- | -- | -- | -- |
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 price | 委托单价 | Yes
 volume | 数量 | Yes
 side | 买卖方向(BUY买入,SELL卖出) | Yes
@@ -159,7 +159,7 @@ token | token | Yes
 sign | signature | Yes
 nonce | random number | Yes
 time | Timestamp | Yes
-symbol | 币对名称 | No
+symbol | coin pair name | No
 
 **Examples of response values:**
 
@@ -197,7 +197,7 @@ orderIds=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&side=SELL&mi
 Node name (keyword) | Description | Required
 -- | -- | -- | -- |
 orderIds | 订单ID, “,”隔开 | No
-symbol | 币对名称 | No
+symbol | coin pair name | No
 side | 买卖方向(BUY买入,SELL卖出) | No
 minPrice | 最小价格 | No
 maxPrice | 最大价格 | No
@@ -243,7 +243,7 @@ orderId=EX202004071549271315E8C30878571E40EE1444A78&symbol=btcusdt&token=Token&n
 Node name (keyword) | Description | Required
 -- | -- | -- | -- |
 orderId | 订单 | Yes
-symbol | 币对名称 | Yes
+symbol | coin pair name | Yes
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -294,15 +294,15 @@ dealAmount | data | 成交金额 | float
 dealPrice | data | 平均成交价 | float
 dealVolume | data | 成交数量 | float
 id | data | id | string
-makerFeeRate | data | 挂单方手续费率 | float
+makerFeeRate | data | maker rate | float
 memberId | data | 用户ID | integer
 price | data | 价格 | float
 pushed | data | 是否推送 | boolean
 quoteCoin | data | 计价货币,symbol的后半段 | string
 side | data | 交易方向(BUY买入,SELL卖出) | string
 source | data | 来源(WEB,H5,APP,API) | string
-symbol | data | 币对名称 | string
-takerFeeRate | data | 吃单方手续费率 | float
+symbol | data | coin pair name | string
+takerFeeRate | data | taker rate | float
 tradeCount | data | 交易次数 | long
 type | data | 订单类型(LIMIT限价，MARKET市价) | string
 updatedDate | data | 修改时间 | date
@@ -329,7 +329,7 @@ Node name (keyword) | Description | Required
 pageSize | 每页数量(默认值20) | No
 page | 当前页(默认值1) | No
 sort | 排序方式(默认值1,0升序,1降序) | No
-symbol | 币对名称 | No
+symbol | coin pair name | No
 orderId | 订单ID | No
 token | token | Yes
 nonce | random number | Yes
@@ -377,7 +377,7 @@ total | data | 总条数 | long
 id | rows | id | string
 orderId | rows | 订单ID | string
 side | rows | 交易方向(BUY买入,SELL卖出) | string
-symbol | rows | 币对名称 | string
+symbol | rows | coin pair name | string
 volume | rows | 成交数量 | float
 orderPrice | rows | 订单价格 | float
 price | rows | 成交价格 | float
@@ -385,7 +385,7 @@ payCoin | rows | 付出币种 | string
 gainCoin | rows | 得到币种 | string
 payVolume | rows | 付出数量 | float
 gainVolume | rows | 得到数量 | float
-feeRate | rows | 手续费率 | float
+feeRate | rows | commission rate | float
 fee | rows | 手续费 | float
 back | rows | 退还数量 | float
 createdDate | rows | 创建时间 | date

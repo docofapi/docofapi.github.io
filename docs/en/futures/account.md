@@ -52,7 +52,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 availableBalance | data | 可用保证金 | float
 board | data | 合约板块编码 | string
-coin | data | 币种 | string
+coin | data | coin | string
 fee | data | 手续费 | float
 orderBalance | data | 委托（冻结）保证金 | float
 positionBalance | data | 仓位（占用）保证金 | float
@@ -110,7 +110,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 availableBalance | data | 可用保证金 | float
 board | data | 合约板块编码 | string
-coin | data | 币种 | string
+coin | data | coin | string
 fee | data | 手续费 | float
 orderBalance | data | 委托（冻结）保证金 | float
 positionBalance | data | 仓位（占用）保证金 | float
