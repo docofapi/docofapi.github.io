@@ -1,6 +1,6 @@
-# 行情数据
+# Market data
 
-## 获取最新交易
+## Get the latest transactions
 
 **Request path: /market/getNewTrade**
 
@@ -19,7 +19,7 @@ symbol=btcusdt&size=100
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-size | quantity(最小值为1，最大值为100) | Yes
+size | quantity(The minimum is 1, the maximum is 100) | Yes
 
 **Examples of response values:**
 
@@ -43,14 +43,14 @@ size | quantity(最小值为1，最大值为100) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-createdDate | data | 时间 | date
+createdDate | data | time | date
 id | data | id | string
 price | data | price | float
-side | data | 方向:BUY: 买入,SELL: 卖出 | string
+side | data | direction: BUY: buy, SELL: sell | string
 symbol | data | coin pair name | string
 volume | data | quantity | float
 
-## 根据时间获取 K 线
+## Get K line according to time
 
 **Request path: /market/getScaleByDate**
 
@@ -69,9 +69,9 @@ symbol=btcusdt&type=MIN_1&from=1585866600&to=1586046600
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(timestamp) | Yes
-to | 结束时间(timestamp) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
+from | starting time(timestamp) | Yes
+to | end Time(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -99,18 +99,18 @@ to | 结束时间(timestamp) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-amount | data | 交易额 | float
-close | data | 收盘价 | float
-date | data | 日期 | date
-high | data | 最高价 | float
+amount | data | transaction amount | float
+close | data | closing price | float
+date | data | date | date
+high | data | highest price | float
 id | data | id | string
-low | data | 最低价 | float
+low | data | lowest price | float
 open | data | opening price | float
 symbol | data | coin pair name | string
-type | data | K线类型 | string
-volume | data |交易量  | float
+type | data | k line type | string
+volume | data |trading volume  | float
 
-## 获取深度
+## Get depth
 
 **Request path: /market/getDepth**
 
@@ -129,7 +129,7 @@ symbol=btcusdt&type=0&size=20
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-type | 深度档位(默认值:0) | Yes
+type | depth gear (default: 0) | Yes
 size | quantity | No
 
 **Examples of response values:**
@@ -157,11 +157,11 @@ size | quantity | No
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-buyList | data | 买入：单价、数量、个数 | array
-sellList | data | 卖出：单价、数量、个数 | array
+buyList | data | buying:price, quantity, total | array
+sellList | data | sell:price, quantity, total | array
 symbol | data | coin pair name | string
 
-## 获取 24 小时行情
+## Get 24-hour quotes
 
 **Request path: /market/getBySymbol**
 
@@ -204,17 +204,17 @@ symbol | coin pair name | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-amount | data | 成交额 | float
-date | data | 日期 | date
-high | data | 最高价 | float
-low | data | 最低价 | float
+amount | data | turnover | float
+date | data | date | date
+high | data | highest price | float
+low | data | lowest price | float
 open | data | opening price | float
-price | data | 当前价 | float
+price | data | current price | float
 symbol | data | coin pair name | string
-volume | data |当前价  | float
+volume | data | volume  | float
 
 
-## 获取 24 小时行情列表
+## Get a 24-hour market list
 
 **Request path: /market/findAll**
 
@@ -222,7 +222,7 @@ volume | data |当前价  | float
 
 **API signature: No**
 
-**请求参数: None**
+**Request parameters: None**
 
 **Examples of response values:**
 
@@ -247,11 +247,11 @@ volume | data |当前价  | float
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-amount | data | 成交额 | float
-date | data | 日期 | date
-high | data | 最高价 | float
-low | data | 最低价 | float
+amount | data | turnover | float
+date | data | date | date
+high | data | highest price | float
+low | data | lowest price | float
 open | data | opening price | float
-price | data | 当前价 | float
+price | data | current price | float
 symbol | data | coin pair name | string
-volume | data |当前价  | float
+volume | data |volume  | float

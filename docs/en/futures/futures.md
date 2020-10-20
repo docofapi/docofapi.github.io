@@ -21,7 +21,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 size | number of pages(default 10) | No
 page | current page(default 1) | No
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
 positionId | 仓位ID | No
@@ -91,7 +91,7 @@ total | data | total | long
 id | rows | 订单id | string
 memberId | rows | user ID | integer
 symbol | rows | 币对 | string
-scene | rows | 场景(REAL实际，VIRTUAL虚拟)	 | string
+scene | rows | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
 board | rows | 合约板块编码 | string
 coin | rows | 结算币种 | string
 price | rows | price | float
@@ -142,7 +142,7 @@ scene=REAL&type=LIMIT&side=SELL&board=STD&symbol=btcusdt&price=7374.06&quantity=
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
 side | 订单方向(BUY开多, SELL开空) | Yes
 board | 合约板块编码 | Yes
@@ -193,7 +193,7 @@ scene=REAL&symbol=btcusdt&board=STD&type=LIMIT&positionId=CT202008111343545F3230
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 symbol | coin pair name | Yes
 board | 合约板块编码 | Yes
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | Yes
@@ -245,7 +245,7 @@ Node name(keyword) | Description | Required
 orderId | order ID | Yes
 symbol | 交易对 | Yes
 board | 合约板块编码 | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 token | token | Yes
 sign | signature | Yes
 nonce | random number | Yes
@@ -290,7 +290,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 orderIds | order ID, separated by commas | No
 symbol | coin pair name | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 size | number of cancelled orders | No
 side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | No
 minPrice | lowest price | No
@@ -338,7 +338,7 @@ scene=REAL&id=EX202004071549271315E8C30878571E40EE1444A78&board=STD&symbol=btcus
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 orderId | order ID | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
@@ -401,7 +401,7 @@ Node name(keyword) | Parent node | Description | Type
 id | data | 订单id | string
 memberId | data | user ID | integer
 symbol | data | 币对 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
 board | data | 合约板块编码 | string
 coin | data | 结算币种 | string
 price | data | price | float
@@ -456,7 +456,7 @@ Node name(keyword) | Description | Required
 pageSize | number of pages(default 20) | No
 page | current page(default 1) | No
 sort | sorting method (default 1,0: ascending order, 1: descending order) | No
-scene | 场景(REAL实际，VIRTUAL虚拟) | No
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | No
 board | 合约板块编码 | No
 symbol | coin pair name | No
 orderId | order ID | No
@@ -534,7 +534,7 @@ positionNo | rows | 截取后的仓位ID | string
 positionPrice | rows | 开仓均价 | float
 positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓) | string
 price | rows | deal price | float
-scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 success | rows | 是否完成(true:Yes,false否) | boolean
 symbol | rows | 币对 | string
@@ -563,7 +563,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 page | current page(default 1) | No
 size | number of pages(default 10) | No
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 board | 合约板块编码 | Yes
 symbol | coin pair name | Yes
 token | token | Yes
@@ -651,7 +651,7 @@ price | rows | 当前开仓均价 | float
 profit | rows | 盈亏 | float
 referenceSymbol | rows | 引用指数代号 | string
 roleCode  | data | 角色编码 | string
-scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | rows | 币对 | string
 updatedDate | rows | update time | date
@@ -678,7 +678,7 @@ Node name(keyword) | Description | Required
 positionId | 仓位ID | No
 symbol | coin pair name | No
 board | 合约板块编码 | No
-scene | 场景(REAL实际，VIRTUAL虚拟) | No
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | No
 token | token | Yes
 nonce | random number | Yes
 sign | signature | Yes
@@ -754,7 +754,7 @@ passive | data | 是否强平(true:Yes,false否) | boolean
 positionNo | data | 截取后的仓位ID | string
 price | data | 当前开仓均价 | float
 referenceSymbol | data | 引用指数代号 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | data | 币对 | string
 updatedDate | data | update time | date

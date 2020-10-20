@@ -1,4 +1,4 @@
-# 行情数据
+# Market data
 
 ## 根据时间获取合约价格 K 线
 
@@ -20,9 +20,9 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(timestamp) | Yes
-to | 结束时间(timestamp) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
+from | starting time(timestamp) | Yes
+to | end Time(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -51,16 +51,16 @@ to | 结束时间(timestamp) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-amount | data | 交易额 | float
-close | data | 收盘价 | float
-date | data | 日期 | date
-high | data | 最高价 | float
+amount | data | transaction amount | float
+close | data | closing price | float
+date | data | date | date
+high | data | highest price | float
 id | data | id | string
-low | data | 最低价 | float
+low | data | lowest price | float
 open | data | opening price | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 symbol | data | coin pair name | string
-type | data | K线类型 | string
+type | data | k line type | string
 volume | data |交易量  | float
 
 ## 根据时间获取指数价格 K 线
@@ -82,9 +82,9 @@ symbol=btcusdt&type=MIN_1&from=1601246645&to=1601258645
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(timestamp) | Yes
-to | 结束时间(timestamp) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
+from | starting time(timestamp) | Yes
+to | end Time(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -111,15 +111,15 @@ to | 结束时间(timestamp) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-close | data | 收盘价 | float
-date | data | 日期 | date
-high | data | 最高价 | float
+close | data | closing price | float
+date | data | date | date
+high | data | highest price | float
 id | data | id | string
-low | data | 最低价 | float
+low | data | lowest price | float
 open | data | opening price | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 symbol | data | coin pair name | string
-type | data | K线类型 | string
+type | data | k line type | string
 
 ## 根据时间获取标记价格 K 线
 
@@ -141,9 +141,9 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-from | 开始时间(timestamp) | Yes
-to | 结束时间(timestamp) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
+from | starting time(timestamp) | Yes
+to | end Time(timestamp) | Yes
 
 **Examples of response values:**
 
@@ -170,15 +170,15 @@ to | 结束时间(timestamp) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-close | data | 收盘价 | float
-date | data | 日期 | date
-high | data | 最高价 | float
+close | data | closing price | float
+date | data | date | date
+high | data | highest price | float
 id | data | id | string
-low | data | 最低价 | float
+low | data | lowest price | float
 open | data | opening price | float
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 symbol | data | coin pair name | string
-type | data | K线类型 | string
+type | data | k line type | string
 
 ## 获取合约深度
 
@@ -200,7 +200,7 @@ Node name(keyword) | Description | Required
 -- | -- | -- | -- |
 symbol | coin pair name | Yes
 scene | 场景场景(REAL真实，VIRTUAL虚拟) | Yes
-type | 深度档位(默认值:0) | Yes
+type | depth gear (default: 0) | Yes
 size | quantity | No
 
 **Examples of response values:**
@@ -229,9 +229,9 @@ size | quantity | No
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-buyList | data | 买入：价格、数量、条数 | array
+buyList | data | buying: price, quantity, total | array
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
-sellList | data | 卖出：价格、数量、条数 | array
+sellList | data | sell:price, quantity, total | array
 symbol | data | coin pair name | string
 
 ## 获取合约 24 小时行情
@@ -287,23 +287,23 @@ symbol | coin pair name | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-amount | data | 成交额 | float
+amount | data | turnover | float
 basis | data | 合理基差 | float
 buy | data | 买一价格 | float
-date | data | 日期 | date
+date | data | date | date
 fundingRate | data | 资金费率 | float
-high | data | 最高价 | float
+high | data | highest price | float
 indexPrice | data | 指数价格 | float
-low | data | 最低价 | float
+low | data | lowest price | float
 markPrice | data | 标记价格 | float
 open | data |opening price  | float
-price | data | 当前价 | float
+price | data | current price | float
 referencePrice | data | 引用指数价格 | float
 referenceSymbol | data | 引用指数代号 | string
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 sell | data | 卖一价格 | float
 symbol | data | 币对  | string
-volume | data | 成交量  | float
+volume | data | volume  | float
 
 ## 获取合约 24 小时行情列表
 
@@ -356,20 +356,20 @@ scene | 场景(REAL真实，VIRTUAL虚拟) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-amount | data | 成交额 | float
+amount | data | turnover | float
 basis | data | 合理基差 | float
 buy | data | 买一价格 | float
-date | data | 日期 | date
+date | data | date | date
 fundingRate | data | 资金费率 | float
-high | data | 最高价 | float
+high | data | highest price | float
 indexPrice | data | 指数价格 | float
-low | data | 最低价 | float
+low | data | lowest price | float
 markPrice | data | 标记价格 | float
 open | data |opening price  | float
-price | data | 当前价 | float
+price | data | current price | float
 referencePrice | data | 引用指数价格 | float
 referenceSymbol | data | 引用指数代号 | string
 scene | data | 场景(REAL真实，VIRTUAL虚拟) | string
 sell | data | 卖一价格 | float
 symbol | data | 币对  | string
-volume | data | 成交量  | float
+volume | data | volume  | float

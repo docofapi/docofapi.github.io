@@ -1,34 +1,34 @@
 # Websocket
 
-## 简介
+## Introduction
 
-**接入URL: `wss://sock.xyt.com/ws`**
+**Access URL: `wss://sock.xyt.com/ws`**
 
-**心跳消息**
+**Heartbeat message**
 
-当用户的` Websocket `客户端连接到` XYT `的` Websocket `服务器后，服务器会定期(当前设为` 30 `秒)向其发送` ping `消息并包含当前时间的时间戳，如下:
+When the user's Websocket client connects to XYT's Websocket server, the server will periodically (currently set to 30 seconds) to send it a ping message containing the current time stamp, as follows:
 
 ```js
 { data: { time: 1586249815378 }, send: "ping" }
 ```
 
-当用户的 ` Websocket `客户端接收到此心跳消息后，应返回` pong `消息并包含当前时间的时间戳，如下：
+When the user's Websocket client receives this heartbeat message, it should return a pong message and include the current time stamp, as follows:
 
 ```js
 { send: "pong", data: 1586249814687 }
 ```
 
-**注意：当` Websocket` 服务器连续发送了`ping`消息五分钟后却没有收到任何一次`pong`消息返回后，服务器将主动断开与此客户端的连接。**
+**Note: When the Websocket server has continuously sent ping messages for five minutes but has not received any pong message return, the server will actively disconnect the client.**
 
-**订阅主题**
+**Subscribe to topics**
 
-成功建立与` Websocket `服务器的连接后，` Websocket `客户端发送如下请求以订阅特定主题
+After successfully establishing a connection with the Websocket server, the Websocket client sends the following request to subscribe to a specific topic.
 
 ```js
-{ subscribe: 主题名, data: { 参数1:参数值, 参数2:参数值,...... } }
+{ subscribe: topics, data: { parameter 1: parameter value, parameter 2: parameter value,... } }
 ```
 
-示例:
+Example:
 
 ```js
 { subscribe: "scale", data: { symbol: "btcusdt", type: "MIN_1" } }
@@ -53,23 +53,23 @@ Examples of response values:
 }
 ```
 
-**取消订阅**
+**Unsubscribe**
 
-取消订阅格式如下:
+The unsubscribe format is as follows:
 
 ```js
-{ unsubscribe: 主题名, data: { 参数1:参数值,参数2:参数值,...... } }
+{ unsubscribe: topics, data: { parameter 1: parameter value, parameter 2: parameter value,... } }
 ```
 
-示例:
+Example:
 
 ```js
  { unsubscribe: "scale", data: { symbol: "btcusdt", type: "MIN_1" } }
 ```
 
-## 订阅深度
+## Subscribe to depth
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "depth", data: { symbol: "btcusdt", type: 0, size: 100 } }
@@ -79,10 +79,10 @@ Examples of response values:
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
-type | 深度档位(默认值:0) | Yes
-size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
+subscribe | subscribed topic name | Yes
+symbol | coin pair name | Yes
+type | depth gear (default: 0) | Yes
+size | quantity default value: 100 (10, 20, 50, 100, 200, 1000) | Yes
 
 **Examples of response values:**
 
@@ -100,15 +100,15 @@ size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 卖出：价格,quantity,条数 | array
-b | data | 买入：价格,quantity,条数 | array
-s | data | 币对名称 | string
-send | None | 订阅主题名称 | string
+a | data | sell:price, quantity, total | array
+b | data | buying:price,quantity,total | array
+s | data | coin pair name | string
+send | None | subscription topic name | string
 
 
-## 最新成交
+## Subscribe to the latest transactions
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "newTrade", data: { symbol: "btcusdt" } }
@@ -118,8 +118,8 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+subscribe | subscribed topic name | Yes
+symbol | coin pair name | Yes
 
 **Examples of response values:**
 
@@ -142,13 +142,13 @@ symbol | 币对名称 | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-list | data | Id,price,quantity,方向,creation time | array
-symbol | data | 币对名称 | string
-send | None | 订阅主题名称 | string
+list | data | Id,price,quantity,direction,creation time | array
+symbol | data | coin pair name | string
+send | None | subscription topic name | string
 
-## 24小时行情
+## Subscribe to the 24-hour market
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "ticker" }
@@ -158,7 +158,7 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 
 **Examples of response values:**
 
@@ -190,19 +190,19 @@ subscribe | 订阅的主题名称 | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 成交额 | float
-h | data | 最高价 | float
-l | data | 最低价 | float
+a | data | turnover | float
+h | data | highest price | float
+l | data | lowest price | float
 o | data | opening price | float
-p | data | 当前价 | float
-s | data | 币对名称 | float
-t | data | 日期 | date
-v | data | 成交量 | float
-send | None | 订阅主题名称 | string
+p | data | current price | float
+s | data | coin pair name | float
+t | data | date | date
+v | data | volume | float
+send | None | subscription topic name | string
 
-## 单个币对行情
+## Subscribe to a single coin pair market
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "symbolTicker", data: { symbol: "btcusdt" } }
@@ -212,8 +212,8 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
+subscribe | subscribed topic name | Yes
+symbol | coin pair name | Yes
 
 **Examples of response values:**
 
@@ -236,20 +236,20 @@ symbol | 币对名称 | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 成交额 | float
-h | data | 最高价 | float
-l | data | 最低价 | float
+a | data | turnover | float
+h | data | highest price | float
+l | data | lowest price | float
 o | data | opening price | float
-p | data | 当前价 | float
-s | data | 币对名称 | float
-t | data | 日期 | date
-v | data | 成交量 | float
-send | None | 订阅主题名称 | string
+p | data | current price | float
+s | data | coin pair name | float
+t | data | date | date
+v | data | volume | float
+send | None | subscription topic name | string
 
 
-## K 线
+## Subscribe to K Line
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "scale", data: { symbol: "btcusdt", type: "MIN_1" } }
@@ -259,9 +259,9 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
-symbol | 币对名称 | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+subscribe | subscribed topic name | Yes
+symbol | coin pair name | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
 
 **Examples of response values:**
 
@@ -285,20 +285,20 @@ type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分�
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 成交额 | float
-c | data | 收盘价 | float
-h | data | 最高价 | float
+a | data | transaction amount | float
+c | data | closing price | float
+h | data | highest price | float
 i | data | id | float
-l | data | 最低价 | float
+l | data | lowest price | float
 o | data | opening price | float
-s | data | 币对名称 | float
-t | data | K 线类型 | date
-v | data | 交易量 | float
-send | None | 订阅主题名称 | string
+s | data | coin pair name | float
+t | data | k line type | date
+v | data | volume | float
+send | None | subscription topic name | string
 
-## 账户
+## Subscribe to account
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe:"account", data: { "token": "Token", "memberId": 100028 } }
@@ -308,7 +308,7 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 token | token | Yes
 memberId | user ID | Yes
 
@@ -329,15 +329,15 @@ memberId | user ID | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-b | data | 资金余额 | float
+b | data | balance | float
 c | data | coin | float
-l | data | 冻结金额 | float
+l | data | frozen amount | float
 m | data | user ID | integer
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
-## 订单
+## Subscribe to order
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe:"order", data: { "token": "Token", "memberId": 100028 } }
@@ -347,7 +347,7 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 token | token | Yes
 memberId | user ID | Yes
 
@@ -387,7 +387,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 id | data | id | string
 memberId | data | user ID | integer
-symbol | data | 币对名称 | string
+symbol | data | coin pair name | string
 baseCoin | data | base coin, the first half of the symbol | string
 quoteCoin | data | denomination coin, the second half of the symbol | string
 price | data | price | float
@@ -401,9 +401,9 @@ date | data | effective time | date
 createdDate | data | creation time | date
 updatedDate | data | update time | date
 pushed | data | whether to push | boolean
-tradeCount | data | 交易次数 | long
+tradeCount | data | transactions | long
 currentVolume | data | current quantity | float
 dealVolume | data | number of transactions | float
 dealAmount | data | turnover | float
 dealPrice | data | average transaction price | float
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string

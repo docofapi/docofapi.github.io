@@ -18,7 +18,7 @@ scene=REAL&board=STD&token=Token&nonce=123123&sign=signature&time=1586239136316
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | Yes
 board | 合约板块编码 | Yes
 token | token | Yes
 nonce | random number | Yes
@@ -58,7 +58,7 @@ orderBalance | data | 委托（冻结）保证金 | float
 positionBalance | data | 仓位（占用）保证金 | float
 profit | data | 盈亏 | float
 rate | data | 保证金率 | float
-scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 
 ## 获取用户所有保证金
 
@@ -116,4 +116,4 @@ orderBalance | data | 委托（冻结）保证金 | float
 positionBalance | data | 仓位（占用）保证金 | float
 profit | data | 盈亏 | float
 rate | data | 保证金率 | float
-scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string

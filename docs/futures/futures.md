@@ -21,7 +21,7 @@ size=10&page=1&scene=REAL&board=STD&symbol=btcusdt&positionId=CT202009221345165F
 -- | -- | -- | -- |
 size | 每页数量(默认值10) | 否
 page | 当前页(默认值1) | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 board | 合约板块编码 | 是
 symbol | 币对名称 | 是
 positionId | 仓位ID | 否
@@ -91,7 +91,7 @@ total | data | 总条数 | long
 id | rows | 订单id | string
 memberId | rows | 用户id | integer
 symbol | rows | 币对 | string
-scene | rows | 场景(REAL实际，VIRTUAL虚拟)	 | string
+scene | rows | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
 board | rows | 合约板块编码 | string
 coin | rows | 结算币种 | string
 price | rows | 价格 | float
@@ -142,7 +142,7 @@ scene=REAL&type=LIMIT&side=SELL&board=STD&symbol=btcusdt&price=7374.06&quantity=
 
 节点名称(关键字) | 描述 | 必填
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | 是
 side | 订单方向(BUY开多, SELL开空) | 是
 board | 合约板块编码 | 是
@@ -193,7 +193,7 @@ scene=REAL&symbol=btcusdt&board=STD&type=LIMIT&positionId=CT202008111343545F3230
 
 节点名称(关键字) | 描述 | 必填
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 symbol | 币对名称 | 是
 board | 合约板块编码 | 是
 type | 订单类型(LIMIT限价，MARKET市价，STOP突破价，PROFIT_LOSS止盈止损) | 是
@@ -245,7 +245,7 @@ orderId=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt
 orderId | 订单ID | 是
 symbol | 交易对 | 是
 board | 合约板块编码 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 token | token | 是
 sign | 签名 | 是
 nonce | 随机数 | 是
@@ -290,7 +290,7 @@ orderIds=CT202009291022415F729A7150F35B256BDB7523&symbol=btcusdt&scene=REAL&side
 -- | -- | -- | -- |
 orderIds | 订单ID, “,”隔开 | 否
 symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 size | 撤单数量 | 否
 side | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | 否
 minPrice | 最小价格 | 否
@@ -338,7 +338,7 @@ scene=REAL&id=EX202004071549271315E8C30878571E40EE1444A78&board=STD&symbol=btcus
 
 节点名称(关键字) | 描述 | 必填
 -- | -- | -- | -- |
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 orderId | 订单ID | 是
 board | 合约板块编码 | 是
 symbol | 币对名称 | 是
@@ -401,7 +401,7 @@ time | 时间戳 | 是
 id | data | 订单id | string
 memberId | data | 用户id | integer
 symbol | data | 币对 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
 board | data | 合约板块编码 | string
 coin | data | 结算币种 | string
 price | data | 价格 | float
@@ -456,7 +456,7 @@ pageSize=20&page=1&sort=1&scene=REAL&board=STD&symbol=btcusdt
 pageSize | 每页数量(默认值20) | 否
 page | 当前页(默认值1) | 否
 sort | 排序方式(默认值1,0:升序,1:降序) | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 否
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 否
 board | 合约板块编码 | 否
 symbol | 币对名称 | 否
 orderId | 订单ID | 否
@@ -534,7 +534,7 @@ positionNo | rows | 截取后的仓位ID | string
 positionPrice | rows | 开仓均价 | float
 positionSide | rows | 仓位方向(ENTRY开仓, EXIT平仓) | string
 price | rows | 成交价格 | float
-scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 success | rows | 是否完成(true:是,false否) | boolean
 symbol | rows | 币对 | string
@@ -563,7 +563,7 @@ page=1&size=1&scene=REAL&board=STD&symbol=btcusdt&token=Token&nonce=123123&sign=
 -- | -- | -- | -- |
 page | 当前页(默认值1) | 否
 size | 每页数量(默认值10) | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 board | 合约板块编码 | 是
 symbol | 币对名称 | 是
 token | token | 是
@@ -651,7 +651,7 @@ price | rows | 当前开仓均价 | float
 profit | rows | 盈亏 | float
 referenceSymbol | rows | 引用指数代号 | string
 roleCode  | data | 角色编码 | string
-scene | rows | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | rows | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | rows | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | rows | 币对 | string
 updatedDate | rows | 修改时间 | date
@@ -678,7 +678,7 @@ positionId=CT202009281739095F71AF3D50F35B256BD7F7A1&symbol=btcusdt&board=STD&sce
 positionId | 仓位ID | 否
 symbol | 币对名称 | 否
 board | 合约板块编码 | 否
-scene | 场景(REAL实际，VIRTUAL虚拟) | 否
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 否
 token | token | 是
 nonce | 随机数 | 是
 sign | 签名 | 是
@@ -754,7 +754,7 @@ passive | data | 是否强平(true:是,false否) | boolean
 positionNo | data | 截取后的仓位ID | string
 price | data | 当前开仓均价 | float
 referenceSymbol | data | 引用指数代号 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | data | 币对 | string
 updatedDate | data | 修改时间 | date

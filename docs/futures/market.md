@@ -20,7 +20,7 @@ symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 -- | -- | -- | -- |
 symbol | 币对名称 | 是
 scene | 场景(REAL真实，VIRTUAL虚拟) | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
 from | 开始时间(时间戳) | 是
 to | 结束时间(时间戳) | 是
 
@@ -82,7 +82,7 @@ symbol=btcusdt&type=MIN_1&from=1601246645&to=1601258645
 节点名称(关键字) | 描述 | 必填
 -- | -- | -- | -- |
 symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
 from | 开始时间(时间戳) | 是
 to | 结束时间(时间戳) | 是
 
@@ -141,7 +141,7 @@ symbol=btcusdt&scene=REAL&type=MIN_1&from=1601246645&to=1601258645
 -- | -- | -- | -- |
 symbol | 币对名称 | 是
 scene | 场景(REAL真实，VIRTUAL虚拟) | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
 from | 开始时间(时间戳) | 是
 to | 结束时间(时间戳) | 是
 

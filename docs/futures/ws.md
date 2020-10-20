@@ -83,7 +83,7 @@
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
 symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 type | 深度档位(默认值:0) | 是
 size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | 是
 
@@ -106,7 +106,7 @@ size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | 是
 -- | -- | -- | -- |
 a | data | 卖出：价格,数量,条数 | array
 b | data | 买入：价格,数量,条数 | array
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 s | data | 币对名称 | string
 send | 无 | 订阅主题名称 | string
 
@@ -125,7 +125,7 @@ send | 无 | 订阅主题名称 | string
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
 symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 
 **响应值示例:**
 
@@ -154,7 +154,7 @@ e | l | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多)
 i | l | id | string
 p | l | 价格 | float
 v | l | 数量 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 s | data | 币对名称 | string
 send | 无 | 订阅主题名称 | string
 
@@ -171,7 +171,7 @@ send | 无 | 订阅主题名称 | string
 节点名称(关键字) | 描述 | 必填
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 
 **响应值示例:**
 
@@ -213,7 +213,7 @@ i | data | 指数价格 | float
 j | data | 合理基差 | float
 l | data | 最低价 | float
 m | data | 标记价格 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 o | data | 开盘价 | float
 p | data | 当前价 | float
 r | data | 引用指数代号 | string
@@ -236,7 +236,7 @@ send | 无 | 订阅主题名称 | string
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
 symbol | 币对名称 | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 
 **响应值示例:**
 
@@ -278,7 +278,7 @@ i | data | 指数价格 | float
 j | data | 合理基差 | float
 l | data | 最低价 | float
 m | data | 标记价格 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 o | data | 开盘价 | float
 p | data | 当前价 | float
 r | data | 引用指数代号 | string
@@ -302,8 +302,8 @@ send | 无 | 订阅主题名称 | string
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
 symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 
 **响应值示例:**
 
@@ -333,7 +333,7 @@ c | data | 收盘价 | float
 h | data | 最高价 | float
 i | data | id | String
 l | data | 最低价 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | String
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | String
 o | data | 开盘价 | float
 s | data | 币对名称 | String
 t | data | K 线类型 | String
@@ -354,7 +354,7 @@ send | 无 | 订阅主题名称 | string
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
 symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
 
 **响应值示例:**
 
@@ -399,8 +399,8 @@ send | 无 | 订阅主题名称 | string
 -- | -- | -- | -- |
 subscribe | 订阅的主题名称 | 是
 symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
-scene | 场景(REAL实际，VIRTUAL虚拟) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
+scene | 场景(REAL:实际，VIRTUAL:虚拟) | 是
 
 **响应值示例:**
 
@@ -427,7 +427,7 @@ c | data | 收盘价 | float
 h | data | 最高价 | float
 i | data | id | String
 l | data | 最低价 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | String
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | String
 o | data | 开盘价 | float
 s | data | 币对名称 | String
 t | data | K 线类型 | String
@@ -474,7 +474,7 @@ memberId | 用户ID | 是
 -- | -- | -- | -- |
 m | data | 用户ID | integer
 b | data | 合约板块编码 | String
-n | data | 场景(REAL实际，VIRTUAL虚拟) | String
+n | data | 场景(REAL:实际，VIRTUAL:虚拟) | String
 c | data | 币种 | String
 a | data | 可用保证金 | float
 o | data | 委托（冻结）保证金 | float
@@ -573,7 +573,7 @@ quantity | data | 手数 | float
 referenceSymbol | data | 引用指数代号 | string
 referencePrice | data | 指数价 | float
 roleCode | data | 角色编码 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟)	 | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 size | data | 合约面值 | float
 source | data | 来源(WEB,H5,APP,API) | string
@@ -670,7 +670,7 @@ price | data | 当前开仓均价 | float
 profit | data | 盈亏 | float
 referenceSymbol | data | 引用指数代号 | string
 roleCode  | data | 角色编码 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | data | 场景(REAL:实际，VIRTUAL:虚拟) | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | data | 币对 | string
 updatedDate | data | 修改时间 | date

@@ -69,7 +69,7 @@ symbol=btcusdt&type=MIN_1&from=1585866600&to=1586046600
 节点名称(关键字) | 描述 | 必填
 -- | -- | -- | -- |
 symbol | 币对名称 | 是
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | 是
+type | K线类型(MIN_1:一分钟,MIN_5:五分钟,MIN_15:十五分钟,MIN_30:三十分钟,HOUR_1:一小时,HOUR_4:四小时,DAY_1:一天,WEEK_1:一周,MONTH_1:一个月) | 是
 from | 开始时间(时间戳) | 是
 to | 结束时间(时间戳) | 是
 
@@ -211,7 +211,7 @@ low | data | 最低价 | float
 open | data | 开盘价 | float
 price | data | 当前价 | float
 symbol | data | 币对名称 | string
-volume | data |当前价  | float
+volume | data |交易量  | float
 
 
 ## 获取 24 小时行情列表
@@ -254,4 +254,4 @@ low | data | 最低价 | float
 open | data | 开盘价 | float
 price | data | 当前价 | float
 symbol | data | 币对名称 | string
-volume | data |当前价  | float
+volume | data | 交易量  | float

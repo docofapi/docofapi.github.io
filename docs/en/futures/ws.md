@@ -1,35 +1,35 @@
 
 # Websocket
 
-## 简介
+## Introduction
 
-**接入URL: `wss://sock.xyt.com/ws`**
+**Access URL: `wss://sock.xyt.com/ws`**
 
-**心跳消息**
+**Heartbeat message**
 
-当用户的` Websocket `客户端连接到` XYT `的` Websocket `服务器后，服务器会定期(当前设为` 30 `秒)向其发送` ping `消息并包含当前时间的时间戳，如下:
+When the user's Websocket client connects to XYT's Websocket server, the server will periodically (currently set to 30 seconds) to send it a ping message containing the current time stamp, as follows:
 
 ```js
 { data: { time: 1586249815378 }, send: "ping" }
 ```
 
-当用户的 ` Websocket `客户端接收到此心跳消息后，应返回` pong `消息并包含当前时间的时间戳，如下：
+When the user's Websocket client receives this heartbeat message, it should return a pong message and include the current time stamp, as follows:
 
 ```js
 { send: "pong", data: 1586249814687 }
 ```
 
-**注意：当` Websocket` 服务器连续发送了`ping`消息五分钟后却没有收到任何一次`pong`消息返回后，服务器将主动断开与此客户端的连接。**
+**Note: When the Websocket server has continuously sent ping messages for five minutes but has not received any pong message return, the server will actively disconnect the client.**
 
-**订阅主题**
+**Subscribe to topics**
 
-成功建立与` Websocket `服务器的连接后，` Websocket `客户端发送如下请求以订阅特定主题
+After successfully establishing a connection with the Websocket server, the Websocket client sends the following request to subscribe to a specific topic.
 
 ```js
-{ subscribe: 主题名, data: { 参数1:参数值, 参数2:参数值,...... } }
+{ subscribe: topics, data: { parameter 1: parameter value, parameter 2: parameter value,... } }
 ```
 
-示例:
+Example:
 
 ```js
 { subscribe: "contractScale", data: { symbol: "btcusdt", scene: "REAL", type: "MIN_1" } }
@@ -55,23 +55,23 @@ Examples of response values:
 }
 ```
 
-**取消订阅**
+**Unsubscribe**
 
-取消订阅格式如下:
+The unsubscribe format is as follows:
 
 ```js
-{ unsubscribe: 主题名, data: { 参数1:参数值,参数2:参数值,...... } }
+{ unsubscribe: topics, data: { parameter 1: parameter value, parameter 2: parameter value,... } }
 ```
 
-示例:
+Example:
 
 ```js
  { unsubscribe: "contractScale", data: { symbol: "btcusdt", scene: "REAL", type: "MIN_1" } }
 ```
 
-## 合约深度订阅
+## Subscribe to contract depth
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "contractDepth", data: { symbol: "ltcusdt", scene: "REAL", type: 0, size: 1000 } }
@@ -81,11 +81,11 @@ Examples of response values:
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
-type | 深度档位(默认值:0) | Yes
-size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
+scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
+type | depth gear (default: 0) | Yes
+size | quantity default value: 100 (10, 20, 50, 100, 200, 1000) | Yes
 
 **Examples of response values:**
 
@@ -104,16 +104,16 @@ size | 数量默认值:100(10, 20, 50, 100, 200, 1000) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 卖出：价格,quantity,条数 | array
-b | data | 买入：价格,quantity,条数 | array
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+a | data | sell: price,quantity,total | array
+b | data | buying:price,quantity,total | array
+n | data | Scene (REAL: real, VIRTUAL: virtual) | string
 s | data | coin pair name | string
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
 
 ## 合约最新成交订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "contractNewTrade", data: { symbol: "ltcusdt", scene: "REAL" } }
@@ -123,9 +123,9 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -154,13 +154,13 @@ e | l | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多)
 i | l | id | string
 p | l | price | float
 v | l | quantity | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | Scene (REAL: real, VIRTUAL: virtual) | string
 s | data | coin pair name | string
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
 ## 24小时行情订阅
 
-**示例:**
+**Example:**
 
 ```js
 {subscribe: "contractTicker", data: {scene: "REAL"}}
@@ -170,8 +170,8 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+subscribe | subscribed topic name | Yes
+scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -203,28 +203,28 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 成交额 | float
+a | data | turnover | float
 b | data | 买一价格 | float
 c | data | 引用指数价格 | float
 e | data | 卖一价格 | float
 f | data | 资金费率 | float
-h | data | 最高价 | float
+h | data | highest price | float
 i | data | 指数价格 | float
 j | data | 合理基差 | float
-l | data | 最低价 | float
+l | data | lowest price | float
 m | data | 标记价格 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | Scene (REAL: real, VIRTUAL: virtual) | string
 o | data | opening price | float
-p | data | 当前价 | float
+p | data | current price | float
 r | data | 引用指数代号 | string
 s | data | 币对 | string
-t | data | 日期 | date
-v | data | 成交量 | float
-send | None | 订阅主题名称 | string
+t | data | date | date
+v | data | volume | float
+send | None | subscription topic name | string
 
 ## 合约单个币对行情订阅
 
-**示例:**
+**Example:**
 
 ```js
 {subscribe: "contractSymbolTicker", data: {symbol: "btcusdt", scene: "REAL"}}
@@ -234,9 +234,9 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -268,29 +268,29 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 成交额 | float
+a | data | turnover | float
 b | data | 买一价格 | float
 c | data | 引用指数价格 | float
 e | data | 卖一价格 | float
 f | data | 资金费率 | float
-h | data | 最高价 | float
+h | data | highest price | float
 i | data | 指数价格 | float
 j | data | 合理基差 | float
-l | data | 最低价 | float
+l | data | lowest price | float
 m | data | 标记价格 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | string
+n | data | Scene (REAL: real, VIRTUAL: virtual) | string
 o | data | opening price | float
-p | data | 当前价 | float
+p | data | current price | float
 r | data | 引用指数代号 | string
 s | data | 币对 | string
-t | data | 日期 | date
-v | data | 成交量 | float
-send | None | 订阅主题名称 | string
+t | data | date | date
+v | data | volume | float
+send | None | subscription topic name | string
 
 
 ## 合约价 K 线订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "contractScale", data: {symbol: "btcusdt", type: "MIN_1", scene: "REAL"} }
@@ -300,10 +300,10 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
+scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -328,21 +328,21 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-a | data | 成交额 | float
-c | data | 收盘价 | float
-h | data | 最高价 | float
+a | data | turnover | float
+c | data | closing price | float
+h | data | highest price | float
 i | data | id | String
-l | data | 最低价 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | String
+l | data | lowest price | float
+n | data | Scene (REAL: real, VIRTUAL: virtual) | String
 o | data | opening price | float
 s | data | coin pair name | String
 t | data | K 线类型 | String
 v | data | 交易量 | float
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
 ## 指数价 K 线订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "indexScale", data: {symbol: "btcusdt", type: "MIN_1"} }
@@ -352,9 +352,9 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
 
 **Examples of response values:**
 
@@ -376,18 +376,18 @@ type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分�
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-c | data | 收盘价 | float
-h | data | 最高价 | float
+c | data | closing price | float
+h | data | highest price | float
 i | data | id | String
-l | data | 最低价 | float
+l | data | lowest price | float
 o | data | opening price | float
 s | data | coin pair name | String
 t | data | K 线类型 | String
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
 ## 标记价 K 线订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe: "markScale", data: {symbol: "btcusdt", type: "MIN_1", scene: "REAL"} }
@@ -397,10 +397,10 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 symbol | coin pair name | Yes
-type | K线类型(MIN_1一分钟,MIN_5五钟,MIN_15十五分钟,MIN_30三十分钟,HOUR_1一小时,HOUR_4四小时,DAY_1一天,WEEK_1一周,MONTH_1一个月) | Yes
-scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
+type | k line type (MIN_1: one minute, MIN_5: five minutes, MIN_15: fifteen minutes, MIN_30: thirty minutes, HOUR_1: one hour, HOUR_4: four hours, DAY_1: one day, WEEK_1: one week, MONTH_1: one month) | Yes
+scene | Scene (REAL: real, VIRTUAL: virtual) | Yes
 
 **Examples of response values:**
 
@@ -423,19 +423,19 @@ scene | 场景(REAL实际，VIRTUAL虚拟) | Yes
 
 Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
-c | data | 收盘价 | float
-h | data | 最高价 | float
+c | data | closing price | float
+h | data | highest price | float
 i | data | id | String
-l | data | 最低价 | float
-n | data | 场景(REAL实际，VIRTUAL虚拟) | String
+l | data | lowest price | float
+n | data | Scene (REAL: real, VIRTUAL: virtual) | String
 o | data | opening price | float
 s | data | coin pair name | String
 t | data | K 线类型 | String
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
 ## 保证金账户订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe:"margin", data: { "token": "Token", "memberId": 100094 } }
@@ -445,7 +445,7 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 token | token | Yes
 memberId | user ID | Yes
 
@@ -474,7 +474,7 @@ Node name(keyword) | Parent node | Description | Type
 -- | -- | -- | -- |
 m | data | user ID | integer
 b | data | 合约板块编码 | String
-n | data | 场景(REAL实际，VIRTUAL虚拟) | String
+n | data | Scene (REAL: real, VIRTUAL: virtual) | String
 c | data | coin | String
 a | data | 可用保证金 | float
 o | data | 委托（冻结）保证金 | float
@@ -482,11 +482,11 @@ p | data | 仓位（占用）保证金 | float
 r | data | 保证金率 | float
 i | data | 盈亏 | float
 f | data | fees | float
-send | None | 订阅主题名称 | string
+send | None | subscription topic name | string
 
 ## 合约订单订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe:"contractOrder", data: { "token": "Token", "memberId": 100094 } }
@@ -496,7 +496,7 @@ send | None | 订阅主题名称 | string
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 token | token | Yes
 memberId | user ID | Yes
 
@@ -573,20 +573,20 @@ quantity | data | 手数 | float
 referenceSymbol | data | 引用指数代号 | string
 referencePrice | data | 指数价 | float
 roleCode | data | 角色编码 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟)	 | string
+scene | data | Scene (REAL: real, VIRTUAL: virtual)	 | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 size | data | 合约面值 | float
 source | data | source(WEB,H5,APP,API) | string
 symbol | data | 币对 | string
 takerFeeRate | data | taker rate | float
-tradeCount | data | 交易次数 | long
+tradeCount | data | transactions | long
 type | data | 订单类型(LIMIT限价, MARKET市价, STOP突破价, PROFIT_LOSS止盈止损) | string
 updatedDate | data | update time | date
 volume | data | quantity | float
 
 ## 仓位信息订阅
 
-**示例:**
+**Example:**
 
 ```js
 { subscribe:"position", data: { "token": "Token", "memberId": 100094 } }
@@ -596,7 +596,7 @@ volume | data | quantity | float
 
 Node name(keyword) | Description | Required
 -- | -- | -- | -- |
-subscribe | 订阅的主题名称 | Yes
+subscribe | subscribed topic name | Yes
 token | token | Yes
 memberId | user ID | Yes
 
@@ -670,7 +670,7 @@ price | data | 当前开仓均价 | float
 profit | data | 盈亏 | float
 referenceSymbol | data | 引用指数代号 | string
 roleCode  | data | 角色编码 | string
-scene | data | 场景(REAL实际，VIRTUAL虚拟) | string
+scene | data | Scene (REAL: real, VIRTUAL: virtual) | string
 side | data | 交易方向(开仓:BUY开多, SELL开空; 平仓:BUY平空, SELL平多) | string
 symbol | data | 币对 | string
 updatedDate | data | update time | date
