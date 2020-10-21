@@ -1,4 +1,4 @@
-# 合约交易
+# Futures
 
 ::: tip
 This page is a futures trading API document
