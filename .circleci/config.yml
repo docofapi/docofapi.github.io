@@ -11,8 +11,11 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install git
       - run:
-          name: chmod a+rw
-          command: 'sudo chmod a+rw /usr/local/lib/node_modules/*'
+          name: node version
+          command: 'node -v'
+      - run:
+          name: chmod +rwx
+          command: 'chmod +rwx /usr/local/lib/node_modules/*'
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
