@@ -11,7 +11,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install git
       - run:
-          name: clean npm cache
+          name: chmod a+rw
           command: 'sudo chmod a+rw /usr/local/lib/node_modules/*'
       - run:
           name: Update npm
