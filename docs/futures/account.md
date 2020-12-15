@@ -94,7 +94,7 @@ enabledPayment | data | 是否开启付款(true:是,false:否) | boolean
 enabledTrade | data | 交易状态 | boolean
 enabledWithdraw | data | 是否开启提现(true:是,false:否) | boolean
 headerUrl | data | 头像url | string
-id | data | 用户ID | integer
+id | data | memberId | integer
 invitedCode | data | 邀请码| string
 languageCode | data | 语言码 | string
 lastLoginDate | data | 最后登录时间 | date
