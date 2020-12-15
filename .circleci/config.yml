@@ -12,7 +12,7 @@ jobs:
       - run: sudo apt-get install git
       - run:
           name: permission to update npm
-          command: 'sudo chmod -R 777 /usr/local/lib/node_modules/'
+          command: 'sudo chmod -R a+r /usr/local/lib/node_modules/'
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
