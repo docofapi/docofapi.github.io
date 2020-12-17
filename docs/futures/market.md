@@ -340,6 +340,7 @@ scene | 场景(REAL真实，VIRTUAL虚拟) | 是
     "low": 0.2404,
     "markPrice": 0.2426,
     "open": 0.242,
+    "positionVolume": 588,
     "price": 0.2433,
     "referencePrice": null,
     "referenceSymbol": null,
@@ -366,6 +367,7 @@ indexPrice | data | 指数价格 | float
 low | data | 最低价 | float
 markPrice | data | 标记价格 | float
 open | data |开盘价  | float
+positionVolume | data | 持仓量 | float
 price | data | 当前价 | float
 referencePrice | data | 引用指数价格 | float
 referenceSymbol | data | 引用指数代号 | string

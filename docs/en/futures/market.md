@@ -270,6 +270,7 @@ symbol | coin pair name | Yes
     "low": 10701.7,
     "markPrice": 10866.65,
     "open": 10749.8,
+    "positionVolume": 588,
     "price": 10868.9,
     "referencePrice": null,
     "referenceSymbol": null,
@@ -297,6 +298,7 @@ indexPrice | data | index price | float
 low | data | lowest price | float
 markPrice | data | mark price | float
 open | data |opening price  | float
+positionVolume | data | Number of positions | float
 price | data | current price | float
 referencePrice | data | quoted index price | float
 referenceSymbol | data | reference index code | string
