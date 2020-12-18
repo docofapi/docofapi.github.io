@@ -298,7 +298,7 @@ indexPrice | data | index price | float
 low | data | lowest price | float
 markPrice | data | mark price | float
 open | data |opening price  | float
-positionVolume | data | Number of positions | float
+positionVolume | data | position amount | float
 price | data | current price | float
 referencePrice | data | quoted index price | float
 referenceSymbol | data | reference index code | string

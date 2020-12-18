@@ -367,7 +367,7 @@ indexPrice | data | 指数价格 | float
 low | data | 最低价 | float
 markPrice | data | 标记价格 | float
 open | data |开盘价  | float
-positionVolume | data | 持仓量 | float
+positionVolume | data | 持仓额 | float
 price | data | 当前价 | float
 referencePrice | data | 引用指数价格 | float
 referenceSymbol | data | 引用指数代号 | string
