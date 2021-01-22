@@ -225,3 +225,223 @@ positionBalance | data | position (occupied) margin | float
 profit | data | profit and loss | float
 rate | data | margin rate | float
 scene | data | scene(REAL:real, VIRTUAL:virtual) | string
+
+## Deposit application
+
+**Request path: /open/contract/marginDeposit/create**
+
+**Request Protocol: GET/POST**
+
+**API signature: Yes**
+
+**Example request parameters:**
+
+```js
+scene=REAL&board=STD&volume=100token=Token&nonce=123123&sign=signature&time=1586239136316
+```
+
+**The requested data is described as follows:**
+
+Node name(keyword) | Description | Required
+-- | -- | -- | -- |
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
+volume | recharge quantity | 是
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | timestamp | Yes
+
+**Examples of response values:**
+
+```js
+{
+  "type": "SUCCESS",
+  "data": "20210122111032825600A4228F9C6A12E93E3ADDC",
+  "arguments": null,
+  "success": true
+}
+```
+
+**The response data is described as follows:**
+
+Node name(keyword) | Parent node | Description | Type
+-- | -- | -- | -- |
+data | none | Margin recharge ID | string
+
+
+## Paging query of margin recharge records
+
+**Request path: /open/contract/marginDeposit/findPage**
+
+**Request Protocol: GET/POST**
+
+**API signature: Yes**
+
+**Example request parameters:**
+
+```js
+size=20&page=1&sort=1&scene=REAL&board=STD&token=Token&nonce=123123&sign=signature&time=1586239136316
+```
+
+**The requested data is described as follows:**
+
+Node name(keyword) | Description | Required
+-- | -- | -- | -- |
+size | number of pages(default 20) | No
+page | current page(default 1) | No
+sort | sorting method (0: ascending order, 1: descending order) | No
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | timestamp | Yes
+
+**Examples of response values:**
+
+```js
+{
+  "type": "SUCCESS",
+  "data": {
+    "total": 1,
+    "rows": [
+      {
+        "scene": "REAL",
+        "memberId": 100094,
+        "coin": "USDT",
+        "volume": 1000,
+        "createdDate": "2021-01-22T03:10:33.000+0000",
+        "remark": null
+      }
+    ],
+    "footers": null
+  },
+  "arguments": null,
+  "success": true
+}
+```
+
+**The response data is described as follows:**
+
+Node name(keyword) | Parent node | Description | Type
+-- | -- | -- | -- |
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+memberId | rows | member ID | integer
+coin | rows | settlement coin | string
+volume | rows | quantity | float
+createdDate | rows | creation time | date
+remark | rows | remark | string
+
+
+## Margin withdrawal application
+
+**Request path: /open/contract/marginWithdraw/create**
+
+**Request Protocol: GET/POST**
+
+**API signature: Yes**
+
+**Example request parameters:**
+
+```js
+scene=REAL&board=STD&volume=100token=Token&nonce=123123&sign=signature&time=1586239136316
+```
+
+**The requested data is described as follows:**
+
+Node name(keyword) | Description | Required
+-- | -- | -- | -- |
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
+volume | Number of withdrawals | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | timestamp | Yes
+
+**Examples of response values:**
+
+```js
+{
+  "type": "SUCCESS",
+  "data": "202101221148-REAL-100094-STAND",
+  "arguments": null,
+  "success": true
+}
+```
+
+**The response data is described as follows:**
+
+Node name(keyword) | Parent node | Description | Type
+-- | -- | -- | -- |
+data | 无 | Margin withdrawal ID | string
+
+## Paging query of margin withdrawal records
+
+**Request path: /open/contract/marginWithdraw/findPage**
+
+**Request Protocol: GET/POST**
+
+**API signature: Yes**
+
+**Example request parameters:**
+
+```js
+size=20&page=1&sort=1&scene=REAL&board=STD&token=Token&nonce=123123&sign=signature&time=1586239136316
+```
+
+**The requested data is described as follows:**
+
+Node name(keyword) | Description | Required
+-- | -- | -- | -- |
+size | number of pages(default 20) | No
+page | current page(default 1) | No
+sort | sorting method (0: ascending order, 1: descending order) | No
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+board | contract board code | Yes
+token | token | Yes
+nonce | random number | Yes
+sign | signature | Yes
+time | timestamp | Yes
+
+**Examples of response values:**
+
+```js
+{
+  "type": "SUCCESS",
+  "data": {
+    "total": 1,
+    "rows": [
+      {
+        "scene": "REAL",
+        "memberId": 100094,
+        "coin": "USDT",
+        "volume": 1000,
+        "createdDate": "2021-01-22T03:48:25.000+0000",
+        "remark": null
+      }
+    ],
+    "footers": null
+  },
+  "arguments": null,
+  "success": true
+}
+```
+
+**The response data is described as follows:**
+
+Node name(keyword) | Parent node | Description | Type
+-- | -- | -- | -- |
+footers | data | footer | array
+rows | data | datasheets | array
+total | data | total | long
+scene | scene(REAL:real, VIRTUAL:virtual) | Yes
+memberId | rows | member ID | integer
+coin | rows | settlement coin | string
+volume | rows | quantity | float
+createdDate | rows | creation time | date
+remark | rows | remark | string
