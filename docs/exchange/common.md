@@ -4,6 +4,8 @@
 
 **接口地址: ` https://www.xyt.com/api `**
 
+**请求头: ` Content-Type: application/json `**
+
 ## 签名
 
 **签名生成规则如下:**

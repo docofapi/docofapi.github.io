@@ -4,6 +4,8 @@
 
 **REST API: ` https://www.xyt.com/api `**
 
+**Request header: ` Content-Type: application/json `**
+
 ## Signature
 
 **The signature generation rules are as follows:**
